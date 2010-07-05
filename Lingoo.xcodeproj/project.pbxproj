@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1BC8CCC111E240510012A062 /* CRGoogleTranslate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */; };
 		1BC8CE7A11E2641B0012A062 /* CRJSMapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */; };
+		1BC8CF6311E284570012A062 /* CRJSRemoteQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CF6211E284570012A062 /* CRJSRemoteQuery.mm */; };
+		1BC8CF7111E285400012A062 /* CRGoogleLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CF7011E285400012A062 /* CRGoogleLanguage.mm */; };
 		1BCEAF4511E1269D0033EA3C /* CRJSExec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */; };
 		1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */; };
 		1BF0C9BF11DF6A4F005C908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BE11DF6A4F005C908F /* main.m */; };
@@ -44,6 +46,10 @@
 		1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRGoogleTranslate.mm; sourceTree = "<group>"; };
 		1BC8CE7811E2641B0012A062 /* CRJSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSMapper.h; sourceTree = "<group>"; };
 		1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSMapper.mm; sourceTree = "<group>"; };
+		1BC8CF6111E284570012A062 /* CRJSRemoteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSRemoteQuery.h; sourceTree = "<group>"; };
+		1BC8CF6211E284570012A062 /* CRJSRemoteQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSRemoteQuery.mm; sourceTree = "<group>"; };
+		1BC8CF6F11E285400012A062 /* CRGoogleLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGoogleLanguage.h; sourceTree = "<group>"; };
+		1BC8CF7011E285400012A062 /* CRGoogleLanguage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRGoogleLanguage.mm; sourceTree = "<group>"; };
 		1BCEAF4311E1269D0033EA3C /* CRJSExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSExec.h; sourceTree = "<group>"; };
 		1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSExec.mm; sourceTree = "<group>"; };
 		1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LingooAppDelegate.h; path = Source/LingooAppDelegate.h; sourceTree = "<group>"; };
@@ -84,8 +90,7 @@
 			children = (
 				1BC8CE7B11E2642E0012A062 /* HotKeys */,
 				1BC8CE7711E264090012A062 /* CRJavaScript */,
-				1BC8CCBF11E240510012A062 /* CRGoogleTranslate.h */,
-				1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */,
+				1BC8CF6E11E2850E0012A062 /* Google Translate */,
 				1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */,
 				1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */,
 			);
@@ -126,6 +131,8 @@
 			children = (
 				1BC8CE7811E2641B0012A062 /* CRJSMapper.h */,
 				1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */,
+				1BC8CF6111E284570012A062 /* CRJSRemoteQuery.h */,
+				1BC8CF6211E284570012A062 /* CRJSRemoteQuery.mm */,
 				1BCEAF4311E1269D0033EA3C /* CRJSExec.h */,
 				1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */,
 			);
@@ -139,6 +146,17 @@
 				1BF0CDEA11DFCAB0005C908F /* DDHotKeyCenter.mm */,
 			);
 			name = HotKeys;
+			sourceTree = "<group>";
+		};
+		1BC8CF6E11E2850E0012A062 /* Google Translate */ = {
+			isa = PBXGroup;
+			children = (
+				1BC8CF6F11E285400012A062 /* CRGoogleLanguage.h */,
+				1BC8CF7011E285400012A062 /* CRGoogleLanguage.mm */,
+				1BC8CCBF11E240510012A062 /* CRGoogleTranslate.h */,
+				1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */,
+			);
+			name = "Google Translate";
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* Lingoo */ = {
@@ -245,6 +263,8 @@
 				1BCEAF4511E1269D0033EA3C /* CRJSExec.mm in Sources */,
 				1BC8CCC111E240510012A062 /* CRGoogleTranslate.mm in Sources */,
 				1BC8CE7A11E2641B0012A062 /* CRJSMapper.mm in Sources */,
+				1BC8CF6311E284570012A062 /* CRJSRemoteQuery.mm in Sources */,
+				1BC8CF7111E285400012A062 /* CRGoogleLanguage.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

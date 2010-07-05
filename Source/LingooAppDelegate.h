@@ -13,23 +13,29 @@
 // App delegate
 //////////////////////////////////////////////////////////////////////
 @interface LingooAppDelegate : NSObject <NSApplicationDelegate>
-{
-    NSWindow*			window;
-	NSMenu*				statusMenu;
-	NSPanel*			translatePanel;
-	
+{	
 	DDHotKeyCenter*		hotKeys;
 	NSStatusItem*		statusItem;
 	
 	CRGoogleTranslate*	translate;
+	CRGoogleLanguage*	selectedSourceLanguage;
+	
+@public
+	NSMenu*				statusMenu;
+	NSPanel*			translatePanel;
+	NSSearchField*		textSource;
+	NSPopUpButton*		languagesButton;
 }
 
-@property (assign) IBOutlet NSWindow*	window;
-@property (assign) IBOutlet NSMenu*		statusMenu;
-@property (assign) IBOutlet NSPanel*	translatePanel;
+@property (assign) IBOutlet NSMenu*			statusMenu;
+@property (assign) IBOutlet NSPanel*		translatePanel;
+@property (assign) IBOutlet NSSearchField*	textSource;
+@property (assign) IBOutlet NSPopUpButton*	languagesButton;
 
-@property (assign) CRGoogleTranslate*	translate;
+@property (readonly)	CRGoogleTranslate*	translate;
+@property (assign)		CRGoogleLanguage*	selectedSourceLanguage;
 
 - (IBAction)showTranslator:(id)sender;
+- (IBAction)translate:(id)sender;
 
 @end

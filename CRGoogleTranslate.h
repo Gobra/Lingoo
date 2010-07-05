@@ -6,24 +6,12 @@
 //  Copyright 2010 Corner-A. All rights reserved.
 //
 
-#import "CRJSMapper.h"
+#import "CRJSRemoteQuery.h"
 #import "CRJSExec.h"
+#import "CRGoogleLanguage.h"
 
-//////////////////////////////////////////////////////////////////////
-// GoogleTranslate language
-//////////////////////////////////////////////////////////////////////
-@interface CRGoogleLanguage : CRJSMapper
-{
-	NSString* languageCode;
-	NSString* languageName;
-}
-
-@property (readonly) NSString* languageCode;
-@property (readonly) NSString* languageName;
-
-- (id)initWithWebScriptObject:(WebScriptObject *)wo;
-
-@end
+extern NSString* const CRGoogleTranslateTextKey;
+extern NSString* const CRGoogleTranslateLanguageCodeKey;
 
 //////////////////////////////////////////////////////////////////////
 // JavaScript based GoogleTranslate wrapper
@@ -40,5 +28,12 @@
 
 @property (readonly) BOOL		isReady;
 @property (readonly) NSArray*	languages;
+
+// Queries
+- (void)detectLanguage:(CRJSRemoteQuery *)query;
+- (void)translateText:(CRJSRemoteQuery *)query;
+
+// Queries parsing
+- (CRGoogleLanguage *)languageFromQuery:(CRJSRemoteQuery *)query;
 
 @end

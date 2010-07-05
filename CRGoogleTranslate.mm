@@ -7,44 +7,9 @@
 //
 
 #import "CRGoogleTranslate.h"
-#import "CRJSExec.h"
 
-//////////////////////////////////////////////////////////////////////
-// GoogleTranslate language
-//////////////////////////////////////////////////////////////////////
-@implementation CRGoogleLanguage : CRJSMapper
-
-@synthesize languageCode;
-@synthesize languageName;
-
-- (id)initWithWebScriptObject:(WebScriptObject *)wo
-{
-	self = [super init];
-	if (self)
-	{
-		languageCode = [[wo valueForKey:@"code"] retain];
-		
-		// convert name to a readable format
-		languageName = [[wo valueForKey:@"name"] capitalizedString];
-		if ([languageName rangeOfString:@"_"].location != NSNotFound)
-		{
-			NSArray* components = [languageName componentsSeparatedByString:@"_"];
-			if ([components count] == 2)
-				languageName = [NSString stringWithFormat:@"%@ (%@)", [components objectAtIndex:0], [components objectAtIndex:1]];
-		}
-		[languageName retain];
-	}
-	return self;
-}
-
-- (void)dealloc
-{
-	[languageCode release];
-	[languageName release];
-	[super dealloc];
-}
-
-@end
+NSString* const CRGoogleTranslateTextKey = @"text";
+NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
 
 //////////////////////////////////////////////////////////////////////
 // JavaScript based GoogleTranslate wrapper
@@ -91,7 +56,6 @@
 		}
 	}
 	
-	NSLog(@"%@", result);
 	return [result autorelease];
 }
 
@@ -126,15 +90,51 @@
 }
 
 //////////////////////////////////////////////////////////////////////
+#pragma mark Google Translate
+
+- (CRGoogleLanguage *)languageFromQuery:(CRJSRemoteQuery *)query
+{
+	NSString* langCode = [[query params] valueForKey:CRGoogleTranslateLanguageCodeKey];
+	if (langCode)
+	{
+		for (CRGoogleLanguage* lang in [self languages])
+		{
+			if ([[lang languageCode] isEqualToString:langCode])
+				return lang;
+		}
+	}
+	
+	return nil;
+}
+
+- (void)signalQueryComplete:(CRJSRemoteQuery *)query
+{
+	[query complete:YES];
+}
+
+- (void)detectLanguage:(CRJSRemoteQuery *)query
+{
+	[[jsExec script] callWebScriptMethod:@"detectLanguage" withArguments:[NSArray arrayWithObject:query]];
+}
+
+- (void)translateText:(CRJSRemoteQuery *)query
+{
+}
+
+//////////////////////////////////////////////////////////////////////
 #pragma mark WebScripting
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
+	if (sel == @selector(signalQueryComplete:))
+		return NO;
 	return YES;
 }
 
 + (NSString *)webScriptNameForSelector:(SEL)sel
 {
+	if (sel == @selector(signalQueryComplete:))
+		return @"signalQueryComplete";
     return nil;
 }
 

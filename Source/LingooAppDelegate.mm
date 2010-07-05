@@ -13,11 +13,13 @@
 //////////////////////////////////////////////////////////////////////
 @implementation LingooAppDelegate
 
-@synthesize window;
 @synthesize statusMenu;
 @synthesize translatePanel;
+@synthesize textSource;
+@synthesize languagesButton;
 
 @synthesize translate;
+@synthesize selectedSourceLanguage;
 
 - (id)init
 {
@@ -70,11 +72,28 @@
 }
 
 //////////////////////////////////////////////////////////////////////
+#pragma mark Queries
+
+- (void)detectionComplete:(CRJSRemoteQuery *)query
+{
+	if ([query successStatus])
+	{
+		[self setSelectedSourceLanguage:[translate languageFromQuery:query]];
+	}
+}
+
+//////////////////////////////////////////////////////////////////////
 #pragma mark Actions
 
 - (void)showTranslator:(id)sender
 {
 	[translatePanel makeKeyAndOrderFront:self];
+}
+
+- (void)translate:(id)sender
+{
+	NSDictionary* params = [NSDictionary dictionaryWithObject:[textSource stringValue] forKey:CRGoogleTranslateTextKey];
+	[translate detectLanguage:[CRJSRemoteQuery queryWithTarget:self action:@selector(detectionComplete:) params:params]];
 }
 
 @end

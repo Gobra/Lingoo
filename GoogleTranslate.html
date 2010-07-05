@@ -3,15 +3,24 @@
 <script src="http://www.google.com/jsapi" language="javascript"></script>
 <script language="javascript">
 
+function detectLanguage(query) {
+	var text = query.params.valueForKey("text");
+	
+	google.language.detect(text, function(result) {
+		if (!result.error) {
+			query.params.setValueForKey(result.language, "langCode");
+			root.signalQueryComplete(query);
+		}
+	});
+}
+
 function initialize() {
 	function signalLoaded() {
 		// convert the enum to an array
 		var indexer = 0;
 		var langArray = new Array();
 		for (language in google.language.Languages)
-		{
 			langArray[indexer++] = { name : language, code : google.language.Languages[language] };
-		}
 		root.languages = langArray;
 		
 		// singal we are ready
