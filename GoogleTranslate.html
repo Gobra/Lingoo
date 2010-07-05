@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="http://www.google.com/jsapi" language="javascript"></script>
+<script language="javascript">
+
+function initialize() {
+	function signalLoaded() {
+		// convert the enum to an array
+		var indexer = 0;
+		var langArray = new Array();
+		for (language in google.language.Languages)
+		{
+			langArray[indexer++] = { name : language, code : google.language.Languages[language] };
+		}
+		root.languages = langArray;
+		
+		// singal we are ready
+		root.isReady = true;
+	}
+	
+	google.load("language", "1");
+	google.setOnLoadCallback(signalLoaded);
+}
+
+initialize();
+
+</script>
+</head>
+<body>
+	<div id="content"></div>
+</body>
+</html>

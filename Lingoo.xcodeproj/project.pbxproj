@@ -7,21 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.m */; };
+		1BC8CCC111E240510012A062 /* CRGoogleTranslate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */; };
+		1BC8CE7A11E2641B0012A062 /* CRJSMapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */; };
+		1BCEAF4511E1269D0033EA3C /* CRJSExec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */; };
+		1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */; };
 		1BF0C9BF11DF6A4F005C908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BE11DF6A4F005C908F /* main.m */; };
 		1BF0C9C411DF6A61005C908F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0C9C011DF6A61005C908F /* MainMenu.xib */; };
 		1BF0C9C511DF6A61005C908F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0C9C211DF6A61005C908F /* InfoPlist.strings */; };
+		1BF0CC0C11DFAAE3005C908F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CC0B11DFAAE3005C908F /* WebKit.framework */; };
+		1BF0CD8A11DFBA4B005C908F /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */; };
+		1BF0CDCE11DFBA97005C908F /* BWToolkitFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */; };
+		1BF0CDEB11DFCAB0005C908F /* DDHotKeyCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0CDEA11DFCAB0005C908F /* DDHotKeyCenter.mm */; };
+		1BF0CDF211DFD496005C908F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CDF111DFD496005C908F /* Carbon.framework */; };
+		1BF0CEBE11DFE167005C908F /* GoogleTranslate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0CEBD11DFE167005C908F /* GoogleTranslate.html */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1BF0CDD711DFBAB0005C908F /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1BF0CDCE11DFBA97005C908F /* BWToolkitFramework.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1BC8CCBF11E240510012A062 /* CRGoogleTranslate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGoogleTranslate.h; sourceTree = "<group>"; };
+		1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRGoogleTranslate.mm; sourceTree = "<group>"; };
+		1BC8CE7811E2641B0012A062 /* CRJSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSMapper.h; sourceTree = "<group>"; };
+		1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSMapper.mm; sourceTree = "<group>"; };
+		1BCEAF4311E1269D0033EA3C /* CRJSExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSExec.h; sourceTree = "<group>"; };
+		1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSExec.mm; sourceTree = "<group>"; };
 		1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LingooAppDelegate.h; path = Source/LingooAppDelegate.h; sourceTree = "<group>"; };
-		1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LingooAppDelegate.m; path = Source/LingooAppDelegate.m; sourceTree = "<group>"; };
+		1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LingooAppDelegate.mm; path = Source/LingooAppDelegate.mm; sourceTree = "<group>"; };
 		1BF0C9BE11DF6A4F005C908F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
 		1BF0C9C111DF6A61005C908F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1BF0C9C311DF6A61005C908F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1BF0CC0B11DFAAE3005C908F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = "../External frameworks/BWToolkit/BWToolkitFramework.framework"; sourceTree = SOURCE_ROOT; };
+		1BF0CDE911DFCAB0005C908F /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyCenter.h; path = Source/DDHotKeyCenter.h; sourceTree = "<group>"; };
+		1BF0CDEA11DFCAB0005C908F /* DDHotKeyCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DDHotKeyCenter.mm; path = Source/DDHotKeyCenter.mm; sourceTree = "<group>"; };
+		1BF0CDF111DFD496005C908F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		1BF0CEBD11DFE167005C908F /* GoogleTranslate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = GoogleTranslate.html; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* Lingoo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lingoo_Prefix.pch; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -35,6 +70,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				1BF0CC0C11DFAAE3005C908F /* WebKit.framework in Frameworks */,
+				1BF0CD8A11DFBA4B005C908F /* BWToolkitFramework.framework in Frameworks */,
+				1BF0CDF211DFD496005C908F /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +82,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1BC8CE7B11E2642E0012A062 /* HotKeys */,
+				1BC8CE7711E264090012A062 /* CRJavaScript */,
+				1BC8CCBF11E240510012A062 /* CRGoogleTranslate.h */,
+				1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */,
 				1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */,
-				1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.m */,
+				1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -53,7 +95,10 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				1BF0CC0B11DFAAE3005C908F /* WebKit.framework */,
+				1BF0CDF111DFD496005C908F /* Carbon.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -74,6 +119,26 @@
 				8D1107320486CEB800E47090 /* Lingoo.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1BC8CE7711E264090012A062 /* CRJavaScript */ = {
+			isa = PBXGroup;
+			children = (
+				1BC8CE7811E2641B0012A062 /* CRJSMapper.h */,
+				1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */,
+				1BCEAF4311E1269D0033EA3C /* CRJSExec.h */,
+				1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */,
+			);
+			name = CRJavaScript;
+			sourceTree = "<group>";
+		};
+		1BC8CE7B11E2642E0012A062 /* HotKeys */ = {
+			isa = PBXGroup;
+			children = (
+				1BF0CDE911DFCAB0005C908F /* DDHotKeyCenter.h */,
+				1BF0CDEA11DFCAB0005C908F /* DDHotKeyCenter.mm */,
+			);
+			name = HotKeys;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* Lingoo */ = {
@@ -100,6 +165,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BF0CEBD11DFE167005C908F /* GoogleTranslate.html */,
 				8D1107310486CEB800E47090 /* Lingoo-Info.plist */,
 				1BF0C9C011DF6A61005C908F /* MainMenu.xib */,
 				1BF0C9C211DF6A61005C908F /* InfoPlist.strings */,
@@ -126,6 +192,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				1BF0CDD711DFBAB0005C908F /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +228,7 @@
 			files = (
 				1BF0C9C411DF6A61005C908F /* MainMenu.xib in Resources */,
 				1BF0C9C511DF6A61005C908F /* InfoPlist.strings in Resources */,
+				1BF0CEBE11DFE167005C908F /* GoogleTranslate.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,8 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.m in Sources */,
+				1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */,
 				1BF0C9BF11DF6A4F005C908F /* main.m in Sources */,
+				1BF0CDEB11DFCAB0005C908F /* DDHotKeyCenter.mm in Sources */,
+				1BCEAF4511E1269D0033EA3C /* CRJSExec.mm in Sources */,
+				1BC8CCC111E240510012A062 /* CRGoogleTranslate.mm in Sources */,
+				1BC8CE7A11E2641B0012A062 /* CRJSMapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +275,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../External frameworks/BWToolkit\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -220,6 +296,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../External frameworks/BWToolkit\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Lingoo_Prefix.pch;
@@ -234,6 +314,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -248,6 +329,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
