@@ -18,22 +18,24 @@
 	NSStatusItem*		statusItem;
 	
 	CRGoogleTranslate*	translate;
-	CRGoogleLanguage*	selectedSourceLanguage;
+	CRGoogleLanguage*	sourceLanguage;
+	CRGoogleLanguage*	destinationLanguage;
 	
 @public
 	NSMenu*				statusMenu;
 	NSPanel*			translatePanel;
-	NSSearchField*		textSource;
+	NSTextField*		textSource;
 	NSPopUpButton*		languagesButton;
 }
 
 @property (assign) IBOutlet NSMenu*			statusMenu;
 @property (assign) IBOutlet NSPanel*		translatePanel;
-@property (assign) IBOutlet NSSearchField*	textSource;
+@property (assign) IBOutlet NSTextField*	textSource;
 @property (assign) IBOutlet NSPopUpButton*	languagesButton;
 
 @property (readonly)	CRGoogleTranslate*	translate;
-@property (assign)		CRGoogleLanguage*	selectedSourceLanguage;
+@property (assign)		CRGoogleLanguage*	sourceLanguage;
+@property (assign)		CRGoogleLanguage*	destinationLanguage;
 
 - (IBAction)showTranslator:(id)sender;
 - (IBAction)translate:(id)sender;

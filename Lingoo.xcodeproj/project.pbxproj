@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BC8CCC111E240510012A062 /* CRGoogleTranslate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */; };
-		1BC8CE7A11E2641B0012A062 /* CRJSMapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */; };
-		1BC8CF6311E284570012A062 /* CRJSRemoteQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CF6211E284570012A062 /* CRJSRemoteQuery.mm */; };
-		1BC8CF7111E285400012A062 /* CRGoogleLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8CF7011E285400012A062 /* CRGoogleLanguage.mm */; };
-		1BCEAF4511E1269D0033EA3C /* CRJSExec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */; };
+		1BD2548911E45E7B006CD313 /* Constants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2548811E45E7B006CD313 /* Constants.mm */; };
+		1BD2548C11E45E8C006CD313 /* DDHotKeyCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2548B11E45E8C006CD313 /* DDHotKeyCenter.mm */; };
+		1BD2549311E45E9E006CD313 /* CRJSExec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549011E45E9E006CD313 /* CRJSExec.mm */; };
+		1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549111E45E9E006CD313 /* CRJSMapper.mm */; };
+		1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */; };
+		1BD2549A11E45ED3006CD313 /* CRGoogleLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */; };
+		1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */; };
+		1BD2549D11E45EEA006CD313 /* GoogleTranslate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */; };
+		1BD2551A11E46471006CD313 /* CRChangeSignaler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2551911E46471006CD313 /* CRChangeSignaler.mm */; };
 		1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */; };
 		1BF0C9BF11DF6A4F005C908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BE11DF6A4F005C908F /* main.m */; };
 		1BF0C9C411DF6A61005C908F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0C9C011DF6A61005C908F /* MainMenu.xib */; };
@@ -19,9 +23,7 @@
 		1BF0CC0C11DFAAE3005C908F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CC0B11DFAAE3005C908F /* WebKit.framework */; };
 		1BF0CD8A11DFBA4B005C908F /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */; };
 		1BF0CDCE11DFBA97005C908F /* BWToolkitFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */; };
-		1BF0CDEB11DFCAB0005C908F /* DDHotKeyCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0CDEA11DFCAB0005C908F /* DDHotKeyCenter.mm */; };
 		1BF0CDF211DFD496005C908F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0CDF111DFD496005C908F /* Carbon.framework */; };
-		1BF0CEBE11DFE167005C908F /* GoogleTranslate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0CEBD11DFE167005C908F /* GoogleTranslate.html */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,16 +44,23 @@
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		1BC8CCBF11E240510012A062 /* CRGoogleTranslate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGoogleTranslate.h; sourceTree = "<group>"; };
-		1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRGoogleTranslate.mm; sourceTree = "<group>"; };
-		1BC8CE7811E2641B0012A062 /* CRJSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSMapper.h; sourceTree = "<group>"; };
-		1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSMapper.mm; sourceTree = "<group>"; };
-		1BC8CF6111E284570012A062 /* CRJSRemoteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSRemoteQuery.h; sourceTree = "<group>"; };
-		1BC8CF6211E284570012A062 /* CRJSRemoteQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSRemoteQuery.mm; sourceTree = "<group>"; };
-		1BC8CF6F11E285400012A062 /* CRGoogleLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGoogleLanguage.h; sourceTree = "<group>"; };
-		1BC8CF7011E285400012A062 /* CRGoogleLanguage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRGoogleLanguage.mm; sourceTree = "<group>"; };
-		1BCEAF4311E1269D0033EA3C /* CRJSExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRJSExec.h; sourceTree = "<group>"; };
-		1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRJSExec.mm; sourceTree = "<group>"; };
+		1BD2548711E45E7B006CD313 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Common/Constants.h; sourceTree = "<group>"; };
+		1BD2548811E45E7B006CD313 /* Constants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Constants.mm; path = Source/Common/Constants.mm; sourceTree = "<group>"; };
+		1BD2548A11E45E8C006CD313 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyCenter.h; path = Source/HotKeys/DDHotKeyCenter.h; sourceTree = "<group>"; };
+		1BD2548B11E45E8C006CD313 /* DDHotKeyCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DDHotKeyCenter.mm; path = Source/HotKeys/DDHotKeyCenter.mm; sourceTree = "<group>"; };
+		1BD2548D11E45E9E006CD313 /* CRJSExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSExec.h; path = Source/CRJavaScript/CRJSExec.h; sourceTree = "<group>"; };
+		1BD2548E11E45E9E006CD313 /* CRJSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSMapper.h; path = Source/CRJavaScript/CRJSMapper.h; sourceTree = "<group>"; };
+		1BD2548F11E45E9E006CD313 /* CRJSRemoteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSRemoteQuery.h; path = Source/CRJavaScript/CRJSRemoteQuery.h; sourceTree = "<group>"; };
+		1BD2549011E45E9E006CD313 /* CRJSExec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRJSExec.mm; path = Source/CRJavaScript/CRJSExec.mm; sourceTree = "<group>"; };
+		1BD2549111E45E9E006CD313 /* CRJSMapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRJSMapper.mm; path = Source/CRJavaScript/CRJSMapper.mm; sourceTree = "<group>"; };
+		1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRJSRemoteQuery.mm; path = Source/CRJavaScript/CRJSRemoteQuery.mm; sourceTree = "<group>"; };
+		1BD2549611E45ED3006CD313 /* CRGoogleLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleLanguage.h; path = "Source/Google Translate/CRGoogleLanguage.h"; sourceTree = "<group>"; };
+		1BD2549711E45ED3006CD313 /* CRGoogleTranslate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleTranslate.h; path = "Source/Google Translate/CRGoogleTranslate.h"; sourceTree = "<group>"; };
+		1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleLanguage.mm; path = "Source/Google Translate/CRGoogleLanguage.mm"; sourceTree = "<group>"; };
+		1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleTranslate.mm; path = "Source/Google Translate/CRGoogleTranslate.mm"; sourceTree = "<group>"; };
+		1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = GoogleTranslate.html; path = "Source/Google Translate/GoogleTranslate.html"; sourceTree = "<group>"; };
+		1BD2551811E46471006CD313 /* CRChangeSignaler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRChangeSignaler.h; sourceTree = "<group>"; };
+		1BD2551911E46471006CD313 /* CRChangeSignaler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRChangeSignaler.mm; sourceTree = "<group>"; };
 		1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LingooAppDelegate.h; path = Source/LingooAppDelegate.h; sourceTree = "<group>"; };
 		1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LingooAppDelegate.mm; path = Source/LingooAppDelegate.mm; sourceTree = "<group>"; };
 		1BF0C9BE11DF6A4F005C908F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
@@ -59,10 +68,7 @@
 		1BF0C9C311DF6A61005C908F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BF0CC0B11DFAAE3005C908F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = "../External frameworks/BWToolkit/BWToolkitFramework.framework"; sourceTree = SOURCE_ROOT; };
-		1BF0CDE911DFCAB0005C908F /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyCenter.h; path = Source/DDHotKeyCenter.h; sourceTree = "<group>"; };
-		1BF0CDEA11DFCAB0005C908F /* DDHotKeyCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DDHotKeyCenter.mm; path = Source/DDHotKeyCenter.mm; sourceTree = "<group>"; };
 		1BF0CDF111DFD496005C908F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		1BF0CEBD11DFE167005C908F /* GoogleTranslate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = GoogleTranslate.html; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* Lingoo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lingoo_Prefix.pch; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -88,6 +94,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1BD2548311E45E04006CD313 /* Common */,
 				1BC8CE7B11E2642E0012A062 /* HotKeys */,
 				1BC8CE7711E264090012A062 /* CRJavaScript */,
 				1BC8CF6E11E2850E0012A062 /* Google Translate */,
@@ -129,12 +136,12 @@
 		1BC8CE7711E264090012A062 /* CRJavaScript */ = {
 			isa = PBXGroup;
 			children = (
-				1BC8CE7811E2641B0012A062 /* CRJSMapper.h */,
-				1BC8CE7911E2641B0012A062 /* CRJSMapper.mm */,
-				1BC8CF6111E284570012A062 /* CRJSRemoteQuery.h */,
-				1BC8CF6211E284570012A062 /* CRJSRemoteQuery.mm */,
-				1BCEAF4311E1269D0033EA3C /* CRJSExec.h */,
-				1BCEAF4411E1269D0033EA3C /* CRJSExec.mm */,
+				1BD2548D11E45E9E006CD313 /* CRJSExec.h */,
+				1BD2549011E45E9E006CD313 /* CRJSExec.mm */,
+				1BD2548E11E45E9E006CD313 /* CRJSMapper.h */,
+				1BD2549111E45E9E006CD313 /* CRJSMapper.mm */,
+				1BD2548F11E45E9E006CD313 /* CRJSRemoteQuery.h */,
+				1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */,
 			);
 			name = CRJavaScript;
 			sourceTree = "<group>";
@@ -142,8 +149,8 @@
 		1BC8CE7B11E2642E0012A062 /* HotKeys */ = {
 			isa = PBXGroup;
 			children = (
-				1BF0CDE911DFCAB0005C908F /* DDHotKeyCenter.h */,
-				1BF0CDEA11DFCAB0005C908F /* DDHotKeyCenter.mm */,
+				1BD2548A11E45E8C006CD313 /* DDHotKeyCenter.h */,
+				1BD2548B11E45E8C006CD313 /* DDHotKeyCenter.mm */,
 			);
 			name = HotKeys;
 			sourceTree = "<group>";
@@ -151,12 +158,23 @@
 		1BC8CF6E11E2850E0012A062 /* Google Translate */ = {
 			isa = PBXGroup;
 			children = (
-				1BC8CF6F11E285400012A062 /* CRGoogleLanguage.h */,
-				1BC8CF7011E285400012A062 /* CRGoogleLanguage.mm */,
-				1BC8CCBF11E240510012A062 /* CRGoogleTranslate.h */,
-				1BC8CCC011E240510012A062 /* CRGoogleTranslate.mm */,
+				1BD2549611E45ED3006CD313 /* CRGoogleLanguage.h */,
+				1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */,
+				1BD2549711E45ED3006CD313 /* CRGoogleTranslate.h */,
+				1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */,
 			);
 			name = "Google Translate";
+			sourceTree = "<group>";
+		};
+		1BD2548311E45E04006CD313 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1BD2548711E45E7B006CD313 /* Constants.h */,
+				1BD2548811E45E7B006CD313 /* Constants.mm */,
+				1BD2551811E46471006CD313 /* CRChangeSignaler.h */,
+				1BD2551911E46471006CD313 /* CRChangeSignaler.mm */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* Lingoo */ = {
@@ -183,7 +201,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1BF0CEBD11DFE167005C908F /* GoogleTranslate.html */,
+				1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */,
 				8D1107310486CEB800E47090 /* Lingoo-Info.plist */,
 				1BF0C9C011DF6A61005C908F /* MainMenu.xib */,
 				1BF0C9C211DF6A61005C908F /* InfoPlist.strings */,
@@ -246,7 +264,7 @@
 			files = (
 				1BF0C9C411DF6A61005C908F /* MainMenu.xib in Resources */,
 				1BF0C9C511DF6A61005C908F /* InfoPlist.strings in Resources */,
-				1BF0CEBE11DFE167005C908F /* GoogleTranslate.html in Resources */,
+				1BD2549D11E45EEA006CD313 /* GoogleTranslate.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,12 +277,14 @@
 			files = (
 				1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */,
 				1BF0C9BF11DF6A4F005C908F /* main.m in Sources */,
-				1BF0CDEB11DFCAB0005C908F /* DDHotKeyCenter.mm in Sources */,
-				1BCEAF4511E1269D0033EA3C /* CRJSExec.mm in Sources */,
-				1BC8CCC111E240510012A062 /* CRGoogleTranslate.mm in Sources */,
-				1BC8CE7A11E2641B0012A062 /* CRJSMapper.mm in Sources */,
-				1BC8CF6311E284570012A062 /* CRJSRemoteQuery.mm in Sources */,
-				1BC8CF7111E285400012A062 /* CRGoogleLanguage.mm in Sources */,
+				1BD2548911E45E7B006CD313 /* Constants.mm in Sources */,
+				1BD2548C11E45E8C006CD313 /* DDHotKeyCenter.mm in Sources */,
+				1BD2549311E45E9E006CD313 /* CRJSExec.mm in Sources */,
+				1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */,
+				1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */,
+				1BD2549A11E45ED3006CD313 /* CRGoogleLanguage.mm in Sources */,
+				1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */,
+				1BD2551A11E46471006CD313 /* CRChangeSignaler.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

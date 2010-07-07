@@ -7,6 +7,9 @@
 //
 
 #import "LingooAppDelegate.h"
+#import "CRChangeSignaler.h"
+
+NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey";
 
 //////////////////////////////////////////////////////////////////////
 // App delegate
@@ -19,7 +22,20 @@
 @synthesize languagesButton;
 
 @synthesize translate;
-@synthesize selectedSourceLanguage;
+@synthesize sourceLanguage;
+@synthesize destinationLanguage;
+
++ (void)initialize
+{
+	// Defaults
+	[[NSUserDefaults standardUserDefaults] registerDefaults:
+	 [NSDictionary dictionaryWithObjectsAndKeys:
+	  [NSNumber numberWithBool:YES],	LOAutodetectLanguageKey,
+	  @"en",							LOSourceLanguageCodeKey,
+	  @"en",							LODestinationLanguageCodeKey,
+	  nil]
+	 ];
+}
 
 - (id)init
 {
@@ -36,6 +52,8 @@
 		
 		// Google.Translate
 		translate = [[CRGoogleTranslate alloc] init];
+		CRChangeSignaler* signaler = [CRChangeSignaler signalWithObject:translate keyPath:@"isReady" target:self action:@selector(translateReady:)];
+		[signaler retain];
 	}
 	return self;
 }
@@ -50,12 +68,7 @@
 - (void)awakeFromNib
 {
 	[statusItem setMenu:statusMenu];
-	
 	[self showTranslator:self];
-	
-	NSView* view = [[translate jsExec] view];
-	[view setFrame:NSMakeRect(7, 10, 255, 220)];
-	[[[self translatePanel] contentView] addSubview:view];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -64,6 +77,11 @@
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
 	[hotKeys unregisterHotKeysWithTarget:self];
+	
+	// Save some defaults
+	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+	[ud setValue:[[self sourceLanguage] languageCode] forKey:LOSourceLanguageCodeKey];
+	[ud setValue:[[self destinationLanguage] languageCode] forKey:LODestinationLanguageCodeKey];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -74,12 +92,50 @@
 //////////////////////////////////////////////////////////////////////
 #pragma mark Queries
 
+- (void)doTranslate:(CRJSRemoteQuery *)query
+{
+	// translation data
+	NSString* text	= query? [query.params valueForKey:CRGoogleTranslateTextKey] : [textSource stringValue];
+	NSString* sCode = query? [query.params valueForKey:CRGoogleTranslateLanguageCodeKey] : [[self sourceLanguage] languageCode];
+	NSString* dCode = [[self destinationLanguage] languageCode];
+	
+	// query
+	NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+							text,	CRGoogleTranslateTextKey,
+							sCode,	CRGoogleTranslateSourceLanguageCodeKey,
+							dCode,	CRGoogleTranslateDestinationLanguageCodeKey,
+							nil];
+	[translate translateText:[CRJSRemoteQuery queryWithTarget:self action:@selector(translationComplete:) params:params]];
+}
+
 - (void)detectionComplete:(CRJSRemoteQuery *)query
 {
 	if ([query successStatus])
 	{
-		[self setSelectedSourceLanguage:[translate languageFromQuery:query]];
+		[self setSourceLanguage:[translate languageFromQuery:query]];
+		
+		// Check whether we are asked to translate right after that
+		if ([[query.params valueForKey:LODeferredTranslateRequestKey] boolValue])
+			[self doTranslate:query];
 	}
+}
+
+- (void)translationComplete:(CRJSRemoteQuery *)query
+{
+	if ([query successStatus])
+	{
+		NSString* translation = [query.params valueForKey:CRGoogleTranslateTranslationKey];
+		[textSource setStringValue:translation];
+	}
+}
+
+- (void)translateReady:(CRChangeSignaler *)signaler
+{
+	[signaler release];
+	
+	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+	[self setSourceLanguage:[translate languageFromCode:[ud valueForKey:LOSourceLanguageCodeKey]]];
+	[self setDestinationLanguage:[translate languageFromCode:[ud valueForKey:LODestinationLanguageCodeKey]]];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -92,8 +148,18 @@
 
 - (void)translate:(id)sender
 {
-	NSDictionary* params = [NSDictionary dictionaryWithObject:[textSource stringValue] forKey:CRGoogleTranslateTextKey];
-	[translate detectLanguage:[CRJSRemoteQuery queryWithTarget:self action:@selector(detectionComplete:) params:params]];
+	// Detect source language -> Translate
+	if ([[[NSUserDefaults standardUserDefaults] valueForKey:LOAutodetectLanguageKey] boolValue])
+	{
+		NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+								[NSNumber numberWithBool:YES],	LODeferredTranslateRequestKey,
+								[textSource stringValue],		CRGoogleTranslateTextKey,
+								nil];
+		[translate detectLanguage:[CRJSRemoteQuery queryWithTarget:self action:@selector(detectionComplete:) params:params]];
+	}
+	// Immediate translate
+	else
+		[self doTranslate:nil];
 }
 
 @end

@@ -14,6 +14,19 @@ function detectLanguage(query) {
 	});
 }
 
+function translateText(query) {
+	var text = query.params.valueForKey("text");
+	var srcLang = query.params.valueForKey("srcLang");
+	var dstLang = query.params.valueForKey("dstLang");
+	
+	google.language.translate(text, srcLang, dstLang, function(result) {
+		if (!result.error) {
+			query.params.setValueForKey(result.translation, "translation");
+			root.signalQueryComplete(query);
+		}
+	});
+}
+
 function initialize() {
 	function signalLoaded() {
 		// convert the enum to an array

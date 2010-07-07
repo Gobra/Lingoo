@@ -10,6 +10,9 @@
 
 NSString* const CRGoogleTranslateTextKey = @"text";
 NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
+NSString* const CRGoogleTranslateSourceLanguageCodeKey = @"srcLang";
+NSString* const CRGoogleTranslateDestinationLanguageCodeKey = @"dstLang";
+NSString* const CRGoogleTranslateTranslationKey = @"translation";
 
 //////////////////////////////////////////////////////////////////////
 // JavaScript based GoogleTranslate wrapper
@@ -19,6 +22,7 @@ NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
 @synthesize jsExec;
 
 @dynamic	isReady;
+@dynamic	isWaiting;
 @dynamic	languages;
 
 - (id)init
@@ -27,6 +31,7 @@ NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
 	if (self)
 	{
 		isReady = NO;
+		isWaiting = YES;
 		languages = [[NSArray alloc] init];
 		
 		// prepare JavaScript
@@ -62,6 +67,16 @@ NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
 //////////////////////////////////////////////////////////////////////
 #pragma mark Properties
 
+- (BOOL)isWaiting
+{
+	return isWaiting;
+}
+
+- (void)setIsWaiting:(BOOL)flag
+{
+	isWaiting = flag;
+}
+
 - (BOOL)isReady
 {
 	return isReady;
@@ -70,6 +85,7 @@ NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
 - (void)setIsReady:(BOOL)flag
 {
 	isReady = flag;
+	self.isWaiting = NO;
 }
 
 - (NSArray *)languages
@@ -90,35 +106,56 @@ NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
 }
 
 //////////////////////////////////////////////////////////////////////
-#pragma mark Google Translate
+#pragma mark Parsing
 
-- (CRGoogleLanguage *)languageFromQuery:(CRJSRemoteQuery *)query
+- (CRGoogleLanguage *)defaultLanguage
 {
-	NSString* langCode = [[query params] valueForKey:CRGoogleTranslateLanguageCodeKey];
-	if (langCode)
+	return [self languageFromCode:@"en"];
+}
+
+- (CRGoogleLanguage *)languageFromCode:(NSString *)languageCode
+{
+	if (languageCode)
 	{
-		for (CRGoogleLanguage* lang in [self languages])
+		for (CRGoogleLanguage* language in [self languages])
 		{
-			if ([[lang languageCode] isEqualToString:langCode])
-				return lang;
+			if ([[language languageCode] isEqualToString:languageCode])
+				return language;
 		}
 	}
 	
 	return nil;
 }
 
+- (CRGoogleLanguage *)languageFromQuery:(CRJSRemoteQuery *)query
+{
+	NSString* languageCode = [[query params] valueForKey:CRGoogleTranslateLanguageCodeKey];
+	return [self languageFromCode:languageCode];
+}
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark Google Translate
+
 - (void)signalQueryComplete:(CRJSRemoteQuery *)query
 {
 	[query complete:YES];
+	self.isWaiting = NO;
+}
+
+- (void)callMethod:(NSString *)methodName withQuery:(CRJSRemoteQuery *)query
+{
+	self.isWaiting = YES;
+	[[jsExec script] callWebScriptMethod:methodName withArguments:[NSArray arrayWithObject:query]];
 }
 
 - (void)detectLanguage:(CRJSRemoteQuery *)query
 {
-	[[jsExec script] callWebScriptMethod:@"detectLanguage" withArguments:[NSArray arrayWithObject:query]];
+	[self callMethod:@"detectLanguage" withQuery:query];
 }
 
 - (void)translateText:(CRJSRemoteQuery *)query
 {
+	[self callMethod:@"translateText" withQuery:query];
 }
 
 //////////////////////////////////////////////////////////////////////

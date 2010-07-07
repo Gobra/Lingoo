@@ -54,4 +54,25 @@
 	[super dealloc];
 }
 
+//////////////////////////////////////////////////////////////////////
+#pragma mark WebScripting
+
++ (BOOL)isKeyExcludedFromWebScript:(const char *)property
+{
+    if (strcmp(property, "languageCode") == 0)
+        return NO;
+	if (strcmp(property, "languageName") == 0)
+		return NO;
+    return YES;
+}
+
++ (NSString *)webScriptNameForKey:(const char *)property
+{
+	if (strcmp(property, "languageCode") == 0)
+		return @"languageCode";
+	if (strcmp(property, "languageName") == 0)
+		return @"languageName";
+	return nil;
+}
+
 @end
