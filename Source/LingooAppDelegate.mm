@@ -7,9 +7,6 @@
 //
 
 #import "LingooAppDelegate.h"
-#import "CRChangeSignaler.h"
-
-NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey";
 
 //////////////////////////////////////////////////////////////////////
 // App delegate
@@ -17,24 +14,13 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 @implementation LingooAppDelegate
 
 @synthesize statusMenu;
-@synthesize translatePanel;
-@synthesize textSource;
-@synthesize languagesButton;
-
-@synthesize translate;
-@synthesize sourceLanguage;
-@synthesize destinationLanguage;
 
 + (void)initialize
 {
-	// Defaults
-	[[NSUserDefaults standardUserDefaults] registerDefaults:
-	 [NSDictionary dictionaryWithObjectsAndKeys:
-	  [NSNumber numberWithBool:YES],	LOAutodetectLanguageKey,
-	  @"en",							LOSourceLanguageCodeKey,
-	  @"en",							LODestinationLanguageCodeKey,
-	  nil]
-	 ];
+	if (self == [LingooAppDelegate class])
+	{
+		[LOPreferencesWindowController registerDefaults];
+	}
 }
 
 - (id)init
@@ -44,16 +30,12 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 	{
 		// Global hot keys
 		hotKeys = [[DDHotKeyCenter alloc] init];
+		[hotKeys registerHotKeyWithKeyCode:11 modifierFlags:(NSShiftKeyMask | NSCommandKeyMask) target:self action:@selector(toggleTranslator:) object:nil];
 		
 		// Status bar
 		statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 		[statusItem setTitle:@"Lingoo"];
 		[statusItem setHighlightMode:YES];
-		
-		// Google.Translate
-		translate = [[CRGoogleTranslate alloc] init];
-		CRChangeSignaler* signaler = [CRChangeSignaler signalWithObject:translate keyPath:@"isReady" target:self action:@selector(translateReady:)];
-		[signaler retain];
 	}
 	return self;
 }
@@ -61,14 +43,12 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 - (void)dealloc
 {
 	[hotKeys release];
-	[translate release];
 	[super dealloc];
 }
 
 - (void)awakeFromNib
 {
 	[statusItem setMenu:statusMenu];
-	[self showTranslator:self];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -77,89 +57,54 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
 	[hotKeys unregisterHotKeysWithTarget:self];
-	
-	// Save some defaults
-	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-	[ud setValue:[[self sourceLanguage] languageCode] forKey:LOSourceLanguageCodeKey];
-	[ud setValue:[[self destinationLanguage] languageCode] forKey:LODestinationLanguageCodeKey];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	[hotKeys registerHotKeyWithKeyCode:11 modifierFlags:(NSShiftKeyMask | NSCommandKeyMask) target:self action:@selector(toggleTranslator:) object:nil];
-}
-
-//////////////////////////////////////////////////////////////////////
-#pragma mark Queries
-
-- (void)doTranslate:(CRJSRemoteQuery *)query
-{
-	// translation data
-	NSString* text	= query? [query.params valueForKey:CRGoogleTranslateTextKey] : [textSource stringValue];
-	NSString* sCode = query? [query.params valueForKey:CRGoogleTranslateLanguageCodeKey] : [[self sourceLanguage] languageCode];
-	NSString* dCode = [[self destinationLanguage] languageCode];
-	
-	// query
-	NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
-							text,	CRGoogleTranslateTextKey,
-							sCode,	CRGoogleTranslateSourceLanguageCodeKey,
-							dCode,	CRGoogleTranslateDestinationLanguageCodeKey,
-							nil];
-	[translate translateText:[CRJSRemoteQuery queryWithTarget:self action:@selector(translationComplete:) params:params]];
-}
-
-- (void)detectionComplete:(CRJSRemoteQuery *)query
-{
-	if ([query successStatus])
-	{
-		[self setSourceLanguage:[translate languageFromQuery:query]];
-		
-		// Check whether we are asked to translate right after that
-		if ([[query.params valueForKey:LODeferredTranslateRequestKey] boolValue])
-			[self doTranslate:query];
-	}
-}
-
-- (void)translationComplete:(CRJSRemoteQuery *)query
-{
-	if ([query successStatus])
-	{
-		NSString* translation = [query.params valueForKey:CRGoogleTranslateTranslationKey];
-		[textSource setStringValue:translation];
-	}
-}
-
-- (void)translateReady:(CRChangeSignaler *)signaler
-{
-	[signaler release];
-	
+	// First run check
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-	[self setSourceLanguage:[translate languageFromCode:[ud valueForKey:LOSourceLanguageCodeKey]]];
-	[self setDestinationLanguage:[translate languageFromCode:[ud valueForKey:LODestinationLanguageCodeKey]]];
+	BOOL firstRun = [[ud valueForKey:LOFirstRunKey] boolValue];
+	if (firstRun)
+	{
+		[self showPreferences:self];
+		
+		//[ud setValue:[NSNumber numberWithBool:NO] forKey:LOFirstRunKey];
+	}
+	
+	// Crash check
+	[[FRFeedbackReporter sharedReporter] reportIfCrash];
 }
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark Actions
 
-- (void)showTranslator:(id)sender
+- (LOTranslatorWindowController *)translatorController
 {
-	[translatePanel makeKeyAndOrderFront:self];
+	if (nil == translatorWindowController)
+		translatorWindowController = [[LOTranslatorWindowController alloc] init];
+	return translatorWindowController;
 }
 
-- (void)translate:(id)sender
+- (LOPreferencesWindowController *)preferncesController
 {
-	// Detect source language -> Translate
-	if ([[[NSUserDefaults standardUserDefaults] valueForKey:LOAutodetectLanguageKey] boolValue])
-	{
-		NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
-								[NSNumber numberWithBool:YES],	LODeferredTranslateRequestKey,
-								[textSource stringValue],		CRGoogleTranslateTextKey,
-								nil];
-		[translate detectLanguage:[CRJSRemoteQuery queryWithTarget:self action:@selector(detectionComplete:) params:params]];
-	}
-	// Immediate translate
-	else
-		[self doTranslate:nil];
+	if (nil == preferencesWindowController)
+		preferencesWindowController = [[LOPreferencesWindowController alloc] init];
+	return preferencesWindowController;
+}
+
+- (IBAction)showTranslator:(id)sender
+{
+	[[self translatorController] fadeIn:nil];
+}
+
+- (IBAction)showPreferences:(id)sender
+{
+	[[self preferncesController] showWindow:self];
+}
+
+- (IBAction)sendFeedback:(id)sender
+{
+	[[FRFeedbackReporter sharedReporter] reportFeedback];
 }
 
 @end

@@ -7,37 +7,27 @@
 //
 
 #import "DDHotKeyCenter.h"
-#import "CRGoogleTranslate.h"
+#import "LOPreferencesWindowController.h"
+#import "LOTranslatorWindowController.h"
 
 //////////////////////////////////////////////////////////////////////
 // App delegate
 //////////////////////////////////////////////////////////////////////
 @interface LingooAppDelegate : NSObject <NSApplicationDelegate>
 {	
-	DDHotKeyCenter*		hotKeys;
-	NSStatusItem*		statusItem;
-	
-	CRGoogleTranslate*	translate;
-	CRGoogleLanguage*	sourceLanguage;
-	CRGoogleLanguage*	destinationLanguage;
+	DDHotKeyCenter*					hotKeys;
+	NSStatusItem*					statusItem;
+	LOPreferencesWindowController*	preferencesWindowController;
+	LOTranslatorWindowController*	translatorWindowController;
 	
 @public
-	NSMenu*				statusMenu;
-	NSPanel*			translatePanel;
-	NSTextField*		textSource;
-	NSPopUpButton*		languagesButton;
+	NSMenu*							statusMenu;
 }
 
-@property (assign) IBOutlet NSMenu*			statusMenu;
-@property (assign) IBOutlet NSPanel*		translatePanel;
-@property (assign) IBOutlet NSTextField*	textSource;
-@property (assign) IBOutlet NSPopUpButton*	languagesButton;
-
-@property (readonly)	CRGoogleTranslate*	translate;
-@property (assign)		CRGoogleLanguage*	sourceLanguage;
-@property (assign)		CRGoogleLanguage*	destinationLanguage;
+@property (assign) IBOutlet NSMenu*	statusMenu;
 
 - (IBAction)showTranslator:(id)sender;
-- (IBAction)translate:(id)sender;
+- (IBAction)showPreferences:(id)sender;
+- (IBAction)sendFeedback:(id)sender;
 
 @end

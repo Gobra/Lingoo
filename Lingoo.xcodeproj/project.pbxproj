@@ -15,7 +15,26 @@
 		1BD2549A11E45ED3006CD313 /* CRGoogleLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */; };
 		1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */; };
 		1BD2549D11E45EEA006CD313 /* GoogleTranslate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */; };
-		1BD2551A11E46471006CD313 /* CRChangeSignaler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2551911E46471006CD313 /* CRChangeSignaler.mm */; };
+		1BD256C311E47FDA006CD313 /* LOSpecialWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */; };
+		1BD256DD11E48146006CD313 /* TitlebarClose.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BD256DC11E48146006CD313 /* TitlebarClose.tiff */; };
+		1BD256FF11E4865B006CD313 /* LOTranslatorWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD256FE11E4865B006CD313 /* LOTranslatorWindowController.mm */; };
+		1BD2574D11E48CD1006CD313 /* CRChangeSignaler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2574C11E48CD1006CD313 /* CRChangeSignaler.mm */; };
+		1BD2575011E48CED006CD313 /* TranslatorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2574E11E48CED006CD313 /* TranslatorWindow.xib */; };
+		1BD2576C11E48E88006CD313 /* TranslatorMiddleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2576A11E48E88006CD313 /* TranslatorMiddleView.xib */; };
+		1BD2578B11E49293006CD313 /* TranslatorHeavyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2578711E49293006CD313 /* TranslatorHeavyView.xib */; };
+		1BD2578C11E49293006CD313 /* TranslatorLightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2578911E49293006CD313 /* TranslatorLightView.xib */; };
+		1BD2596011E4AEA5006CD313 /* LOTranslatorController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2595911E4AEA5006CD313 /* LOTranslatorController.mm */; };
+		1BD2596111E4AEA5006CD313 /* LOTranslatorHeavyController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2595B11E4AEA5006CD313 /* LOTranslatorHeavyController.mm */; };
+		1BD2596211E4AEA5006CD313 /* LOTranslatorLightController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2595D11E4AEA5006CD313 /* LOTranslatorLightController.mm */; };
+		1BD2596311E4AEA5006CD313 /* LOTranslatorMiddleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2595F11E4AEA5006CD313 /* LOTranslatorMiddleController.mm */; };
+		1BD259E711E4B9DC006CD313 /* FeedbackReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD259E511E4B9DC006CD313 /* FeedbackReporter.framework */; };
+		1BD259E811E4B9DC006CD313 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD259E611E4B9DC006CD313 /* Sparkle.framework */; };
+		1BD259F611E4BA0B006CD313 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD259E611E4B9DC006CD313 /* Sparkle.framework */; };
+		1BD259F711E4BA0B006CD313 /* FeedbackReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD259E511E4B9DC006CD313 /* FeedbackReporter.framework */; };
+		1BD25B2111E4BD47006CD313 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD25B1F11E4BD47006CD313 /* About.xib */; };
+		1BD25B2811E4BD71006CD313 /* LOAboutWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD25B2711E4BD71006CD313 /* LOAboutWindowController.mm */; };
+		1BD25B9A11E4CDDD006CD313 /* LOPreferencesWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD25B9911E4CDDD006CD313 /* LOPreferencesWindowController.mm */; };
+		1BD25B9D11E4CDEE006CD313 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD25B9B11E4CDEE006CD313 /* Preferences.xib */; };
 		1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */; };
 		1BF0C9BF11DF6A4F005C908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BE11DF6A4F005C908F /* main.m */; };
 		1BF0C9C411DF6A61005C908F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0C9C011DF6A61005C908F /* MainMenu.xib */; };
@@ -34,6 +53,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1BD259F611E4BA0B006CD313 /* Sparkle.framework in Copy Frameworks */,
+				1BD259F711E4BA0B006CD313 /* FeedbackReporter.framework in Copy Frameworks */,
 				1BF0CDCE11DFBA97005C908F /* BWToolkitFramework.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -59,8 +80,33 @@
 		1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleLanguage.mm; path = "Source/Google Translate/CRGoogleLanguage.mm"; sourceTree = "<group>"; };
 		1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleTranslate.mm; path = "Source/Google Translate/CRGoogleTranslate.mm"; sourceTree = "<group>"; };
 		1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = GoogleTranslate.html; path = "Source/Google Translate/GoogleTranslate.html"; sourceTree = "<group>"; };
-		1BD2551811E46471006CD313 /* CRChangeSignaler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRChangeSignaler.h; sourceTree = "<group>"; };
-		1BD2551911E46471006CD313 /* CRChangeSignaler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRChangeSignaler.mm; sourceTree = "<group>"; };
+		1BD256C111E47FDA006CD313 /* LOSpecialWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOSpecialWindow.h; path = Source/Controls/LOSpecialWindow.h; sourceTree = "<group>"; };
+		1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOSpecialWindow.mm; path = Source/Controls/LOSpecialWindow.mm; sourceTree = "<group>"; };
+		1BD256DC11E48146006CD313 /* TitlebarClose.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TitlebarClose.tiff; path = Resources/Images/TitlebarClose.tiff; sourceTree = "<group>"; };
+		1BD256FD11E4865B006CD313 /* LOTranslatorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOTranslatorWindowController.h; path = Source/Controllers/LOTranslatorWindowController.h; sourceTree = "<group>"; };
+		1BD256FE11E4865B006CD313 /* LOTranslatorWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOTranslatorWindowController.mm; path = Source/Controllers/LOTranslatorWindowController.mm; sourceTree = "<group>"; };
+		1BD2574B11E48CD1006CD313 /* CRChangeSignaler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRChangeSignaler.h; path = Source/Common/CRChangeSignaler.h; sourceTree = "<group>"; };
+		1BD2574C11E48CD1006CD313 /* CRChangeSignaler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRChangeSignaler.mm; path = Source/Common/CRChangeSignaler.mm; sourceTree = "<group>"; };
+		1BD2574F11E48CED006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/TranslatorWindow.xib; sourceTree = "<group>"; };
+		1BD2576B11E48E88006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/TranslatorMiddleView.xib; sourceTree = "<group>"; };
+		1BD2578811E49293006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/TranslatorHeavyView.xib; sourceTree = "<group>"; };
+		1BD2578A11E49293006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/TranslatorLightView.xib; sourceTree = "<group>"; };
+		1BD2595811E4AEA5006CD313 /* LOTranslatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOTranslatorController.h; path = Source/Controllers/Views/LOTranslatorController.h; sourceTree = "<group>"; };
+		1BD2595911E4AEA5006CD313 /* LOTranslatorController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOTranslatorController.mm; path = Source/Controllers/Views/LOTranslatorController.mm; sourceTree = "<group>"; };
+		1BD2595A11E4AEA5006CD313 /* LOTranslatorHeavyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOTranslatorHeavyController.h; path = Source/Controllers/Views/LOTranslatorHeavyController.h; sourceTree = "<group>"; };
+		1BD2595B11E4AEA5006CD313 /* LOTranslatorHeavyController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOTranslatorHeavyController.mm; path = Source/Controllers/Views/LOTranslatorHeavyController.mm; sourceTree = "<group>"; };
+		1BD2595C11E4AEA5006CD313 /* LOTranslatorLightController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOTranslatorLightController.h; path = Source/Controllers/Views/LOTranslatorLightController.h; sourceTree = "<group>"; };
+		1BD2595D11E4AEA5006CD313 /* LOTranslatorLightController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOTranslatorLightController.mm; path = Source/Controllers/Views/LOTranslatorLightController.mm; sourceTree = "<group>"; };
+		1BD2595E11E4AEA5006CD313 /* LOTranslatorMiddleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOTranslatorMiddleController.h; path = Source/Controllers/Views/LOTranslatorMiddleController.h; sourceTree = "<group>"; };
+		1BD2595F11E4AEA5006CD313 /* LOTranslatorMiddleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOTranslatorMiddleController.mm; path = Source/Controllers/Views/LOTranslatorMiddleController.mm; sourceTree = "<group>"; };
+		1BD259E511E4B9DC006CD313 /* FeedbackReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedbackReporter.framework; path = "../External frameworks/FeedbackReporter.framework"; sourceTree = SOURCE_ROOT; };
+		1BD259E611E4B9DC006CD313 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "../External frameworks/Sparkle.framework"; sourceTree = SOURCE_ROOT; };
+		1BD25B2011E4BD47006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/About.xib; sourceTree = "<group>"; };
+		1BD25B2611E4BD71006CD313 /* LOAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOAboutWindowController.h; path = Source/Controllers/LOAboutWindowController.h; sourceTree = "<group>"; };
+		1BD25B2711E4BD71006CD313 /* LOAboutWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOAboutWindowController.mm; path = Source/Controllers/LOAboutWindowController.mm; sourceTree = "<group>"; };
+		1BD25B9811E4CDDD006CD313 /* LOPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOPreferencesWindowController.h; path = Source/Controllers/LOPreferencesWindowController.h; sourceTree = "<group>"; };
+		1BD25B9911E4CDDD006CD313 /* LOPreferencesWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOPreferencesWindowController.mm; path = Source/Controllers/LOPreferencesWindowController.mm; sourceTree = "<group>"; };
+		1BD25B9C11E4CDEE006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LingooAppDelegate.h; path = Source/LingooAppDelegate.h; sourceTree = "<group>"; };
 		1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LingooAppDelegate.mm; path = Source/LingooAppDelegate.mm; sourceTree = "<group>"; };
 		1BF0C9BE11DF6A4F005C908F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
@@ -85,6 +131,8 @@
 				1BF0CC0C11DFAAE3005C908F /* WebKit.framework in Frameworks */,
 				1BF0CD8A11DFBA4B005C908F /* BWToolkitFramework.framework in Frameworks */,
 				1BF0CDF211DFD496005C908F /* Carbon.framework in Frameworks */,
+				1BD259E711E4B9DC006CD313 /* FeedbackReporter.framework in Frameworks */,
+				1BD259E811E4B9DC006CD313 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +145,8 @@
 				1BD2548311E45E04006CD313 /* Common */,
 				1BC8CE7B11E2642E0012A062 /* HotKeys */,
 				1BC8CE7711E264090012A062 /* CRJavaScript */,
+				1BD256BD11E47FB2006CD313 /* Controls */,
+				1BD256F611E484E9006CD313 /* Controllers */,
 				1BC8CF6E11E2850E0012A062 /* Google Translate */,
 				1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */,
 				1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */,
@@ -107,6 +157,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BD259E611E4B9DC006CD313 /* Sparkle.framework */,
+				1BD259E511E4B9DC006CD313 /* FeedbackReporter.framework */,
 				1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				1BF0CC0B11DFAAE3005C908F /* WebKit.framework */,
@@ -171,10 +223,78 @@
 			children = (
 				1BD2548711E45E7B006CD313 /* Constants.h */,
 				1BD2548811E45E7B006CD313 /* Constants.mm */,
-				1BD2551811E46471006CD313 /* CRChangeSignaler.h */,
-				1BD2551911E46471006CD313 /* CRChangeSignaler.mm */,
+				1BD2574B11E48CD1006CD313 /* CRChangeSignaler.h */,
+				1BD2574C11E48CD1006CD313 /* CRChangeSignaler.mm */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		1BD256BD11E47FB2006CD313 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				1BD256C111E47FDA006CD313 /* LOSpecialWindow.h */,
+				1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		1BD256DA11E48100006CD313 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1BD256DC11E48146006CD313 /* TitlebarClose.tiff */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		1BD256F611E484E9006CD313 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BD2577E11E48FC8006CD313 /* Views */,
+				1BD256FD11E4865B006CD313 /* LOTranslatorWindowController.h */,
+				1BD256FE11E4865B006CD313 /* LOTranslatorWindowController.mm */,
+				1BD25B9811E4CDDD006CD313 /* LOPreferencesWindowController.h */,
+				1BD25B9911E4CDDD006CD313 /* LOPreferencesWindowController.mm */,
+				1BD25B2611E4BD71006CD313 /* LOAboutWindowController.h */,
+				1BD25B2711E4BD71006CD313 /* LOAboutWindowController.mm */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1BD2574411E48CAF006CD313 /* Views & Windows */ = {
+			isa = PBXGroup;
+			children = (
+				1BD25B1811E4BD24006CD313 /* Translator Views */,
+				1BF0C9C011DF6A61005C908F /* MainMenu.xib */,
+				1BD2574E11E48CED006CD313 /* TranslatorWindow.xib */,
+				1BD25B9B11E4CDEE006CD313 /* Preferences.xib */,
+				1BD25B1F11E4BD47006CD313 /* About.xib */,
+			);
+			name = "Views & Windows";
+			sourceTree = "<group>";
+		};
+		1BD2577E11E48FC8006CD313 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BD2595811E4AEA5006CD313 /* LOTranslatorController.h */,
+				1BD2595911E4AEA5006CD313 /* LOTranslatorController.mm */,
+				1BD2595C11E4AEA5006CD313 /* LOTranslatorLightController.h */,
+				1BD2595D11E4AEA5006CD313 /* LOTranslatorLightController.mm */,
+				1BD2595E11E4AEA5006CD313 /* LOTranslatorMiddleController.h */,
+				1BD2595F11E4AEA5006CD313 /* LOTranslatorMiddleController.mm */,
+				1BD2595A11E4AEA5006CD313 /* LOTranslatorHeavyController.h */,
+				1BD2595B11E4AEA5006CD313 /* LOTranslatorHeavyController.mm */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1BD25B1811E4BD24006CD313 /* Translator Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BD2578911E49293006CD313 /* TranslatorLightView.xib */,
+				1BD2576A11E48E88006CD313 /* TranslatorMiddleView.xib */,
+				1BD2578711E49293006CD313 /* TranslatorHeavyView.xib */,
+			);
+			name = "Translator Views";
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* Lingoo */ = {
@@ -201,9 +321,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BD2574411E48CAF006CD313 /* Views & Windows */,
+				1BD256DA11E48100006CD313 /* Images */,
 				1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */,
 				8D1107310486CEB800E47090 /* Lingoo-Info.plist */,
-				1BF0C9C011DF6A61005C908F /* MainMenu.xib */,
 				1BF0C9C211DF6A61005C908F /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -265,6 +386,13 @@
 				1BF0C9C411DF6A61005C908F /* MainMenu.xib in Resources */,
 				1BF0C9C511DF6A61005C908F /* InfoPlist.strings in Resources */,
 				1BD2549D11E45EEA006CD313 /* GoogleTranslate.html in Resources */,
+				1BD256DD11E48146006CD313 /* TitlebarClose.tiff in Resources */,
+				1BD2575011E48CED006CD313 /* TranslatorWindow.xib in Resources */,
+				1BD2576C11E48E88006CD313 /* TranslatorMiddleView.xib in Resources */,
+				1BD2578B11E49293006CD313 /* TranslatorHeavyView.xib in Resources */,
+				1BD2578C11E49293006CD313 /* TranslatorLightView.xib in Resources */,
+				1BD25B2111E4BD47006CD313 /* About.xib in Resources */,
+				1BD25B9D11E4CDEE006CD313 /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,13 +412,69 @@
 				1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */,
 				1BD2549A11E45ED3006CD313 /* CRGoogleLanguage.mm in Sources */,
 				1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */,
-				1BD2551A11E46471006CD313 /* CRChangeSignaler.mm in Sources */,
+				1BD256C311E47FDA006CD313 /* LOSpecialWindow.mm in Sources */,
+				1BD256FF11E4865B006CD313 /* LOTranslatorWindowController.mm in Sources */,
+				1BD2574D11E48CD1006CD313 /* CRChangeSignaler.mm in Sources */,
+				1BD2596011E4AEA5006CD313 /* LOTranslatorController.mm in Sources */,
+				1BD2596111E4AEA5006CD313 /* LOTranslatorHeavyController.mm in Sources */,
+				1BD2596211E4AEA5006CD313 /* LOTranslatorLightController.mm in Sources */,
+				1BD2596311E4AEA5006CD313 /* LOTranslatorMiddleController.mm in Sources */,
+				1BD25B2811E4BD71006CD313 /* LOAboutWindowController.mm in Sources */,
+				1BD25B9A11E4CDDD006CD313 /* LOPreferencesWindowController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1BD2574E11E48CED006CD313 /* TranslatorWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BD2574F11E48CED006CD313 /* English */,
+			);
+			name = TranslatorWindow.xib;
+			sourceTree = "<group>";
+		};
+		1BD2576A11E48E88006CD313 /* TranslatorMiddleView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BD2576B11E48E88006CD313 /* English */,
+			);
+			name = TranslatorMiddleView.xib;
+			sourceTree = "<group>";
+		};
+		1BD2578711E49293006CD313 /* TranslatorHeavyView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BD2578811E49293006CD313 /* English */,
+			);
+			name = TranslatorHeavyView.xib;
+			sourceTree = "<group>";
+		};
+		1BD2578911E49293006CD313 /* TranslatorLightView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BD2578A11E49293006CD313 /* English */,
+			);
+			name = TranslatorLightView.xib;
+			sourceTree = "<group>";
+		};
+		1BD25B1F11E4BD47006CD313 /* About.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BD25B2011E4BD47006CD313 /* English */,
+			);
+			name = About.xib;
+			sourceTree = "<group>";
+		};
+		1BD25B9B11E4CDEE006CD313 /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BD25B9C11E4CDEE006CD313 /* English */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
 		1BF0C9C011DF6A61005C908F /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -318,6 +502,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../External frameworks/BWToolkit\"",
+					"\"$(SRCROOT)/../External frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -339,6 +524,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../External frameworks/BWToolkit\"",
+					"\"$(SRCROOT)/../External frameworks\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

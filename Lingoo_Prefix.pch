@@ -5,6 +5,7 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 	#import <WebKit/WebKit.h>
+	#import <FeedbackReporter/FRFeedbackReporter.h>
 
 	#import "Constants.h"
 #endif

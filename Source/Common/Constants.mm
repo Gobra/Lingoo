@@ -8,6 +8,9 @@
 
 #import "Constants.h"
 
+NSString* const LOFirstRunKey = @"LOFirstRunKey";
+NSString* const LOTranslatorTypeIndexKey = @"LOTranslatorTypeIndexKey";
+NSString* const LODefaultLanguageViewKey = @"LODefaultLanguageViewKey";
 NSString* const LOAutodetectLanguageKey = @"LOAutodetectLanguageKey";
 NSString* const LOSourceLanguageCodeKey = @"LOSourceLanguageCodeKey";
 NSString* const LODestinationLanguageCodeKey = @"LODestinationLanguageCodeKey";
