@@ -14,3 +14,9 @@ NSString* const LODefaultLanguageViewKey = @"LODefaultLanguageViewKey";
 NSString* const LOAutodetectLanguageKey = @"LOAutodetectLanguageKey";
 NSString* const LOSourceLanguageCodeKey = @"LOSourceLanguageCodeKey";
 NSString* const LODestinationLanguageCodeKey = @"LODestinationLanguageCodeKey";
+NSString* const LOAutoselectTranslationKey = @"LOAutoselectTranslationKey";
+NSString* const LOAutoclipboardTranslationKey = @"LOAutoclipboardTranslationKey";
+NSString* const LOAutotranslateFromClipboardKey = @"LOAutotranslateFromClipboardKey";
+
+NSString* const LOShowTranslatorHotkeyKey = @"LOShowTranslatorHotkeyKey";
+NSString* const LOShowTranslatorClipboardHotkeyKey = @"LOShowTranslatorClipboardHotkeyKey";

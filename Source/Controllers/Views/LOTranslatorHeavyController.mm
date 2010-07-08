@@ -24,13 +24,9 @@
 	return self;
 }
 
-- (void)translationComplete:(CRJSRemoteQuery *)query
+- (NSTextField *)translationDestination
 {
-	if ([query successStatus])
-	{
-		NSString* translation = [query.params valueForKey:CRGoogleTranslateTranslationKey];
-		[textDestination setStringValue:translation];
-	}
+	return textDestination;
 }
 
 @end

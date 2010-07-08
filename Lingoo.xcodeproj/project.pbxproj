@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BC6E14411E5CF00003D6B05 /* CRAutorunOnLogin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E14311E5CF00003D6B05 /* CRAutorunOnLogin.mm */; };
+		1BC6E1E111E5DC7C003D6B05 /* LOApplication.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E1E011E5DC7C003D6B05 /* LOApplication.mm */; };
+		1BC6E34511E5F9AE003D6B05 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC6E34411E5F9AE003D6B05 /* ShortcutRecorder.framework */; };
+		1BC6E35011E5F9BB003D6B05 /* ShortcutRecorder.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC6E34411E5F9AE003D6B05 /* ShortcutRecorder.framework */; };
+		1BC6E38411E600ED003D6B05 /* SGHotKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E37D11E600ED003D6B05 /* SGHotKey.mm */; };
+		1BC6E38511E600ED003D6B05 /* SGHotKeyCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E37F11E600ED003D6B05 /* SGHotKeyCenter.mm */; };
+		1BC6E38611E600ED003D6B05 /* SGKeyCodeTranslator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38111E600ED003D6B05 /* SGKeyCodeTranslator.mm */; };
+		1BC6E38711E600ED003D6B05 /* SGKeyCombo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */; };
+		1BC6E38A11E600FD003D6B05 /* LOHotKeysCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */; };
 		1BD2548911E45E7B006CD313 /* Constants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2548811E45E7B006CD313 /* Constants.mm */; };
-		1BD2548C11E45E8C006CD313 /* DDHotKeyCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2548B11E45E8C006CD313 /* DDHotKeyCenter.mm */; };
 		1BD2549311E45E9E006CD313 /* CRJSExec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549011E45E9E006CD313 /* CRJSExec.mm */; };
 		1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549111E45E9E006CD313 /* CRJSMapper.mm */; };
 		1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */; };
@@ -53,6 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1BC6E35011E5F9BB003D6B05 /* ShortcutRecorder.framework in Copy Frameworks */,
 				1BD259F611E4BA0B006CD313 /* Sparkle.framework in Copy Frameworks */,
 				1BD259F711E4BA0B006CD313 /* FeedbackReporter.framework in Copy Frameworks */,
 				1BF0CDCE11DFBA97005C908F /* BWToolkitFramework.framework in Copy Frameworks */,
@@ -65,10 +74,23 @@
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1BC6E14211E5CF00003D6B05 /* CRAutorunOnLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRAutorunOnLogin.h; path = Source/Common/CRAutorunOnLogin.h; sourceTree = "<group>"; };
+		1BC6E14311E5CF00003D6B05 /* CRAutorunOnLogin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRAutorunOnLogin.mm; path = Source/Common/CRAutorunOnLogin.mm; sourceTree = "<group>"; };
+		1BC6E1DF11E5DC7C003D6B05 /* LOApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOApplication.h; path = Source/LOApplication.h; sourceTree = "<group>"; };
+		1BC6E1E011E5DC7C003D6B05 /* LOApplication.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOApplication.mm; path = Source/LOApplication.mm; sourceTree = "<group>"; };
+		1BC6E34411E5F9AE003D6B05 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = "../External frameworks/ShortcutRecorder/ShortcutRecorder.framework"; sourceTree = SOURCE_ROOT; };
+		1BC6E37C11E600ED003D6B05 /* SGHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKey.h; sourceTree = "<group>"; };
+		1BC6E37D11E600ED003D6B05 /* SGHotKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGHotKey.mm; sourceTree = "<group>"; };
+		1BC6E37E11E600ED003D6B05 /* SGHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKeyCenter.h; sourceTree = "<group>"; };
+		1BC6E37F11E600ED003D6B05 /* SGHotKeyCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGHotKeyCenter.mm; sourceTree = "<group>"; };
+		1BC6E38011E600ED003D6B05 /* SGKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCodeTranslator.h; sourceTree = "<group>"; };
+		1BC6E38111E600ED003D6B05 /* SGKeyCodeTranslator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGKeyCodeTranslator.mm; sourceTree = "<group>"; };
+		1BC6E38211E600ED003D6B05 /* SGKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCombo.h; sourceTree = "<group>"; };
+		1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGKeyCombo.mm; sourceTree = "<group>"; };
+		1BC6E38811E600FD003D6B05 /* LOHotKeysCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOHotKeysCenter.h; sourceTree = "<group>"; };
+		1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LOHotKeysCenter.mm; sourceTree = "<group>"; };
 		1BD2548711E45E7B006CD313 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Common/Constants.h; sourceTree = "<group>"; };
 		1BD2548811E45E7B006CD313 /* Constants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Constants.mm; path = Source/Common/Constants.mm; sourceTree = "<group>"; };
-		1BD2548A11E45E8C006CD313 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyCenter.h; path = Source/HotKeys/DDHotKeyCenter.h; sourceTree = "<group>"; };
-		1BD2548B11E45E8C006CD313 /* DDHotKeyCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DDHotKeyCenter.mm; path = Source/HotKeys/DDHotKeyCenter.mm; sourceTree = "<group>"; };
 		1BD2548D11E45E9E006CD313 /* CRJSExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSExec.h; path = Source/CRJavaScript/CRJSExec.h; sourceTree = "<group>"; };
 		1BD2548E11E45E9E006CD313 /* CRJSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSMapper.h; path = Source/CRJavaScript/CRJSMapper.h; sourceTree = "<group>"; };
 		1BD2548F11E45E9E006CD313 /* CRJSRemoteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSRemoteQuery.h; path = Source/CRJavaScript/CRJSRemoteQuery.h; sourceTree = "<group>"; };
@@ -133,6 +155,7 @@
 				1BF0CDF211DFD496005C908F /* Carbon.framework in Frameworks */,
 				1BD259E711E4B9DC006CD313 /* FeedbackReporter.framework in Frameworks */,
 				1BD259E811E4B9DC006CD313 /* Sparkle.framework in Frameworks */,
+				1BC6E34511E5F9AE003D6B05 /* ShortcutRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,11 +166,13 @@
 			isa = PBXGroup;
 			children = (
 				1BD2548311E45E04006CD313 /* Common */,
-				1BC8CE7B11E2642E0012A062 /* HotKeys */,
 				1BC8CE7711E264090012A062 /* CRJavaScript */,
+				1BC6E36611E5FFF3003D6B05 /* HotKeys */,
 				1BD256BD11E47FB2006CD313 /* Controls */,
 				1BD256F611E484E9006CD313 /* Controllers */,
 				1BC8CF6E11E2850E0012A062 /* Google Translate */,
+				1BC6E1DF11E5DC7C003D6B05 /* LOApplication.h */,
+				1BC6E1E011E5DC7C003D6B05 /* LOApplication.mm */,
 				1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */,
 				1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */,
 			);
@@ -158,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD259E611E4B9DC006CD313 /* Sparkle.framework */,
+				1BC6E34411E5F9AE003D6B05 /* ShortcutRecorder.framework */,
 				1BD259E511E4B9DC006CD313 /* FeedbackReporter.framework */,
 				1BF0CD8911DFBA4B005C908F /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -185,6 +211,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1BC6E36611E5FFF3003D6B05 /* HotKeys */ = {
+			isa = PBXGroup;
+			children = (
+				1BC6E37B11E600ED003D6B05 /* SGHotKeys */,
+				1BC6E38811E600FD003D6B05 /* LOHotKeysCenter.h */,
+				1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */,
+			);
+			name = HotKeys;
+			path = Source/HotKeys;
+			sourceTree = "<group>";
+		};
+		1BC6E37B11E600ED003D6B05 /* SGHotKeys */ = {
+			isa = PBXGroup;
+			children = (
+				1BC6E37C11E600ED003D6B05 /* SGHotKey.h */,
+				1BC6E37D11E600ED003D6B05 /* SGHotKey.mm */,
+				1BC6E37E11E600ED003D6B05 /* SGHotKeyCenter.h */,
+				1BC6E37F11E600ED003D6B05 /* SGHotKeyCenter.mm */,
+				1BC6E38011E600ED003D6B05 /* SGKeyCodeTranslator.h */,
+				1BC6E38111E600ED003D6B05 /* SGKeyCodeTranslator.mm */,
+				1BC6E38211E600ED003D6B05 /* SGKeyCombo.h */,
+				1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */,
+			);
+			path = SGHotKeys;
+			sourceTree = "<group>";
+		};
 		1BC8CE7711E264090012A062 /* CRJavaScript */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,15 +248,6 @@
 				1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */,
 			);
 			name = CRJavaScript;
-			sourceTree = "<group>";
-		};
-		1BC8CE7B11E2642E0012A062 /* HotKeys */ = {
-			isa = PBXGroup;
-			children = (
-				1BD2548A11E45E8C006CD313 /* DDHotKeyCenter.h */,
-				1BD2548B11E45E8C006CD313 /* DDHotKeyCenter.mm */,
-			);
-			name = HotKeys;
 			sourceTree = "<group>";
 		};
 		1BC8CF6E11E2850E0012A062 /* Google Translate */ = {
@@ -225,6 +268,8 @@
 				1BD2548811E45E7B006CD313 /* Constants.mm */,
 				1BD2574B11E48CD1006CD313 /* CRChangeSignaler.h */,
 				1BD2574C11E48CD1006CD313 /* CRChangeSignaler.mm */,
+				1BC6E14211E5CF00003D6B05 /* CRAutorunOnLogin.h */,
+				1BC6E14311E5CF00003D6B05 /* CRAutorunOnLogin.mm */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -406,7 +451,6 @@
 				1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */,
 				1BF0C9BF11DF6A4F005C908F /* main.m in Sources */,
 				1BD2548911E45E7B006CD313 /* Constants.mm in Sources */,
-				1BD2548C11E45E8C006CD313 /* DDHotKeyCenter.mm in Sources */,
 				1BD2549311E45E9E006CD313 /* CRJSExec.mm in Sources */,
 				1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */,
 				1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */,
@@ -421,6 +465,13 @@
 				1BD2596311E4AEA5006CD313 /* LOTranslatorMiddleController.mm in Sources */,
 				1BD25B2811E4BD71006CD313 /* LOAboutWindowController.mm in Sources */,
 				1BD25B9A11E4CDDD006CD313 /* LOPreferencesWindowController.mm in Sources */,
+				1BC6E14411E5CF00003D6B05 /* CRAutorunOnLogin.mm in Sources */,
+				1BC6E1E111E5DC7C003D6B05 /* LOApplication.mm in Sources */,
+				1BC6E38411E600ED003D6B05 /* SGHotKey.mm in Sources */,
+				1BC6E38511E600ED003D6B05 /* SGHotKeyCenter.mm in Sources */,
+				1BC6E38611E600ED003D6B05 /* SGKeyCodeTranslator.mm in Sources */,
+				1BC6E38711E600ED003D6B05 /* SGKeyCombo.mm in Sources */,
+				1BC6E38A11E600FD003D6B05 /* LOHotKeysCenter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +554,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../External frameworks/BWToolkit\"",
 					"\"$(SRCROOT)/../External frameworks\"",
+					"\"$(SRCROOT)/../External frameworks/ShortcutRecorder\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -525,6 +577,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../External frameworks/BWToolkit\"",
 					"\"$(SRCROOT)/../External frameworks\"",
+					"\"$(SRCROOT)/../External frameworks/ShortcutRecorder\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -26,6 +26,7 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self)
 	{
+		[self loadView];
 	}
 	return self;
 }
@@ -33,6 +34,39 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 + (id)controller
 {
 	return [[[self alloc] init] autorelease];
+}
+
+- (void)awakeFromNib
+{
+	originalSize = [[self view] frame].size;
+}
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark Setting from UserDefaults
+
+- (NSSize)originalSize
+{
+	return originalSize;
+}
+
+- (BOOL)autoselectTranslated
+{
+	return [[[NSUserDefaults standardUserDefaults] valueForKey:LOAutoselectTranslationKey] boolValue];
+}
+
+- (BOOL)autotranslateForClipboard
+{
+	return [[[NSUserDefaults standardUserDefaults] valueForKey:LOAutotranslateFromClipboardKey] boolValue];
+}
+
+- (BOOL)autoclipboardTranslated
+{
+	return [[[NSUserDefaults standardUserDefaults] valueForKey:LOAutoclipboardTranslationKey] boolValue];
+}
+
+- (NSTextField *)translationDestination
+{
+	return textSource;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -90,12 +124,33 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 	if ([query successStatus])
 	{
 		NSString* translation = [query.params valueForKey:CRGoogleTranslateTranslationKey];
-		[textSource setStringValue:translation];
+		[[self translationDestination] setStringValue:translation];
+		if ([self autoselectTranslated])
+			[[self translationDestination] selectText:self];
+		if ([self autoclipboardTranslated])
+		{
+			NSPasteboard* clipboard = [NSPasteboard generalPasteboard];
+			[clipboard setString:translation forType:NSStringPboardType];
+		}
 	}
 }
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark Actions
+
+- (IBAction)readTextFromClipboard:(id)sender
+{
+	// read the text
+	NSPasteboard* pboard = [NSPasteboard generalPasteboard];
+	NSString* text = [pboard stringForType:NSStringPboardType];
+	if (text)
+	{
+		[textSource setStringValue:text];
+		
+		if ([self autotranslateForClipboard])
+			[self translate:self];
+	}
+}
 
 - (void)translate:(id)sender
 {

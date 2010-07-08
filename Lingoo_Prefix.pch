@@ -6,6 +6,8 @@
     #import <Cocoa/Cocoa.h>
 	#import <WebKit/WebKit.h>
 	#import <FeedbackReporter/FRFeedbackReporter.h>
+	#import <ShortcutRecorder/ShortcutRecorder.h>
 
 	#import "Constants.h"
+	#import "LOHotKeysCenter.h"
 #endif

@@ -20,7 +20,7 @@
 	
 @public
 	NSView*				toolbarView;
-	NSView*				contentBox;
+	NSBox*				contentBox;
 }
 
 @property (assign) IBOutlet NSView*	toolbarView;
@@ -31,6 +31,10 @@
 - (IBAction)fadeIn:(id)sender;
 - (IBAction)fadeOut:(id)sender;
 
-- (IBAction)test:(id)sender;
+- (IBAction)readTextFromClipboard:(id)sender;
+
+- (IBAction)showLightView:(id)sender;
+- (IBAction)showMiddleView:(id)sender;
+- (IBAction)showHeavyView:(id)sender;
 
 @end

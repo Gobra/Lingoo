@@ -77,10 +77,9 @@
 	// view switch
 	if (oldController != selectedViewController)
 	{
-		NSSize viewSize = [[selectedViewController view] frame].size;
+		NSSize viewSize = [[selectedViewController valueForKey:@"originalSize"] sizeValue];
 		[contentBox setFrameSize:viewSize];
-		[[[[contentBox subviews] lastObject] animator] removeFromSuperview];
-		[[contentBox animator] addSubview:[selectedViewController view]];
+		[[contentBox animator] setContentView:[selectedViewController view]];
 		[self animateToContentSize:viewSize];
 	}
 	
@@ -128,7 +127,23 @@
 	[[[self window] animator] setAlphaValue:1.0f];
 }
 
-- (IBAction)test:(id)sender
+- (IBAction)readTextFromClipboard:(id)sender;
+{
+	if ([selectedViewController isKindOfClass:[LOTranslatorController class]])
+		[(LOTranslatorController *)selectedViewController readTextFromClipboard:sender];
+}
+
+- (IBAction)showLightView:(id)sender
+{
+	[self showViewAtIndex:0];
+}
+
+- (IBAction)showMiddleView:(id)sender
+{
+	[self showViewAtIndex:1];
+}
+
+- (IBAction)showHeavyView:(id)sender
 {
 	[self showViewAtIndex:2];
 }

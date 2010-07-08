@@ -19,6 +19,9 @@ extern NSString* const LODeferredTranslateRequestKey;
 	CRGoogleLanguage*	sourceLanguage;
 	CRGoogleLanguage*	destinationLanguage;
 	
+@private
+	NSSize				originalSize;
+	
 @public
 	NSTextField*		textSource;
 }
@@ -31,8 +34,14 @@ extern NSString* const LODeferredTranslateRequestKey;
 
 + (id)controller;
 
+- (NSSize)originalSize;
+- (BOOL)autoselectTranslated;
+- (BOOL)autotranslateForClipboard;
+- (BOOL)autoclipboardTranslated;
+
 - (IBAction)saveDefaults:(id)sender;
 - (IBAction)loadDefaults:(id)sender;
+- (IBAction)readTextFromClipboard:(id)sender;
 - (IBAction)translate:(id)sender;
 
 @end

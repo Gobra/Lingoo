@@ -12,3 +12,9 @@ extern NSString* const LODefaultLanguageViewKey;
 extern NSString* const LOAutodetectLanguageKey;
 extern NSString* const LOSourceLanguageCodeKey;
 extern NSString* const LODestinationLanguageCodeKey;
+extern NSString* const LOAutoselectTranslationKey;
+extern NSString* const LOAutotranslateFromClipboardKey;
+extern NSString* const LOAutoclipboardTranslationKey;
+
+extern NSString* const LOShowTranslatorHotkeyKey;
+extern NSString* const LOShowTranslatorClipboardHotkeyKey;

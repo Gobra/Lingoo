@@ -28,10 +28,6 @@
 	self = [super init];
 	if (self)
 	{
-		// Global hot keys
-		hotKeys = [[DDHotKeyCenter alloc] init];
-		[hotKeys registerHotKeyWithKeyCode:11 modifierFlags:(NSShiftKeyMask | NSCommandKeyMask) target:self action:@selector(toggleTranslator:) object:nil];
-		
 		// Status bar
 		statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 		[statusItem setTitle:@"Lingoo"];
@@ -42,7 +38,6 @@
 
 - (void)dealloc
 {
-	[hotKeys release];
 	[super dealloc];
 }
 
@@ -56,7 +51,6 @@
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
-	[hotKeys unregisterHotKeysWithTarget:self];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -67,12 +61,16 @@
 	if (firstRun)
 	{
 		[self showPreferences:self];
-		
-		//[ud setValue:[NSNumber numberWithBool:NO] forKey:LOFirstRunKey];
+		[ud setValue:[NSNumber numberWithBool:NO] forKey:LOFirstRunKey];
 	}
 	
 	// Crash check
 	[[FRFeedbackReporter sharedReporter] reportIfCrash];
+	
+	// Hotkeys
+	
+	[[LOHotKeysCenter sharedCenter] registerHotkeyForKey:LOShowTranslatorHotkeyKey withTarget:self action:@selector(showTranslator:)];
+	[[LOHotKeysCenter sharedCenter] registerHotkeyForKey:LOShowTranslatorClipboardHotkeyKey withTarget:self action:@selector(showTranslatorWithClipboard:)];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -85,11 +83,18 @@
 	return translatorWindowController;
 }
 
-- (LOPreferencesWindowController *)preferncesController
+- (LOPreferencesWindowController *)preferencesController
 {
 	if (nil == preferencesWindowController)
 		preferencesWindowController = [[LOPreferencesWindowController alloc] init];
 	return preferencesWindowController;
+}
+
+- (LOAboutWindowController *)aboutController
+{
+	if (nil == aboutWindowController)
+		aboutWindowController = [[LOAboutWindowController alloc] init];
+	return aboutWindowController;
 }
 
 - (IBAction)showTranslator:(id)sender
@@ -97,9 +102,20 @@
 	[[self translatorController] fadeIn:nil];
 }
 
+- (IBAction)showTranslatorWithClipboard:(id)sender
+{
+	[[self translatorController] fadeIn:nil];
+	[[self translatorController] readTextFromClipboard:self];
+}
+
 - (IBAction)showPreferences:(id)sender
 {
-	[[self preferncesController] showWindow:self];
+	[[self preferencesController] showWindow:self];
+}
+
+- (IBAction)showAbout:(id)sender
+{
+	[[self aboutController] showWindow:self];
 }
 
 - (IBAction)sendFeedback:(id)sender
