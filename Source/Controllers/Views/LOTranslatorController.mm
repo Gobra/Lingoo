@@ -86,6 +86,7 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 		[ud setValue:[[self sourceLanguage] languageCode] forKey:LOSourceLanguageCodeKey];
 	if ([self destinationLanguage])
 		[ud setValue:[[self destinationLanguage] languageCode] forKey:LODestinationLanguageCodeKey];
+	[ud synchronize];
 }
 
 //////////////////////////////////////////////////////////////////////

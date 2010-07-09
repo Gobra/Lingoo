@@ -37,6 +37,10 @@
 		translator = [[CRGoogleTranslate alloc] init];
 		CRChangeSignaler* signaler = [CRChangeSignaler signalWithObject:translator keyPath:@"isReady" target:self action:@selector(translateReady:)];
 		[signaler retain];
+		
+		// Animation
+		inAnimation = NO;
+		viewSwitchInterval = 0.25f;
 	}
 	return self;
 }
@@ -63,8 +67,22 @@
 	[[self window] setFrame:newFrame display:YES animate:YES];
 }
 
+- (void)setContentController:(LOTranslatorController *)aController
+{
+	NSSize viewSize = [[selectedViewController valueForKey:@"originalSize"] sizeValue];
+	
+	[[NSAnimationContext currentContext] setDuration:viewSwitchInterval];
+	[contentBox setContentView:[aController view]];
+	[contentBox setFrameSize:viewSize];
+	[[contentBox animator] setAlphaValue:1.0f];
+	[self animateToContentSize:viewSize];
+}
+
 - (void)showViewAtIndex:(NSUInteger)index
 {
+	if (inAnimation)
+		return;
+	
 	id oldController = selectedViewController;
 	if ([oldController isKindOfClass:[LOTranslatorController class]])
 		[(LOTranslatorController *)oldController saveDefaults:self];
@@ -77,10 +95,9 @@
 	// view switch
 	if (oldController != selectedViewController)
 	{
-		NSSize viewSize = [[selectedViewController valueForKey:@"originalSize"] sizeValue];
-		[contentBox setFrameSize:viewSize];
-		[[contentBox animator] setContentView:[selectedViewController view]];
-		[self animateToContentSize:viewSize];
+		[[NSAnimationContext currentContext] setDuration:viewSwitchInterval];
+		[[contentBox animator] setAlphaValue:0.0f];
+		[self performSelector:@selector(setContentController:) withObject:selectedViewController afterDelay:viewSwitchInterval];
 	}
 	
 	// save in Defaults

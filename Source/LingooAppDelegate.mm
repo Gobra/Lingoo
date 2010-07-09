@@ -90,10 +90,10 @@
 	return preferencesWindowController;
 }
 
-- (LOAboutWindowController *)aboutController
+- (CRAboutWindowController *)aboutController
 {
 	if (nil == aboutWindowController)
-		aboutWindowController = [[LOAboutWindowController alloc] init];
+		aboutWindowController = [[CRAboutWindowController alloc] init];
 	return aboutWindowController;
 }
 
@@ -110,12 +110,12 @@
 
 - (IBAction)showPreferences:(id)sender
 {
-	[[self preferencesController] showWindow:self];
+	[[self preferencesController] show];
 }
 
 - (IBAction)showAbout:(id)sender
 {
-	[[self aboutController] showWindow:self];
+	[[self aboutController] show];
 }
 
 - (IBAction)sendFeedback:(id)sender

@@ -8,7 +8,7 @@
 
 #import "LOPreferencesWindowController.h"
 #import "LOTranslatorWindowController.h"
-#import "LOAboutWindowController.h"
+#import "CRAboutWindowController.h"
 
 //////////////////////////////////////////////////////////////////////
 // App delegate
@@ -18,7 +18,7 @@
 	NSStatusItem*					statusItem;
 	LOPreferencesWindowController*	preferencesWindowController;
 	LOTranslatorWindowController*	translatorWindowController;
-	LOAboutWindowController*		aboutWindowController;
+	CRAboutWindowController*		aboutWindowController;
 	
 @public
 	NSMenu*							statusMenu;

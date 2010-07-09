@@ -18,13 +18,17 @@
 	NSArray*			viewControllers;
 	NSViewController*	selectedViewController;
 	
+@private
+	BOOL				inAnimation;
+	NSTimeInterval		viewSwitchInterval;
+	
 @public
 	NSView*				toolbarView;
 	NSBox*				contentBox;
 }
 
 @property (assign) IBOutlet NSView*	toolbarView;
-@property (assign) IBOutlet NSView*	contentBox;
+@property (assign) IBOutlet NSBox*	contentBox;
 
 - (void)showViewAtIndex:(NSUInteger)index;
 

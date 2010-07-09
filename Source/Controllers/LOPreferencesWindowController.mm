@@ -47,7 +47,7 @@
 
 - (id)init
 {
-	self = [super initWithWindowNibName:@"Preferences"];
+	self = [super initWithWindowNibName:@"PreferencesWindow"];
 	if (self)
 	{
 		NSURL* appURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
@@ -78,6 +78,12 @@
 		[[LOHotKeysCenter sharedCenter] saveControlCombo:[aRecorder keyCombo] forKey:LOShowTranslatorHotkeyKey];
 	else if (aRecorder == hotKeyShowClipboard)
 		[[LOHotKeysCenter sharedCenter] saveControlCombo:[aRecorder keyCombo] forKey:LOShowTranslatorClipboardHotkeyKey];
+}
+
+- (void)show
+{
+	[self showWindow:self];
+	[[self window] orderFront:self];
 }
 
 @end

@@ -24,4 +24,6 @@
 
 + (void)registerDefaults;
 
+- (void)show;
+
 @end
