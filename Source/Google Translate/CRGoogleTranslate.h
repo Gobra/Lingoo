@@ -21,11 +21,11 @@ extern NSString* const CRGoogleTranslateTranslationKey;
 //////////////////////////////////////////////////////////////////////
 @interface CRGoogleTranslate : NSObject
 {
-	CRJSExec*	jsExec;
+	CRJSExec*	jsExec;			// JavaScript command tool
 	
-	BOOL		isReady;
-	BOOL		isWaiting;
-	NSArray*	languages;
+	BOOL		isReady;		// Signals whether the module is ready for work
+	BOOL		isWaiting;		// Signals whether the module is waiting for an answer
+	NSArray*	languages;		// Available languages list
 }
 
 @property (readonly) CRJSExec*	jsExec;

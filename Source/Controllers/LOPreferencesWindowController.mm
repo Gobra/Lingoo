@@ -22,6 +22,7 @@
 	// prepapre
 	SGKeyCombo* comboShow = [[SGKeyCombo alloc] initWithKeyCode:37 modifiers:2304];			// cmd + alt + L
 	SGKeyCombo* comboShowClipboard = [[SGKeyCombo alloc] initWithKeyCode:8 modifiers:2304];	// cmd + alt + C
+	id langPairsData = [CRGoogleLanguagePairsSet defaultData];								// default data
 	
 	// defaults
 	[[NSUserDefaults standardUserDefaults] registerDefaults:
@@ -32,9 +33,11 @@
 	  @"en",										LOSourceLanguageCodeKey,
 	  @"en",										LODestinationLanguageCodeKey,
 	  [NSNumber numberWithBool:YES],				LOAutoselectTranslationKey,
+	  [NSNumber numberWithBool:YES],				LOUseLanguagePairsKey,
 	  [NSNumber numberWithBool:YES],				LOAutotranslateFromClipboardKey,
 	  [NSNumber numberWithBool:NO],					LOAutoclipboardTranslationKey,
 	  
+	  langPairsData,								LOLanguagePairsKey,
 	  [comboShow plistRepresentation],				LOShowTranslatorHotkeyKey,
 	  [comboShowClipboard plistRepresentation],		LOShowTranslatorClipboardHotkeyKey,
 	  nil]
@@ -84,6 +87,60 @@
 {
 	[self showWindow:self];
 	[[self window] orderFront:self];
+}
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark Language paris
+
+- (void)addNewLanguagePair:(id)sender
+{
+	[sourceLanguageButton selectItemAtIndex:0];
+	[destinationLanguageButton selectItemAtIndex:0];
+	
+	[NSApp beginSheet:languagePairsSheet
+	   modalForWindow:[self window]
+        modalDelegate:nil
+       didEndSelector:NULL
+          contextInfo:NULL];
+}
+
+- (IBAction)cancelNewLanguagePair:(id)sender
+{
+	[NSApp endSheet:languagePairsSheet];
+	[languagePairsSheet orderOut:sender];
+}
+
+- (IBAction)acceptNewLanguagePair:(id)sender
+{
+	// add new record
+	CRGoogleLanguage* sourceCode = [[sourceLanguageButton selectedItem] representedObject];
+	CRGoogleLanguage* destinationCode = [[destinationLanguageButton selectedItem] representedObject];
+	[[LOShared languagePairs] addDestination:destinationCode forSource:sourceCode];
+	
+	// remove the sheet
+	[NSApp endSheet:languagePairsSheet];
+	[languagePairsSheet orderOut:sender];
+}
+
+- (void)removeSelectedPairs:(id)sender
+{
+	NSArray* items = [languagePairsController selectedObjects];
+	
+	if ([items count] > 0)
+	{
+		// texts
+		NSString* confirmation	= NSLocalizedString(@"common.confirmation", @"");
+		NSString* erase			= NSLocalizedString(@"common.erase", @"");
+		NSString* cancel		= NSLocalizedString(@"common.cancel", @"");
+		NSString* question		= NSLocalizedString(@"common.confirm_erase", @"");
+		
+		NSString* message = [NSString stringWithFormat:question, [items count]];
+		if (NSAlertAlternateReturn != NSRunAlertPanel(confirmation, message, erase, cancel, nil))
+		{
+			for (CRGoogleLanguagePair* pair in items)
+				[[LOShared languagePairs] removePair:pair];
+		}
+	}
 }
 
 @end

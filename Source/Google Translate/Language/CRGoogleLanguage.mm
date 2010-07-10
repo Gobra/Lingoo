@@ -36,6 +36,34 @@
 	return self;
 }
 
+- (id)initWithName:(NSString *)name code:(NSString *)code
+{
+	self = [super init];
+	if (self)
+	{
+		languageName = [name copy];
+		languageCode = [code copy];
+	}
+	return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super init];
+	if (self)
+	{
+		languageCode = [[aDecoder decodeObjectForKey:@"code"] retain];
+		languageName = [[aDecoder decodeObjectForKey:@"name"] retain];
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+	[aCoder encodeObject:languageCode forKey:@"code"];
+	[aCoder encodeObject:languageName forKey:@"name"];
+}
+
 - (id)copyWithZone:(NSZone*)zone
 {
 	if (nil == zone)
@@ -52,6 +80,11 @@
 	[languageCode release];
 	[languageName release];
 	[super dealloc];
+}
+
+- (NSString *)description
+{
+	return languageName;
 }
 
 //////////////////////////////////////////////////////////////////////

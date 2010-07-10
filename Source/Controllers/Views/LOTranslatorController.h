@@ -15,7 +15,6 @@ extern NSString* const LODeferredTranslateRequestKey;
 //////////////////////////////////////////////////////////////////////
 @interface LOTranslatorController : NSViewController
 {
-	CRGoogleTranslate*	translator;
 	CRGoogleLanguage*	sourceLanguage;
 	CRGoogleLanguage*	destinationLanguage;
 	
@@ -26,7 +25,6 @@ extern NSString* const LODeferredTranslateRequestKey;
 	NSTextField*		textSource;
 }
 
-@property (assign) CRGoogleTranslate*		translator;				// Google.Translate proxy, is set externally
 @property (assign) CRGoogleLanguage*		sourceLanguage;			// Source language object
 @property (assign) CRGoogleLanguage*		destinationLanguage;	// Destination language object
 

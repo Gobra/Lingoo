@@ -403,22 +403,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentArray: translator.languages</string>
-						<reference key="source" ref="1010476015"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1010476015"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">contentArray: translator.languages</string>
-							<string key="NSBinding">contentArray</string>
-							<string key="NSKeyPath">translator.languages</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">36</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">content: arrangedObjects</string>
 						<reference key="source" ref="619413622"/>
 						<reference key="destination" ref="1010476015"/>
@@ -527,31 +511,47 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">animate: translator.isWaiting</string>
-						<reference key="source" ref="588999564"/>
-						<reference key="destination" ref="1001"/>
+						<string key="label">contentArray: delegate.translator.languages</string>
+						<reference key="source" ref="1010476015"/>
+						<reference key="destination" ref="1004"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="588999564"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">animate: translator.isWaiting</string>
-							<string key="NSBinding">animate</string>
-							<string key="NSKeyPath">translator.isWaiting</string>
+							<reference key="NSSource" ref="1010476015"/>
+							<reference key="NSDestination" ref="1004"/>
+							<string key="NSLabel">contentArray: delegate.translator.languages</string>
+							<string key="NSBinding">contentArray</string>
+							<string key="NSKeyPath">delegate.translator.languages</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">55</int>
+					<int key="connectionID">58</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: translator.isWaiting</string>
+						<string key="label">animate: delegate.translator.isWaiting</string>
 						<reference key="source" ref="588999564"/>
-						<reference key="destination" ref="1001"/>
+						<reference key="destination" ref="1004"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="588999564"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">hidden: translator.isWaiting</string>
+							<reference key="NSDestination" ref="1004"/>
+							<string key="NSLabel">animate: delegate.translator.isWaiting</string>
+							<string key="NSBinding">animate</string>
+							<string key="NSKeyPath">delegate.translator.isWaiting</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">60</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: delegate.translator.isWaiting</string>
+						<reference key="source" ref="588999564"/>
+						<reference key="destination" ref="1004"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="588999564"/>
+							<reference key="NSDestination" ref="1004"/>
+							<string key="NSLabel">hidden: delegate.translator.isWaiting</string>
 							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">translator.isWaiting</string>
+							<string key="NSKeyPath">delegate.translator.isWaiting</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
 								<string key="NS.object.0">NSNegateBoolean</string>
@@ -559,7 +559,7 @@
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">56</int>
+					<int key="connectionID">62</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -853,7 +853,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">56</int>
+			<int key="maxID">62</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -897,6 +897,13 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Source/Controllers/Views/LOTranslatorHeavyController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Source/Google Translate/Language/CRGoogleLanguagePair.h</string>
 					</object>
 				</object>
 			</object>

@@ -1,0 +1,6 @@
+common.confirmation = "Confirmation";
+common.erase = "Erase";
+common.cancel = "Cancel";
+common.confirm_erase = "Are your sure you want to erase %i selected item(s)?";
+
+language.any_marker = "Any";

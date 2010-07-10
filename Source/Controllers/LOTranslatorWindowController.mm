@@ -7,7 +7,6 @@
 //
 
 #import "LOTranslatorWindowController.h"
-#import "CRChangeSignaler.h"
 
 #import "LOTranslatorLightController.h"
 #import "LOTranslatorMiddleController.h"
@@ -33,21 +32,20 @@
 						   [LOTranslatorHeavyController controller],
 						   nil];
 		
-		// Google.Translate
-		translator = [[CRGoogleTranslate alloc] init];
-		CRChangeSignaler* signaler = [CRChangeSignaler signalWithObject:translator keyPath:@"isReady" target:self action:@selector(translateReady:)];
-		[signaler retain];
-		
 		// Animation
 		inAnimation = NO;
 		viewSwitchInterval = 0.25f;
+		
+		// Notification
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(translatorIsReady:) name:LOTranslatorIsReadyNotification object:nil];
 	}
 	return self;
 }
 
 - (void)dealloc
 {
-	[translator release];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
 	[super dealloc];
 }
 
@@ -76,6 +74,8 @@
 	[contentBox setFrameSize:viewSize];
 	[[contentBox animator] setAlphaValue:1.0f];
 	[self animateToContentSize:viewSize];
+	
+	inAnimation = NO;
 }
 
 - (void)showViewAtIndex:(NSUInteger)index
@@ -95,6 +95,8 @@
 	// view switch
 	if (oldController != selectedViewController)
 	{
+		inAnimation = YES;
+		
 		[[NSAnimationContext currentContext] setDuration:viewSwitchInterval];
 		[[contentBox animator] setAlphaValue:0.0f];
 		[self performSelector:@selector(setContentController:) withObject:selectedViewController afterDelay:viewSwitchInterval];
@@ -112,18 +114,9 @@
 	if ([selectedViewController isKindOfClass:[LOTranslatorController class]])
 		[(LOTranslatorController *)selectedViewController saveDefaults:nil];
 }
-
-- (void)translateReady:(CRChangeSignaler *)signaler
+																				  
+- (void)translatorIsReady:(NSNotification *)notification
 {
-	// we don't need signaler anymore
-	[signaler release];
-	
-	// set controllers up
-	for (NSViewController* controller in viewControllers)
-		if ([controller isKindOfClass:[LOTranslatorController class]])
-			[(LOTranslatorController *)controller setTranslator:translator];
-	
-	// view
 	int index = [[[NSUserDefaults standardUserDefaults] valueForKey:LOTranslatorTypeIndexKey] intValue];
 	[self showViewAtIndex:index];
 }

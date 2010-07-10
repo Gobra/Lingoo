@@ -13,17 +13,26 @@
 //////////////////////////////////////////////////////////////////////
 @interface LOPreferencesWindowController : NSWindowController
 {
-	CRAutorunOnLogin*	autoRun;
+	CRAutorunOnLogin*			autoRun;
 	
 @public
 	IBOutlet SRRecorderControl*	hotKeyShow;
 	IBOutlet SRRecorderControl*	hotKeyShowClipboard;
+	
+	IBOutlet NSPanel*			languagePairsSheet;
+	IBOutlet NSPopUpButton*		sourceLanguageButton;
+	IBOutlet NSPopUpButton*		destinationLanguageButton;
+	IBOutlet NSArrayController*	languagePairsController;
 }
 
-@property (readonly) CRAutorunOnLogin* autoRun;
+@property (readonly) CRAutorunOnLogin*	autoRun;
 
 + (void)registerDefaults;
-
 - (void)show;
+
+- (void)addNewLanguagePair:(id)sender;
+- (void)cancelNewLanguagePair:(id)sender;
+- (void)acceptNewLanguagePair:(id)sender;
+- (void)removeSelectedPairs:(id)sender;
 
 @end

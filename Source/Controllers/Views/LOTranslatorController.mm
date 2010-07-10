@@ -1,5 +1,5 @@
 //
-//  LOTranslatorController.m
+//  LO[LOShared translator]Controller.m
 //  Lingoo
 //
 //  Created by Yaroslav Glushchenko on 7/7/10.
@@ -11,11 +11,10 @@
 NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey";
 
 //////////////////////////////////////////////////////////////////////
-// Translator controller
+// LOTranslatorController
 //////////////////////////////////////////////////////////////////////
 @implementation LOTranslatorController
 
-@synthesize translator;
 @synthesize sourceLanguage;
 @synthesize destinationLanguage;
 
@@ -54,6 +53,11 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 	return [[[NSUserDefaults standardUserDefaults] valueForKey:LOAutoselectTranslationKey] boolValue];
 }
 
+- (BOOL)useLanguagePairs
+{
+	return [[[NSUserDefaults standardUserDefaults] valueForKey:LOUseLanguagePairsKey] boolValue];
+}
+
 - (BOOL)autotranslateForClipboard
 {
 	return [[[NSUserDefaults standardUserDefaults] valueForKey:LOAutotranslateFromClipboardKey] boolValue];
@@ -75,8 +79,8 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 - (IBAction)loadDefaults:(id)sender
 {
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-	[self setSourceLanguage:[translator languageFromCode:[ud valueForKey:LOSourceLanguageCodeKey]]];
-	[self setDestinationLanguage:[translator languageFromCode:[ud valueForKey:LODestinationLanguageCodeKey]]];
+	[self setSourceLanguage:[[LOShared translator] languageFromCode:[ud valueForKey:LOSourceLanguageCodeKey]]];
+	[self setDestinationLanguage:[[LOShared translator] languageFromCode:[ud valueForKey:LODestinationLanguageCodeKey]]];
 }
 
 - (IBAction)saveDefaults:(id)sender
@@ -105,14 +109,24 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 							sCode,	CRGoogleTranslateSourceLanguageCodeKey,
 							dCode,	CRGoogleTranslateDestinationLanguageCodeKey,
 							nil];
-	[translator translateText:[CRJSRemoteQuery queryWithTarget:self action:@selector(translationComplete:) params:params]];
+	[[LOShared translator] translateText:[CRJSRemoteQuery queryWithTarget:self action:@selector(translationComplete:) params:params]];
 }
 
 - (void)detectionComplete:(CRJSRemoteQuery *)query
 {
 	if ([query successStatus])
 	{
-		[self setSourceLanguage:[translator languageFromQuery:query]];
+		// Source language is set
+		CRGoogleLanguage* newSource = [[LOShared translator] languageFromQuery:query];
+		[self setSourceLanguage:newSource];
+		
+		// Set destination language if needed
+		if ([self useLanguagePairs])
+		{
+			CRGoogleLanguage* autoLanguage = [[LOShared languagePairs] destinationLanguageForSource:[newSource languageCode]];
+			if (autoLanguage)
+				[self setDestinationLanguage:autoLanguage];
+		}
 		
 		// Check whether we are asked to translate right after that
 		if ([[query.params valueForKey:LODeferredTranslateRequestKey] boolValue])
@@ -162,7 +176,7 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 								[NSNumber numberWithBool:YES],	LODeferredTranslateRequestKey,
 								[textSource stringValue],		CRGoogleTranslateTextKey,
 								nil];
-		[translator detectLanguage:[CRJSRemoteQuery queryWithTarget:self action:@selector(detectionComplete:) params:params]];
+		[[LOShared translator] detectLanguage:[CRJSRemoteQuery queryWithTarget:self action:@selector(detectionComplete:) params:params]];
 	}
 	// Immediate translate
 	else

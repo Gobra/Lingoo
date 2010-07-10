@@ -11,7 +11,7 @@
 //////////////////////////////////////////////////////////////////////
 // GoogleTranslate language
 //////////////////////////////////////////////////////////////////////
-@interface CRGoogleLanguage : CRJSMapper<NSCopying>
+@interface CRGoogleLanguage : CRJSMapper<NSCopying, NSCoding>
 {
 	NSString* languageCode;
 	NSString* languageName;
@@ -21,5 +21,6 @@
 @property (readonly) NSString* languageName;
 
 - (id)initWithWebScriptObject:(WebScriptObject *)wo;
+- (id)initWithName:(NSString *)name code:(NSString *)code;
 
 @end

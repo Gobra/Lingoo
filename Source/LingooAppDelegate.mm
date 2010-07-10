@@ -7,18 +7,24 @@
 //
 
 #import "LingooAppDelegate.h"
+#import "CRChangeSignaler.h"
+#import "CRDataToObjectTransformer.h"
 
 //////////////////////////////////////////////////////////////////////
 // App delegate
 //////////////////////////////////////////////////////////////////////
 @implementation LingooAppDelegate
 
+@synthesize translator;
+@synthesize languagePairs;
 @synthesize statusMenu;
 
 + (void)initialize
 {
 	if (self == [LingooAppDelegate class])
 	{
+		[NSValueTransformer setValueTransformer:[CRDataToObjectTransformer transformer] forName:@"CRDataToObjectTransformer"];
+		
 		[LOPreferencesWindowController registerDefaults];
 	}
 }
@@ -32,12 +38,23 @@
 		statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 		[statusItem setTitle:@"Lingoo"];
 		[statusItem setHighlightMode:YES];
+		
+		// Google.Translate
+		translator = [[CRGoogleTranslate alloc] init];
+		CRChangeSignaler* signaler = [CRChangeSignaler signalWithObject:translator keyPath:@"isReady" target:self action:@selector(translateReady:)];
+		[signaler retain];
+		
+		// Pairs
+		languagePairs = [[CRGoogleLanguagePairsSet alloc] init];
+		[languagePairs setAutosaveName:LOLanguagePairsKey];
 	}
 	return self;
 }
 
 - (void)dealloc
 {
+	[translator release];
+	[languagePairs release];
 	[super dealloc];
 }
 
@@ -48,6 +65,19 @@
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark App delegate
+
+- (void)translateReady:(CRChangeSignaler *)signaler
+{
+	// we don't need signaler anymore
+	[signaler release];
+	
+	// set pair up
+	[languagePairs setTranslator:translator];
+	[languagePairs readFromDefaults];
+	
+	// signal to everyone
+	[[NSNotificationCenter defaultCenter] postNotificationName:LOTranslatorIsReadyNotification object:self];
+}
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
@@ -61,7 +91,7 @@
 	if (firstRun)
 	{
 		[self showPreferences:self];
-		[ud setValue:[NSNumber numberWithBool:NO] forKey:LOFirstRunKey];
+		//[ud setValue:[NSNumber numberWithBool:NO] forKey:LOFirstRunKey];
 	}
 	
 	// Crash check

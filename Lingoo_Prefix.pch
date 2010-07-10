@@ -10,4 +10,11 @@
 
 	#import "Constants.h"
 	#import "LOHotKeysCenter.h"
+
+	#import "CRGoogleTranslate.h"
+	#import "CRGoogleLanguage.h"
+	#import "CRGoogleLanguagePair.h"
+	#import "CRGoogleLanguagePairsSet.h"
+
+	#import "LOShared.h"
 #endif

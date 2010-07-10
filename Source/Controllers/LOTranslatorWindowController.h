@@ -6,7 +6,6 @@
 //  Copyright 2010 Corner-A. All rights reserved.
 //
 
-#import "CRGoogleTranslate.h"
 #import "LOTranslatorController.h"
 
 //////////////////////////////////////////////////////////////////////
@@ -14,7 +13,6 @@
 //////////////////////////////////////////////////////////////////////
 @interface LOTranslatorWindowController : NSWindowController
 {
-	CRGoogleTranslate*	translator;
 	NSArray*			viewControllers;
 	NSViewController*	selectedViewController;
 	
@@ -27,8 +25,8 @@
 	NSBox*				contentBox;
 }
 
-@property (assign) IBOutlet NSView*	toolbarView;
-@property (assign) IBOutlet NSBox*	contentBox;
+@property (assign) IBOutlet NSView*		toolbarView;
+@property (assign) IBOutlet NSBox*		contentBox;
 
 - (void)showViewAtIndex:(NSUInteger)index;
 

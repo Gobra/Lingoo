@@ -13,8 +13,12 @@ extern NSString* const LOAutodetectLanguageKey;
 extern NSString* const LOSourceLanguageCodeKey;
 extern NSString* const LODestinationLanguageCodeKey;
 extern NSString* const LOAutoselectTranslationKey;
+extern NSString* const LOUseLanguagePairsKey;
 extern NSString* const LOAutotranslateFromClipboardKey;
 extern NSString* const LOAutoclipboardTranslationKey;
+extern NSString* const LOLanguagePairsKey;
 
 extern NSString* const LOShowTranslatorHotkeyKey;
 extern NSString* const LOShowTranslatorClipboardHotkeyKey;
+
+extern NSString* const LOTranslatorIsReadyNotification;

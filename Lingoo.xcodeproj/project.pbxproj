@@ -20,11 +20,11 @@
 		1BCE2A2611E7895A006CD5DC /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE2A2411E7895A006CD5DC /* AboutWindow.xib */; };
 		1BCE2A6311E78EF6006CD5DC /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE2A5D11E78EF6006CD5DC /* Credits */; };
 		1BCE2B0E11E7A275006CD5DC /* CRAboutWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2B0D11E7A275006CD5DC /* CRAboutWindow.mm */; };
+		1BCE2B9511E7BF3D006CD5DC /* CRDataToObjectTransformer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2B9411E7BF3D006CD5DC /* CRDataToObjectTransformer.mm */; };
 		1BD2548911E45E7B006CD313 /* Constants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2548811E45E7B006CD313 /* Constants.mm */; };
 		1BD2549311E45E9E006CD313 /* CRJSExec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549011E45E9E006CD313 /* CRJSExec.mm */; };
 		1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549111E45E9E006CD313 /* CRJSMapper.mm */; };
 		1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */; };
-		1BD2549A11E45ED3006CD313 /* CRGoogleLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */; };
 		1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */; };
 		1BD2549D11E45EEA006CD313 /* GoogleTranslate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */; };
 		1BD256C311E47FDA006CD313 /* LOSpecialWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */; };
@@ -45,6 +45,11 @@
 		1BD259F711E4BA0B006CD313 /* FeedbackReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD259E511E4B9DC006CD313 /* FeedbackReporter.framework */; };
 		1BD25B9A11E4CDDD006CD313 /* LOPreferencesWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD25B9911E4CDDD006CD313 /* LOPreferencesWindowController.mm */; };
 		1BD25B9D11E4CDEE006CD313 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD25B9B11E4CDEE006CD313 /* PreferencesWindow.xib */; };
+		1BE59F5811E8D37D00CF82C3 /* LOShared.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BE59F5711E8D37D00CF82C3 /* LOShared.mm */; };
+		1BE59F5F11E8D39000CF82C3 /* CRGoogleLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BE59F5C11E8D39000CF82C3 /* CRGoogleLanguage.mm */; };
+		1BE59F6011E8D39000CF82C3 /* CRGoogleLanguagePair.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BE59F5D11E8D39000CF82C3 /* CRGoogleLanguagePair.mm */; };
+		1BE59F6111E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BE59F5E11E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm */; };
+		1BE59F6F11E8D3D500CF82C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BE59F6D11E8D3D500CF82C3 /* Localizable.strings */; };
 		1BF0C9BD11DF6A43005C908F /* LingooAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */; };
 		1BF0C9BF11DF6A4F005C908F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C9BE11DF6A4F005C908F /* main.m */; };
 		1BF0C9C411DF6A61005C908F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0C9C011DF6A61005C908F /* MainMenu.xib */; };
@@ -97,6 +102,8 @@
 		1BCE2A5D11E78EF6006CD5DC /* Credits */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Credits; path = Resources/Credits; sourceTree = "<group>"; };
 		1BCE2B0C11E7A275006CD5DC /* CRAboutWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAboutWindow.h; sourceTree = "<group>"; };
 		1BCE2B0D11E7A275006CD5DC /* CRAboutWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAboutWindow.mm; sourceTree = "<group>"; };
+		1BCE2B9311E7BF3D006CD5DC /* CRDataToObjectTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDataToObjectTransformer.h; path = Source/Common/CRDataToObjectTransformer.h; sourceTree = "<group>"; };
+		1BCE2B9411E7BF3D006CD5DC /* CRDataToObjectTransformer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRDataToObjectTransformer.mm; path = Source/Common/CRDataToObjectTransformer.mm; sourceTree = "<group>"; };
 		1BD2548711E45E7B006CD313 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Common/Constants.h; sourceTree = "<group>"; };
 		1BD2548811E45E7B006CD313 /* Constants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Constants.mm; path = Source/Common/Constants.mm; sourceTree = "<group>"; };
 		1BD2548D11E45E9E006CD313 /* CRJSExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSExec.h; path = Source/CRJavaScript/CRJSExec.h; sourceTree = "<group>"; };
@@ -105,9 +112,7 @@
 		1BD2549011E45E9E006CD313 /* CRJSExec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRJSExec.mm; path = Source/CRJavaScript/CRJSExec.mm; sourceTree = "<group>"; };
 		1BD2549111E45E9E006CD313 /* CRJSMapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRJSMapper.mm; path = Source/CRJavaScript/CRJSMapper.mm; sourceTree = "<group>"; };
 		1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRJSRemoteQuery.mm; path = Source/CRJavaScript/CRJSRemoteQuery.mm; sourceTree = "<group>"; };
-		1BD2549611E45ED3006CD313 /* CRGoogleLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleLanguage.h; path = "Source/Google Translate/CRGoogleLanguage.h"; sourceTree = "<group>"; };
 		1BD2549711E45ED3006CD313 /* CRGoogleTranslate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleTranslate.h; path = "Source/Google Translate/CRGoogleTranslate.h"; sourceTree = "<group>"; };
-		1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleLanguage.mm; path = "Source/Google Translate/CRGoogleLanguage.mm"; sourceTree = "<group>"; };
 		1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleTranslate.mm; path = "Source/Google Translate/CRGoogleTranslate.mm"; sourceTree = "<group>"; };
 		1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = GoogleTranslate.html; path = "Source/Google Translate/GoogleTranslate.html"; sourceTree = "<group>"; };
 		1BD256C111E47FDA006CD313 /* LOSpecialWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOSpecialWindow.h; path = Source/Controls/LOSpecialWindow.h; sourceTree = "<group>"; };
@@ -134,6 +139,15 @@
 		1BD25B9811E4CDDD006CD313 /* LOPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOPreferencesWindowController.h; path = Source/Controllers/LOPreferencesWindowController.h; sourceTree = "<group>"; };
 		1BD25B9911E4CDDD006CD313 /* LOPreferencesWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOPreferencesWindowController.mm; path = Source/Controllers/LOPreferencesWindowController.mm; sourceTree = "<group>"; };
 		1BD25B9C11E4CDEE006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
+		1BE59F5611E8D37D00CF82C3 /* LOShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOShared.h; path = Source/LOShared.h; sourceTree = "<group>"; };
+		1BE59F5711E8D37D00CF82C3 /* LOShared.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOShared.mm; path = Source/LOShared.mm; sourceTree = "<group>"; };
+		1BE59F5911E8D39000CF82C3 /* CRGoogleLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleLanguage.h; path = "Source/Google Translate/Language/CRGoogleLanguage.h"; sourceTree = "<group>"; };
+		1BE59F5A11E8D39000CF82C3 /* CRGoogleLanguagePair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleLanguagePair.h; path = "Source/Google Translate/Language/CRGoogleLanguagePair.h"; sourceTree = "<group>"; };
+		1BE59F5B11E8D39000CF82C3 /* CRGoogleLanguagePairsSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleLanguagePairsSet.h; path = "Source/Google Translate/Language/CRGoogleLanguagePairsSet.h"; sourceTree = "<group>"; };
+		1BE59F5C11E8D39000CF82C3 /* CRGoogleLanguage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleLanguage.mm; path = "Source/Google Translate/Language/CRGoogleLanguage.mm"; sourceTree = "<group>"; };
+		1BE59F5D11E8D39000CF82C3 /* CRGoogleLanguagePair.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleLanguagePair.mm; path = "Source/Google Translate/Language/CRGoogleLanguagePair.mm"; sourceTree = "<group>"; };
+		1BE59F5E11E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleLanguagePairsSet.mm; path = "Source/Google Translate/Language/CRGoogleLanguagePairsSet.mm"; sourceTree = "<group>"; };
+		1BE59F6E11E8D3D500CF82C3 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Resources/English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LingooAppDelegate.h; path = Source/LingooAppDelegate.h; sourceTree = "<group>"; };
 		1BF0C9BC11DF6A43005C908F /* LingooAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LingooAppDelegate.mm; path = Source/LingooAppDelegate.mm; sourceTree = "<group>"; };
 		1BF0C9BE11DF6A4F005C908F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
@@ -177,6 +191,8 @@
 				1BD256BD11E47FB2006CD313 /* Controls */,
 				1BD256F611E484E9006CD313 /* Controllers */,
 				1BC8CF6E11E2850E0012A062 /* Google Translate */,
+				1BE59F5611E8D37D00CF82C3 /* LOShared.h */,
+				1BE59F5711E8D37D00CF82C3 /* LOShared.mm */,
 				1BC6E1DF11E5DC7C003D6B05 /* LOApplication.h */,
 				1BC6E1E011E5DC7C003D6B05 /* LOApplication.mm */,
 				1BF0C9BB11DF6A43005C908F /* LingooAppDelegate.h */,
@@ -259,8 +275,7 @@
 		1BC8CF6E11E2850E0012A062 /* Google Translate */ = {
 			isa = PBXGroup;
 			children = (
-				1BD2549611E45ED3006CD313 /* CRGoogleLanguage.h */,
-				1BD2549811E45ED3006CD313 /* CRGoogleLanguage.mm */,
+				1BE59E2B11E8B75900CF82C3 /* Language */,
 				1BD2549711E45ED3006CD313 /* CRGoogleTranslate.h */,
 				1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */,
 			);
@@ -288,6 +303,8 @@
 				1BD2574C11E48CD1006CD313 /* CRChangeSignaler.mm */,
 				1BC6E14211E5CF00003D6B05 /* CRAutorunOnLogin.h */,
 				1BC6E14311E5CF00003D6B05 /* CRAutorunOnLogin.mm */,
+				1BCE2B9311E7BF3D006CD5DC /* CRDataToObjectTransformer.h */,
+				1BCE2B9411E7BF3D006CD5DC /* CRDataToObjectTransformer.mm */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -358,6 +375,19 @@
 			name = "Translator Views";
 			sourceTree = "<group>";
 		};
+		1BE59E2B11E8B75900CF82C3 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				1BE59F5911E8D39000CF82C3 /* CRGoogleLanguage.h */,
+				1BE59F5C11E8D39000CF82C3 /* CRGoogleLanguage.mm */,
+				1BE59F5A11E8D39000CF82C3 /* CRGoogleLanguagePair.h */,
+				1BE59F5D11E8D39000CF82C3 /* CRGoogleLanguagePair.mm */,
+				1BE59F5B11E8D39000CF82C3 /* CRGoogleLanguagePairsSet.h */,
+				1BE59F5E11E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm */,
+			);
+			name = Language;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* Lingoo */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +418,7 @@
 				1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */,
 				8D1107310486CEB800E47090 /* Lingoo-Info.plist */,
 				1BF0C9C211DF6A61005C908F /* InfoPlist.strings */,
+				1BE59F6D11E8D3D500CF82C3 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -456,6 +487,7 @@
 				1BD25B9D11E4CDEE006CD313 /* PreferencesWindow.xib in Resources */,
 				1BCE2A2611E7895A006CD5DC /* AboutWindow.xib in Resources */,
 				1BCE2A6311E78EF6006CD5DC /* Credits in Resources */,
+				1BE59F6F11E8D3D500CF82C3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +504,6 @@
 				1BD2549311E45E9E006CD313 /* CRJSExec.mm in Sources */,
 				1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */,
 				1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */,
-				1BD2549A11E45ED3006CD313 /* CRGoogleLanguage.mm in Sources */,
 				1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */,
 				1BD256C311E47FDA006CD313 /* LOSpecialWindow.mm in Sources */,
 				1BD256FF11E4865B006CD313 /* LOTranslatorWindowController.mm in Sources */,
@@ -491,6 +522,11 @@
 				1BC6E38A11E600FD003D6B05 /* LOHotKeysCenter.mm in Sources */,
 				1BCE292A11E786B1006CD5DC /* CRAboutWindowController.mm in Sources */,
 				1BCE2B0E11E7A275006CD5DC /* CRAboutWindow.mm in Sources */,
+				1BCE2B9511E7BF3D006CD5DC /* CRDataToObjectTransformer.mm in Sources */,
+				1BE59F5811E8D37D00CF82C3 /* LOShared.mm in Sources */,
+				1BE59F5F11E8D39000CF82C3 /* CRGoogleLanguage.mm in Sources */,
+				1BE59F6011E8D39000CF82C3 /* CRGoogleLanguagePair.mm in Sources */,
+				1BE59F6111E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +579,14 @@
 				1BD25B9C11E4CDEE006CD313 /* English */,
 			);
 			name = PreferencesWindow.xib;
+			sourceTree = "<group>";
+		};
+		1BE59F6D11E8D3D500CF82C3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BE59F6E11E8D3D500CF82C3 /* English */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		1BF0C9C011DF6A61005C908F /* MainMenu.xib */ = {

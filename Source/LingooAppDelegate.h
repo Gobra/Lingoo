@@ -14,8 +14,13 @@
 // App delegate
 //////////////////////////////////////////////////////////////////////
 @interface LingooAppDelegate : NSObject <NSApplicationDelegate>
-{	
+{
+@private
 	NSStatusItem*					statusItem;
+	CRGoogleTranslate*				translator;
+	CRGoogleLanguagePairsSet*		languagePairs;
+	
+@private
 	LOPreferencesWindowController*	preferencesWindowController;
 	LOTranslatorWindowController*	translatorWindowController;
 	CRAboutWindowController*		aboutWindowController;
@@ -24,7 +29,9 @@
 	NSMenu*							statusMenu;
 }
 
-@property (assign) IBOutlet NSMenu*	statusMenu;
+@property (readonly) CRGoogleTranslate*			translator;
+@property (readonly) CRGoogleLanguagePairsSet*	languagePairs;
+@property (assign) IBOutlet NSMenu*				statusMenu;
 
 - (IBAction)showTranslator:(id)sender;
 - (IBAction)showTranslatorWithClipboard:(id)sender;
