@@ -26,40 +26,10 @@
         forceDisplay = NO;
         [self setBackgroundColor:[self sizedHUDBackground]];
         
-        [self addCloseWidget];
-        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResize:) name:NSWindowDidResizeNotification object:self];
         return self;
     }
     return nil;
-}
-
-- (void)awakeFromNib
-{
-    [self addCloseWidget];
-}
-
-- (void)addCloseWidget
-{
-    NSButton *closeButton = [[NSButton alloc] initWithFrame:NSMakeRect(3.0, [self frame].size.height - 16.0, 13.0, 13.0)];
-    
-    [[self contentView] addSubview:closeButton];
-    [closeButton setBezelStyle:NSRoundedBezelStyle];
-    [closeButton setButtonType:NSMomentaryChangeButton];
-    [closeButton setBordered:NO];
-    [closeButton setImage:[NSImage imageNamed:@"TitlebarClose"]];
-    [closeButton setTitle:@""];
-    [closeButton setImagePosition:NSImageBelow];
-    [closeButton setTarget:self];
-    [closeButton setFocusRingType:NSFocusRingTypeNone];
-    [closeButton setAction:@selector(doClose)];
-    [closeButton release];
-}
-
-- (void)doClose
-{
-	[self orderOut:self];
-	[self close];
 }
 
 - (void)dealloc

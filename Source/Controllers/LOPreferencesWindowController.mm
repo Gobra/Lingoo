@@ -36,6 +36,7 @@
 	  [NSNumber numberWithBool:YES],				LOUseLanguagePairsKey,
 	  [NSNumber numberWithBool:YES],				LOAutotranslateFromClipboardKey,
 	  [NSNumber numberWithBool:NO],					LOAutoclipboardTranslationKey,
+	  [NSNumber numberWithFloat:5.0f],				LOFailReloadDelayKey,
 	  
 	  langPairsData,								LOLanguagePairsKey,
 	  [comboShow plistRepresentation],				LOShowTranslatorHotkeyKey,

@@ -1,0 +1,9 @@
+Lingoo
+1.0
+u94805.ftp.masterhost.ru
+u94805
+roiden4ic4
+corner-a.com/www/files/lingoo
+http://corner-a.com
+files/lingoo/updates
+appcast.xml

@@ -40,13 +40,18 @@
 		[statusItem setHighlightMode:YES];
 		
 		// Google.Translate
+		float reloadDelay = [[[NSUserDefaults standardUserDefaults] valueForKey:LOFailReloadDelayKey] floatValue];
 		translator = [[CRGoogleTranslate alloc] init];
+		[[translator jsExec] setReloadDelay:reloadDelay];
 		CRChangeSignaler* signaler = [CRChangeSignaler signalWithObject:translator keyPath:@"isReady" target:self action:@selector(translateReady:)];
 		[signaler retain];
 		
 		// Pairs
 		languagePairs = [[CRGoogleLanguagePairsSet alloc] init];
 		[languagePairs setAutosaveName:LOLanguagePairsKey];
+		
+		// Translator controller
+		translatorWindowController = [[LOTranslatorWindowController alloc] init];
 	}
 	return self;
 }
@@ -55,6 +60,7 @@
 {
 	[translator release];
 	[languagePairs release];
+	[translatorWindowController release];
 	[super dealloc];
 }
 
@@ -91,7 +97,7 @@
 	if (firstRun)
 	{
 		[self showPreferences:self];
-		//[ud setValue:[NSNumber numberWithBool:NO] forKey:LOFirstRunKey];
+		[ud setValue:[NSNumber numberWithBool:NO] forKey:LOFirstRunKey];
 	}
 	
 	// Crash check
@@ -105,13 +111,6 @@
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark Actions
-
-- (LOTranslatorWindowController *)translatorController
-{
-	if (nil == translatorWindowController)
-		translatorWindowController = [[LOTranslatorWindowController alloc] init];
-	return translatorWindowController;
-}
 
 - (LOPreferencesWindowController *)preferencesController
 {
@@ -129,13 +128,13 @@
 
 - (IBAction)showTranslator:(id)sender
 {
-	[[self translatorController] fadeIn:nil];
+	[translatorWindowController fadeIn:nil];
 }
 
 - (IBAction)showTranslatorWithClipboard:(id)sender
 {
-	[[self translatorController] fadeIn:nil];
-	[[self translatorController] readTextFromClipboard:self];
+	[translatorWindowController fadeIn:nil];
+	[translatorWindowController readTextFromClipboard:self];
 }
 
 - (IBAction)showPreferences:(id)sender

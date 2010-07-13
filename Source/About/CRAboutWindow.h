@@ -16,6 +16,5 @@
 }
 
 - (NSColor *)sizedHUDBackground;
-- (void)addCloseWidget;
 
 @end

@@ -15,6 +15,7 @@ extern NSString* const CRGoogleTranslateLanguageCodeKey;
 extern NSString* const CRGoogleTranslateSourceLanguageCodeKey;
 extern NSString* const CRGoogleTranslateDestinationLanguageCodeKey;
 extern NSString* const CRGoogleTranslateTranslationKey;
+extern NSString* const CRGoogleTranslateErrorKey;
 
 //////////////////////////////////////////////////////////////////////
 // JavaScript based GoogleTranslate wrapper
@@ -22,6 +23,7 @@ extern NSString* const CRGoogleTranslateTranslationKey;
 @interface CRGoogleTranslate : NSObject
 {
 	CRJSExec*	jsExec;			// JavaScript command tool
+	NSImage*	googleBrand;	// Google "powered by" image
 	
 	BOOL		isReady;		// Signals whether the module is ready for work
 	BOOL		isWaiting;		// Signals whether the module is waiting for an answer
@@ -29,6 +31,7 @@ extern NSString* const CRGoogleTranslateTranslationKey;
 }
 
 @property (readonly) CRJSExec*	jsExec;
+@property (readonly) NSImage*	googleBrand;
 
 @property (readonly) BOOL		isReady;
 @property (readonly) BOOL		isWaiting;

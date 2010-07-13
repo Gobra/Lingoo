@@ -3,4 +3,7 @@ common.erase = "Erase";
 common.cancel = "Cancel";
 common.confirm_erase = "Are your sure you want to erase %i selected item(s)?";
 
+about.show_licenses = "Show external licenses";
+about.hide_licenses = "Hide external licenses";
+
 language.any_marker = "Any";

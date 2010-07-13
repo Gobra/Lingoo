@@ -18,6 +18,7 @@
 @implementation LOTranslatorWindowController
 
 @synthesize toolbarView;
+@synthesize footerbarView;
 @synthesize contentBox;
 
 - (id)init
@@ -35,6 +36,7 @@
 		// Animation
 		inAnimation = NO;
 		viewSwitchInterval = 0.25f;
+		deferredViewLoad = -1;
 		
 		// Notification
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(translatorIsReady:) name:LOTranslatorIsReadyNotification object:nil];
@@ -51,7 +53,8 @@
 
 - (void)awakeFromNib
 {
-	[self showViewAtIndex:0];
+	if (deferredViewLoad != -1)
+		[self showViewAtIndex:deferredViewLoad];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +62,8 @@
 
 - (void)animateToContentSize:(NSSize)aSize
 {
-	NSSize newSize = NSMakeSize(aSize.width, toolbarView.frame.size.height + aSize.height);
+	CGFloat extraHeight = toolbarView.frame.size.height + footerbarView.frame.size.height;
+	NSSize newSize = NSMakeSize(aSize.width, extraHeight + aSize.height);
 	NSRect oldFrame = [[self window] frame];
 	NSRect newFrame = NSMakeRect(oldFrame.origin.x, oldFrame.origin.y + oldFrame.size.height - newSize.height, newSize.width, newSize.height);
 	[[self window] setFrame:newFrame display:YES animate:YES];
@@ -74,6 +78,7 @@
 	[contentBox setFrameSize:viewSize];
 	[[contentBox animator] setAlphaValue:1.0f];
 	[self animateToContentSize:viewSize];
+	[aController activate];
 	
 	inAnimation = NO;
 }
@@ -104,6 +109,7 @@
 	
 	// save in Defaults
 	[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:index] forKey:LOTranslatorTypeIndexKey];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -118,7 +124,10 @@
 - (void)translatorIsReady:(NSNotification *)notification
 {
 	int index = [[[NSUserDefaults standardUserDefaults] valueForKey:LOTranslatorTypeIndexKey] intValue];
-	[self showViewAtIndex:index];
+	if ([self isWindowLoaded])
+		[self showViewAtIndex:index];
+	else
+		deferredViewLoad = index;
 }
 
 //////////////////////////////////////////////////////////////////////

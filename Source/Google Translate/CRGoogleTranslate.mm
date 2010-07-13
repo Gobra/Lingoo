@@ -13,6 +13,7 @@ NSString* const CRGoogleTranslateLanguageCodeKey = @"langCode";
 NSString* const CRGoogleTranslateSourceLanguageCodeKey = @"srcLang";
 NSString* const CRGoogleTranslateDestinationLanguageCodeKey = @"dstLang";
 NSString* const CRGoogleTranslateTranslationKey = @"translation";
+NSString* const CRGoogleTranslateErrorKey = @"error";
 
 //////////////////////////////////////////////////////////////////////
 // JavaScript based GoogleTranslate wrapper
@@ -20,6 +21,7 @@ NSString* const CRGoogleTranslateTranslationKey = @"translation";
 @implementation CRGoogleTranslate
 
 @synthesize jsExec;
+@synthesize googleBrand;
 
 @dynamic	isReady;
 @dynamic	isWaiting;
@@ -66,6 +68,16 @@ NSString* const CRGoogleTranslateTranslationKey = @"translation";
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark Properties
+
+- (void)setGoogleBrand:(NSImage *)anImage
+{
+	if (googleBrand != anImage)
+	{
+		[anImage retain];
+		[googleBrand release];
+		googleBrand = anImage;
+	}
+}
 
 - (BOOL)isWaiting
 {
@@ -138,7 +150,8 @@ NSString* const CRGoogleTranslateTranslationKey = @"translation";
 
 - (void)signalQueryComplete:(CRJSRemoteQuery *)query
 {
-	[query complete:YES];
+	BOOL success = (nil == [query.params valueForKey:CRGoogleTranslateErrorKey]);
+	[query complete:success];
 	self.isWaiting = NO;
 }
 
@@ -206,6 +219,31 @@ NSString* const CRGoogleTranslateTranslationKey = @"translation";
 - (void)jsReady:(CRJSExec *)sender
 {
 	[[jsExec script] setValue:self forKey:@"root"];
+}
+
+- (void)frameLoaded:(CRJSExec *)sender
+{
+	// "shot" the branding image
+	if (nil == googleBrand)
+	{
+		// To render WebView must be placed into a onscreen non-deferred window
+		WebView* vw = [jsExec view];
+		NSWindow* temporaryWindow = [[NSWindow alloc] initWithContentRect:vw.bounds styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO];
+		[temporaryWindow setContentView:vw];
+		[temporaryWindow setAlphaValue:0];
+		[temporaryWindow orderFront:self];
+		
+		NSView* vr = [[[vw mainFrame] frameView] documentView];
+		NSData* pdf = [vr dataWithPDFInsideRect:vr.bounds];
+		NSImage* brandImage = [[NSImage alloc] initWithData:pdf];
+		[self setGoogleBrand:brandImage];
+		[brandImage release];
+		
+		// remove the window
+		[temporaryWindow setContentView:nil];
+		[temporaryWindow orderOut:self];
+		[temporaryWindow close];
+	}
 }
 
 @end

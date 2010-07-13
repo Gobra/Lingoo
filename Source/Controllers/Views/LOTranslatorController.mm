@@ -26,6 +26,8 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 	if (self)
 	{
 		[self loadView];
+		
+		ignoreAction = NO;
 	}
 	return self;
 }
@@ -38,6 +40,11 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 - (void)awakeFromNib
 {
 	originalSize = [[self view] frame].size;
+}
+
+- (void)activate
+{
+	[textSource selectText:self];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -94,6 +101,14 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 }
 
 //////////////////////////////////////////////////////////////////////
+#pragma mark Errors
+
+- (void)handleError:(CRJSRemoteQuery *)query
+{
+	[[self translationDestination] setStringValue:[query.params valueForKey:CRGoogleTranslateErrorKey]];
+}
+
+//////////////////////////////////////////////////////////////////////
 #pragma mark Queries
 
 - (void)doTranslate:(CRJSRemoteQuery *)query
@@ -132,12 +147,16 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 		if ([[query.params valueForKey:LODeferredTranslateRequestKey] boolValue])
 			[self doTranslate:query];
 	}
+	else
+		[self handleError:query];
 }
 
 - (void)translationComplete:(CRJSRemoteQuery *)query
 {
 	if ([query successStatus])
 	{
+		ignoreAction = YES;
+
 		NSString* translation = [query.params valueForKey:CRGoogleTranslateTranslationKey];
 		[[self translationDestination] setStringValue:translation];
 		if ([self autoselectTranslated])
@@ -147,7 +166,11 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 			NSPasteboard* clipboard = [NSPasteboard generalPasteboard];
 			[clipboard setString:translation forType:NSStringPboardType];
 		}
+		
+		ignoreAction = NO;
 	}
+	else
+		[self handleError:query];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -169,12 +192,16 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 
 - (void)translate:(id)sender
 {
+	NSString* sourceText = [textSource stringValue];
+	if (ignoreAction || !sourceText || 0 == [sourceText length])
+		return;
+	
 	// Detect source language -> Translate
 	if ([[[NSUserDefaults standardUserDefaults] valueForKey:LOAutodetectLanguageKey] boolValue])
 	{
 		NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
 								[NSNumber numberWithBool:YES],	LODeferredTranslateRequestKey,
-								[textSource stringValue],		CRGoogleTranslateTextKey,
+								sourceText,						CRGoogleTranslateTextKey,
 								nil];
 		[[LOShared translator] detectLanguage:[CRJSRemoteQuery queryWithTarget:self action:@selector(detectionComplete:) params:params]];
 	}

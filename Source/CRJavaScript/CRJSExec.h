@@ -14,11 +14,13 @@
 	id					delegate;
 	WebView*			view;
 	WebScriptObject*	script;
+	float				reloadDelay;
 }
 
 @property (readonly)			WebView*			view;
 @property (readonly)			WebScriptObject*	script;
 @property (assign, readwrite)	id					delegate;
+@property (assign, readwrite)	float				reloadDelay;
 
 - (id)init;
 - (id)initWithHTML:(NSString *)HTML;

@@ -16,8 +16,13 @@
 		1BC6E38611E600ED003D6B05 /* SGKeyCodeTranslator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38111E600ED003D6B05 /* SGKeyCodeTranslator.mm */; };
 		1BC6E38711E600ED003D6B05 /* SGKeyCombo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */; };
 		1BC6E38A11E600FD003D6B05 /* LOHotKeysCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */; };
+		1BCD763911EC492E000938B1 /* CRAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD763711EC492E000938B1 /* CRAboutWindow.xib */; };
+		1BCD768D11EC4AA0000938B1 /* CRRoundedBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */; };
+		1BCD76BA11EC52AB000938B1 /* sparkle_public.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD76B911EC52AB000938B1 /* sparkle_public.pem */; };
+		1BCD77E411EC5E55000938B1 /* TranslatorHeavy.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E111EC5E55000938B1 /* TranslatorHeavy.tiff */; };
+		1BCD77E511EC5E55000938B1 /* TranslatorLight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E211EC5E55000938B1 /* TranslatorLight.tiff */; };
+		1BCD77E611EC5E55000938B1 /* TranslatorMiddle.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E311EC5E55000938B1 /* TranslatorMiddle.tiff */; };
 		1BCE292A11E786B1006CD5DC /* CRAboutWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE292911E786B1006CD5DC /* CRAboutWindowController.mm */; };
-		1BCE2A2611E7895A006CD5DC /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE2A2411E7895A006CD5DC /* AboutWindow.xib */; };
 		1BCE2A6311E78EF6006CD5DC /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE2A5D11E78EF6006CD5DC /* Credits */; };
 		1BCE2B0E11E7A275006CD5DC /* CRAboutWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2B0D11E7A275006CD5DC /* CRAboutWindow.mm */; };
 		1BCE2B9511E7BF3D006CD5DC /* CRDataToObjectTransformer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2B9411E7BF3D006CD5DC /* CRDataToObjectTransformer.mm */; };
@@ -96,9 +101,15 @@
 		1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGKeyCombo.mm; sourceTree = "<group>"; };
 		1BC6E38811E600FD003D6B05 /* LOHotKeysCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOHotKeysCenter.h; sourceTree = "<group>"; };
 		1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LOHotKeysCenter.mm; sourceTree = "<group>"; };
+		1BCD763811EC492E000938B1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/CRAboutWindow.xib; sourceTree = "<group>"; };
+		1BCD768B11EC4AA0000938B1 /* CRRoundedBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRRoundedBox.h; path = Source/Controls/CRRoundedBox.h; sourceTree = "<group>"; };
+		1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRRoundedBox.mm; path = Source/Controls/CRRoundedBox.mm; sourceTree = "<group>"; };
+		1BCD76B911EC52AB000938B1 /* sparkle_public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sparkle_public.pem; path = Keys/sparkle_public.pem; sourceTree = "<group>"; };
+		1BCD77E111EC5E55000938B1 /* TranslatorHeavy.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorHeavy.tiff; path = Resources/Images/TranslatorHeavy.tiff; sourceTree = "<group>"; };
+		1BCD77E211EC5E55000938B1 /* TranslatorLight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorLight.tiff; path = Resources/Images/TranslatorLight.tiff; sourceTree = "<group>"; };
+		1BCD77E311EC5E55000938B1 /* TranslatorMiddle.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorMiddle.tiff; path = Resources/Images/TranslatorMiddle.tiff; sourceTree = "<group>"; };
 		1BCE292811E786B1006CD5DC /* CRAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAboutWindowController.h; sourceTree = "<group>"; };
 		1BCE292911E786B1006CD5DC /* CRAboutWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAboutWindowController.mm; sourceTree = "<group>"; };
-		1BCE2A2511E7895A006CD5DC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/AboutWindow.xib; sourceTree = "<group>"; };
 		1BCE2A5D11E78EF6006CD5DC /* Credits */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Credits; path = Resources/Credits; sourceTree = "<group>"; };
 		1BCE2B0C11E7A275006CD5DC /* CRAboutWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAboutWindow.h; sourceTree = "<group>"; };
 		1BCE2B0D11E7A275006CD5DC /* CRAboutWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAboutWindow.mm; sourceTree = "<group>"; };
@@ -282,6 +293,14 @@
 			name = "Google Translate";
 			sourceTree = "<group>";
 		};
+		1BCD78C611EC85E6000938B1 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
 		1BCE292711E786B1006CD5DC /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +331,8 @@
 		1BD256BD11E47FB2006CD313 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				1BCD768B11EC4AA0000938B1 /* CRRoundedBox.h */,
+				1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */,
 				1BD256C111E47FDA006CD313 /* LOSpecialWindow.h */,
 				1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */,
 			);
@@ -322,6 +343,9 @@
 			isa = PBXGroup;
 			children = (
 				1BD256DC11E48146006CD313 /* TitlebarClose.tiff */,
+				1BCD77E111EC5E55000938B1 /* TranslatorHeavy.tiff */,
+				1BCD77E211EC5E55000938B1 /* TranslatorLight.tiff */,
+				1BCD77E311EC5E55000938B1 /* TranslatorMiddle.tiff */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -345,7 +369,7 @@
 				1BF0C9C011DF6A61005C908F /* MainMenu.xib */,
 				1BD2574E11E48CED006CD313 /* TranslatorWindow.xib */,
 				1BD25B9B11E4CDEE006CD313 /* PreferencesWindow.xib */,
-				1BCE2A2411E7895A006CD5DC /* AboutWindow.xib */,
+				1BCD763711EC492E000938B1 /* CRAboutWindow.xib */,
 			);
 			name = "Views & Windows";
 			sourceTree = "<group>";
@@ -415,8 +439,9 @@
 				1BCE2A5D11E78EF6006CD5DC /* Credits */,
 				1BD2574411E48CAF006CD313 /* Views & Windows */,
 				1BD256DA11E48100006CD313 /* Images */,
-				1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */,
+				1BCD78C611EC85E6000938B1 /* HTML */,
 				8D1107310486CEB800E47090 /* Lingoo-Info.plist */,
+				1BCD76B911EC52AB000938B1 /* sparkle_public.pem */,
 				1BF0C9C211DF6A61005C908F /* InfoPlist.strings */,
 				1BE59F6D11E8D3D500CF82C3 /* Localizable.strings */,
 			);
@@ -485,9 +510,13 @@
 				1BD2578B11E49293006CD313 /* TranslatorHeavyView.xib in Resources */,
 				1BD2578C11E49293006CD313 /* TranslatorLightView.xib in Resources */,
 				1BD25B9D11E4CDEE006CD313 /* PreferencesWindow.xib in Resources */,
-				1BCE2A2611E7895A006CD5DC /* AboutWindow.xib in Resources */,
 				1BCE2A6311E78EF6006CD5DC /* Credits in Resources */,
 				1BE59F6F11E8D3D500CF82C3 /* Localizable.strings in Resources */,
+				1BCD763911EC492E000938B1 /* CRAboutWindow.xib in Resources */,
+				1BCD76BA11EC52AB000938B1 /* sparkle_public.pem in Resources */,
+				1BCD77E411EC5E55000938B1 /* TranslatorHeavy.tiff in Resources */,
+				1BCD77E511EC5E55000938B1 /* TranslatorLight.tiff in Resources */,
+				1BCD77E611EC5E55000938B1 /* TranslatorMiddle.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,18 +556,19 @@
 				1BE59F5F11E8D39000CF82C3 /* CRGoogleLanguage.mm in Sources */,
 				1BE59F6011E8D39000CF82C3 /* CRGoogleLanguagePair.mm in Sources */,
 				1BE59F6111E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm in Sources */,
+				1BCD768D11EC4AA0000938B1 /* CRRoundedBox.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1BCE2A2411E7895A006CD5DC /* AboutWindow.xib */ = {
+		1BCD763711EC492E000938B1 /* CRAboutWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BCE2A2511E7895A006CD5DC /* English */,
+				1BCD763811EC492E000938B1 /* English */,
 			);
-			name = AboutWindow.xib;
+			name = CRAboutWindow.xib;
 			sourceTree = "<group>";
 		};
 		1BD2574E11E48CED006CD313 /* TranslatorWindow.xib */ = {

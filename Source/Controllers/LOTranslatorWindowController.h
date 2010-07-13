@@ -15,6 +15,7 @@
 {
 	NSArray*			viewControllers;
 	NSViewController*	selectedViewController;
+	int					deferredViewLoad;
 	
 @private
 	BOOL				inAnimation;
@@ -22,10 +23,12 @@
 	
 @public
 	NSView*				toolbarView;
+	NSView*				footerbarView;
 	NSBox*				contentBox;
 }
 
 @property (assign) IBOutlet NSView*		toolbarView;
+@property (assign) IBOutlet NSView*		footerbarView;
 @property (assign) IBOutlet NSBox*		contentBox;
 
 - (void)showViewAtIndex:(NSUInteger)index;

@@ -1,5 +1,27 @@
 <html>
 <head>
+
+<!-- Branding CSS -->
+<style type="text/css">
+	html, body {
+		margin	: 0;
+		padding	: 0;
+	}
+	
+    div#branding {
+		width	: 128px;
+		height	: 16px;
+    }
+
+    div#branding .gBranding {
+		text-align : right;
+    }
+    div#branding .gBrandingText {
+		color : white;
+    }
+</style>
+
+<!-- Translate script -->  
 <script src="http://www.google.com/jsapi" language="javascript"></script>
 <script language="javascript">
 
@@ -9,8 +31,11 @@ function detectLanguage(query) {
 	google.language.detect(text, function(result) {
 		if (!result.error) {
 			query.params.setValueForKey(result.language, "langCode");
-			root.signalQueryComplete(query);
 		}
+		else {
+			query.params.setValueForKey(result.error.message, "error");
+		}
+		root.signalQueryComplete(query);
 	});
 }
 
@@ -22,13 +47,19 @@ function translateText(query) {
 	google.language.translate(text, srcLang, dstLang, function(result) {
 		if (!result.error) {
 			query.params.setValueForKey(result.translation, "translation");
-			root.signalQueryComplete(query);
 		}
+		else {
+			query.params.setValueForKey(result.error.message, "error");
+		}
+		root.signalQueryComplete(query);
 	});
 }
 
 function initialize() {
 	function signalLoaded() {
+		// load branding
+		google.language.getBranding('branding');
+		
 		// convert the enum to an array
 		var indexer = 0;
 		var langArray = new Array();
@@ -40,7 +71,7 @@ function initialize() {
 		root.isReady = true;
 	}
 	
-	google.load("language", "1");
+	google.load('language', "1");
 	google.setOnLoadCallback(signalLoaded);
 }
 
@@ -48,7 +79,9 @@ initialize();
 
 </script>
 </head>
+
+<!-- Body to get branding image -->
 <body>
-	<div id="content"></div>
+	<div id="branding"/>
 </body>
 </html>

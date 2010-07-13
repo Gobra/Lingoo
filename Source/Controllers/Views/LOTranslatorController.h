@@ -19,6 +19,7 @@ extern NSString* const LODeferredTranslateRequestKey;
 	CRGoogleLanguage*	destinationLanguage;
 	
 @private
+	BOOL				ignoreAction;			// signal whether text field action should be ignored
 	NSSize				originalSize;
 	
 @public
@@ -37,6 +38,7 @@ extern NSString* const LODeferredTranslateRequestKey;
 - (BOOL)autotranslateForClipboard;
 - (BOOL)autoclipboardTranslated;
 
+- (void)activate;
 - (IBAction)saveDefaults:(id)sender;
 - (IBAction)loadDefaults:(id)sender;
 - (IBAction)readTextFromClipboard:(id)sender;

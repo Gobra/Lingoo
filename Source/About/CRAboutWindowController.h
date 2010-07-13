@@ -14,23 +14,34 @@
 @protected
 	NSString*	applicationName;
 	NSString*	applicationVersion;
+	NSString*	applicationCopyright;
 	NSImage*	applicationIcon;
 	
 	NSArray*	credits;
 	NSTimer*	creditsTimer;
 	NSUInteger	currentCredit;
 	
+	BOOL		showsExternals;
+	BOOL		isSwitching;
+	
 @private
 	NSTextView*	creditsView;
+	NSTextField*externalsSwitcher;
+	NSBox*		externalLicensesBox;
 }
 
-@property (assign) IBOutlet NSTextView* creditsView;
+@property (readonly) NSString*	applicationName;
+@property (readonly) NSImage*	applicationIcon;
+@property (readonly) NSString*	applicationCopyright;
+@property (readonly) NSString*	applicationVersion;
 
-- (NSString *)applicationName;
-- (NSImage *)applicationIcon;
-- (NSString *)applicationVersion;
+@property (assign) IBOutlet NSTextView* creditsView;
+@property (assign) IBOutlet NSTextField*externalsSwitcher;
+@property (assign) IBOutlet NSBox*		externalLicensesBox;
 
 - (void)show;
+- (IBAction)close:(id)sender;
+- (IBAction)toggleExternalLicenses:(id)sender;
 - (IBAction)showNextCredit:(id)sender;
 
 @end

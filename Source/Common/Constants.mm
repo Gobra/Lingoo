@@ -19,6 +19,7 @@ NSString* const LOUseLanguagePairsKey = @"LOUseLanguagePairsKey";
 NSString* const LOAutoclipboardTranslationKey = @"LOAutoclipboardTranslationKey";
 NSString* const LOAutotranslateFromClipboardKey = @"LOAutotranslateFromClipboardKey";
 NSString* const LOLanguagePairsKey = @"LOLanguagePairsKey";
+NSString* const LOFailReloadDelayKey = @"LOFailReloadDelayKey";
 
 NSString* const LOShowTranslatorHotkeyKey = @"LOShowTranslatorHotkeyKey";
 NSString* const LOShowTranslatorClipboardHotkeyKey = @"LOShowTranslatorClipboardHotkeyKey";

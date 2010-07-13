@@ -30,5 +30,13 @@
 	<string>LOApplication</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2010 Corner-A</string>
+	<key>FRFeedbackReporter.targetURL</key>
+	<string>http://corner-a.com/feedback.php?project=%@</string>
+	<key>SUFeedURL</key>
+	<string>http://corner-a.com/files/lingoo/updates/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>sparkle_public.pem</string>
 </dict>
 </plist>

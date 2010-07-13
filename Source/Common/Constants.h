@@ -16,6 +16,7 @@ extern NSString* const LOAutoselectTranslationKey;
 extern NSString* const LOUseLanguagePairsKey;
 extern NSString* const LOAutotranslateFromClipboardKey;
 extern NSString* const LOAutoclipboardTranslationKey;
+extern NSString* const LOFailReloadDelayKey;				// is not implemented in the UI
 extern NSString* const LOLanguagePairsKey;
 
 extern NSString* const LOShowTranslatorHotkeyKey;
