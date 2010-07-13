@@ -33,16 +33,6 @@ echo " - Cleanup old files - "
 rm -rf "../build/Release/"$ProjectName".app"
 rm -rf "../build/Release/"$ProjectName".app.dSYM"
 
-# Index documentation
-echo " - Indexing help - "
-if [ -a "/usr/bin/hiutil" ]; then
-  # Using hiutil on Snow Leopard
-  /usr/bin/hiutil --create "../Source/Resources/English.lproj/Help/" -a --file "../Source/Resources/English.lproj/Help/Help.helpindex"
-else
-  # Using Help Indexer.app
-  /Developer/Applications/Utilities/Help\ Indexer.app/Contents/MacOS/Help\ Indexer ../Source/Resources/English.lproj/Help/
-fi
-
 # Build project as Release
 echo " - Compiling the project - "
 xcodebuild -project "../"$ProjectName".xcodeproj" -configuration Release clean build

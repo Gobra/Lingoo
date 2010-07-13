@@ -32,7 +32,7 @@ rm -f $BuildPath
 mkdir "../out/tmp"
 mkdir $BuildBase
 cp -R "../build/Release/"$ProjectName".app" "../out/tmp"
-cp -R "../License.rtf" "../out/tmp"
+# cp -R "../License.rtf" "../out/tmp"
 
 echo " - Making DMG - "
 hdiutil create -anyowners -ov -srcfolder "../out/tm"p  -volname $ProjectName -uid 99 -gid 99 $BuildPath

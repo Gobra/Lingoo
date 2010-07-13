@@ -7,29 +7,28 @@
 //
 
 #import "LOTranslatorController.h"
+#import "CRAnimationStack.h"
 
 //////////////////////////////////////////////////////////////////////
 // Translator window controller
 //////////////////////////////////////////////////////////////////////
 @interface LOTranslatorWindowController : NSWindowController
 {
-	NSArray*			viewControllers;
-	NSViewController*	selectedViewController;
-	int					deferredViewLoad;
+	NSArray*				viewControllers;
+	LOTranslatorController*	selectedViewController;
+	int						deferredViewLoad;
 	
 @private
-	BOOL				inAnimation;
-	NSTimeInterval		viewSwitchInterval;
+	BOOL					inAnimation;
+	NSTimeInterval			viewSwitchInterval;
 	
 @public
-	NSView*				toolbarView;
-	NSView*				footerbarView;
-	NSBox*				contentBox;
+	NSBox*					contentBox;
+	NSSegmentedControl*		modeSwitch;
 }
 
-@property (assign) IBOutlet NSView*		toolbarView;
-@property (assign) IBOutlet NSView*		footerbarView;
-@property (assign) IBOutlet NSBox*		contentBox;
+@property (assign) IBOutlet NSBox*				contentBox;
+@property (assign) IBOutlet NSSegmentedControl*	modeSwitch;
 
 - (void)showViewAtIndex:(NSUInteger)index;
 
@@ -41,5 +40,6 @@
 - (IBAction)showLightView:(id)sender;
 - (IBAction)showMiddleView:(id)sender;
 - (IBAction)showHeavyView:(id)sender;
+- (IBAction)selectModeWithSegmentedControl:(id)sender;
 
 @end

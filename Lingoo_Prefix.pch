@@ -5,6 +5,7 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 	#import <WebKit/WebKit.h>
+	#import <QuartzCore/QuartzCore.h>
 	#import <FeedbackReporter/FRFeedbackReporter.h>
 	#import <ShortcutRecorder/ShortcutRecorder.h>
 

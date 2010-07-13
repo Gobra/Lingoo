@@ -1,3 +1,4 @@
 build
+out
 Lingoo.xcodeproj/*.model1v3
 Lingoo.xcodeproj/*.pbxuser

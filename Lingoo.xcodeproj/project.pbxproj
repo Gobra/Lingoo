@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0060AB11ECE93B00336629 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0060AA11ECE93B00336629 /* QuartzCore.framework */; };
+		1B0061EB11ED08EF00336629 /* CRAnimationStack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B0061EA11ED08EF00336629 /* CRAnimationStack.mm */; };
 		1BC6E14411E5CF00003D6B05 /* CRAutorunOnLogin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E14311E5CF00003D6B05 /* CRAutorunOnLogin.mm */; };
 		1BC6E1E111E5DC7C003D6B05 /* LOApplication.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E1E011E5DC7C003D6B05 /* LOApplication.mm */; };
 		1BC6E34511E5F9AE003D6B05 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC6E34411E5F9AE003D6B05 /* ShortcutRecorder.framework */; };
@@ -19,9 +21,9 @@
 		1BCD763911EC492E000938B1 /* CRAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD763711EC492E000938B1 /* CRAboutWindow.xib */; };
 		1BCD768D11EC4AA0000938B1 /* CRRoundedBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */; };
 		1BCD76BA11EC52AB000938B1 /* sparkle_public.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD76B911EC52AB000938B1 /* sparkle_public.pem */; };
-		1BCD77E411EC5E55000938B1 /* TranslatorHeavy.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E111EC5E55000938B1 /* TranslatorHeavy.tiff */; };
-		1BCD77E511EC5E55000938B1 /* TranslatorLight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E211EC5E55000938B1 /* TranslatorLight.tiff */; };
-		1BCD77E611EC5E55000938B1 /* TranslatorMiddle.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E311EC5E55000938B1 /* TranslatorMiddle.tiff */; };
+		1BCD77E411EC5E55000938B1 /* TranslatorHeavyTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E111EC5E55000938B1 /* TranslatorHeavyTemplate.tiff */; };
+		1BCD77E511EC5E55000938B1 /* TranslatorLightTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E211EC5E55000938B1 /* TranslatorLightTemplate.tiff */; };
+		1BCD77E611EC5E55000938B1 /* TranslatorMiddleTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD77E311EC5E55000938B1 /* TranslatorMiddleTemplate.tiff */; };
 		1BCE292A11E786B1006CD5DC /* CRAboutWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE292911E786B1006CD5DC /* CRAboutWindowController.mm */; };
 		1BCE2A6311E78EF6006CD5DC /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE2A5D11E78EF6006CD5DC /* Credits */; };
 		1BCE2B0E11E7A275006CD5DC /* CRAboutWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2B0D11E7A275006CD5DC /* CRAboutWindow.mm */; };
@@ -32,7 +34,6 @@
 		1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549211E45E9E006CD313 /* CRJSRemoteQuery.mm */; };
 		1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */; };
 		1BD2549D11E45EEA006CD313 /* GoogleTranslate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */; };
-		1BD256C311E47FDA006CD313 /* LOSpecialWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */; };
 		1BD256DD11E48146006CD313 /* TitlebarClose.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1BD256DC11E48146006CD313 /* TitlebarClose.tiff */; };
 		1BD256FF11E4865B006CD313 /* LOTranslatorWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD256FE11E4865B006CD313 /* LOTranslatorWindowController.mm */; };
 		1BD2574D11E48CD1006CD313 /* CRChangeSignaler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2574C11E48CD1006CD313 /* CRChangeSignaler.mm */; };
@@ -86,6 +87,9 @@
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1B0060AA11ECE93B00336629 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1B0061E911ED08EF00336629 /* CRAnimationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAnimationStack.h; sourceTree = "<group>"; };
+		1B0061EA11ED08EF00336629 /* CRAnimationStack.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAnimationStack.mm; sourceTree = "<group>"; };
 		1BC6E14211E5CF00003D6B05 /* CRAutorunOnLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRAutorunOnLogin.h; path = Source/Common/CRAutorunOnLogin.h; sourceTree = "<group>"; };
 		1BC6E14311E5CF00003D6B05 /* CRAutorunOnLogin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRAutorunOnLogin.mm; path = Source/Common/CRAutorunOnLogin.mm; sourceTree = "<group>"; };
 		1BC6E1DF11E5DC7C003D6B05 /* LOApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOApplication.h; path = Source/LOApplication.h; sourceTree = "<group>"; };
@@ -105,9 +109,9 @@
 		1BCD768B11EC4AA0000938B1 /* CRRoundedBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRRoundedBox.h; path = Source/Controls/CRRoundedBox.h; sourceTree = "<group>"; };
 		1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRRoundedBox.mm; path = Source/Controls/CRRoundedBox.mm; sourceTree = "<group>"; };
 		1BCD76B911EC52AB000938B1 /* sparkle_public.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sparkle_public.pem; path = Keys/sparkle_public.pem; sourceTree = "<group>"; };
-		1BCD77E111EC5E55000938B1 /* TranslatorHeavy.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorHeavy.tiff; path = Resources/Images/TranslatorHeavy.tiff; sourceTree = "<group>"; };
-		1BCD77E211EC5E55000938B1 /* TranslatorLight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorLight.tiff; path = Resources/Images/TranslatorLight.tiff; sourceTree = "<group>"; };
-		1BCD77E311EC5E55000938B1 /* TranslatorMiddle.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorMiddle.tiff; path = Resources/Images/TranslatorMiddle.tiff; sourceTree = "<group>"; };
+		1BCD77E111EC5E55000938B1 /* TranslatorHeavyTemplate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorHeavyTemplate.tiff; path = Resources/Images/TranslatorHeavyTemplate.tiff; sourceTree = "<group>"; };
+		1BCD77E211EC5E55000938B1 /* TranslatorLightTemplate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorLightTemplate.tiff; path = Resources/Images/TranslatorLightTemplate.tiff; sourceTree = "<group>"; };
+		1BCD77E311EC5E55000938B1 /* TranslatorMiddleTemplate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TranslatorMiddleTemplate.tiff; path = Resources/Images/TranslatorMiddleTemplate.tiff; sourceTree = "<group>"; };
 		1BCE292811E786B1006CD5DC /* CRAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAboutWindowController.h; sourceTree = "<group>"; };
 		1BCE292911E786B1006CD5DC /* CRAboutWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAboutWindowController.mm; sourceTree = "<group>"; };
 		1BCE2A5D11E78EF6006CD5DC /* Credits */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Credits; path = Resources/Credits; sourceTree = "<group>"; };
@@ -126,8 +130,6 @@
 		1BD2549711E45ED3006CD313 /* CRGoogleTranslate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleTranslate.h; path = "Source/Google Translate/CRGoogleTranslate.h"; sourceTree = "<group>"; };
 		1BD2549911E45ED3006CD313 /* CRGoogleTranslate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRGoogleTranslate.mm; path = "Source/Google Translate/CRGoogleTranslate.mm"; sourceTree = "<group>"; };
 		1BD2549C11E45EEA006CD313 /* GoogleTranslate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = GoogleTranslate.html; path = "Source/Google Translate/GoogleTranslate.html"; sourceTree = "<group>"; };
-		1BD256C111E47FDA006CD313 /* LOSpecialWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOSpecialWindow.h; path = Source/Controls/LOSpecialWindow.h; sourceTree = "<group>"; };
-		1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOSpecialWindow.mm; path = Source/Controls/LOSpecialWindow.mm; sourceTree = "<group>"; };
 		1BD256DC11E48146006CD313 /* TitlebarClose.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TitlebarClose.tiff; path = Resources/Images/TitlebarClose.tiff; sourceTree = "<group>"; };
 		1BD256FD11E4865B006CD313 /* LOTranslatorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOTranslatorWindowController.h; path = Source/Controllers/LOTranslatorWindowController.h; sourceTree = "<group>"; };
 		1BD256FE11E4865B006CD313 /* LOTranslatorWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOTranslatorWindowController.mm; path = Source/Controllers/LOTranslatorWindowController.mm; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				1BD259E711E4B9DC006CD313 /* FeedbackReporter.framework in Frameworks */,
 				1BD259E811E4B9DC006CD313 /* Sparkle.framework in Frameworks */,
 				1BC6E34511E5F9AE003D6B05 /* ShortcutRecorder.framework in Frameworks */,
+				1B0060AB11ECE93B00336629 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD2548311E45E04006CD313 /* Common */,
+				1B0061E811ED08EF00336629 /* Animation Stack */,
 				1BC8CE7711E264090012A062 /* CRJavaScript */,
 				1BC6E36611E5FFF3003D6B05 /* HotKeys */,
 				1BCE292711E786B1006CD5DC /* About */,
@@ -222,6 +226,7 @@
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				1BF0CC0B11DFAAE3005C908F /* WebKit.framework */,
 				1BF0CDF111DFD496005C908F /* Carbon.framework */,
+				1B0060AA11ECE93B00336629 /* QuartzCore.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -242,6 +247,16 @@
 				8D1107320486CEB800E47090 /* Lingoo.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1B0061E811ED08EF00336629 /* Animation Stack */ = {
+			isa = PBXGroup;
+			children = (
+				1B0061E911ED08EF00336629 /* CRAnimationStack.h */,
+				1B0061EA11ED08EF00336629 /* CRAnimationStack.mm */,
+			);
+			name = "Animation Stack";
+			path = "Source/Animation Stack";
 			sourceTree = "<group>";
 		};
 		1BC6E36611E5FFF3003D6B05 /* HotKeys */ = {
@@ -333,8 +348,6 @@
 			children = (
 				1BCD768B11EC4AA0000938B1 /* CRRoundedBox.h */,
 				1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */,
-				1BD256C111E47FDA006CD313 /* LOSpecialWindow.h */,
-				1BD256C211E47FDA006CD313 /* LOSpecialWindow.mm */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -343,9 +356,9 @@
 			isa = PBXGroup;
 			children = (
 				1BD256DC11E48146006CD313 /* TitlebarClose.tiff */,
-				1BCD77E111EC5E55000938B1 /* TranslatorHeavy.tiff */,
-				1BCD77E211EC5E55000938B1 /* TranslatorLight.tiff */,
-				1BCD77E311EC5E55000938B1 /* TranslatorMiddle.tiff */,
+				1BCD77E111EC5E55000938B1 /* TranslatorHeavyTemplate.tiff */,
+				1BCD77E211EC5E55000938B1 /* TranslatorLightTemplate.tiff */,
+				1BCD77E311EC5E55000938B1 /* TranslatorMiddleTemplate.tiff */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -514,9 +527,9 @@
 				1BE59F6F11E8D3D500CF82C3 /* Localizable.strings in Resources */,
 				1BCD763911EC492E000938B1 /* CRAboutWindow.xib in Resources */,
 				1BCD76BA11EC52AB000938B1 /* sparkle_public.pem in Resources */,
-				1BCD77E411EC5E55000938B1 /* TranslatorHeavy.tiff in Resources */,
-				1BCD77E511EC5E55000938B1 /* TranslatorLight.tiff in Resources */,
-				1BCD77E611EC5E55000938B1 /* TranslatorMiddle.tiff in Resources */,
+				1BCD77E411EC5E55000938B1 /* TranslatorHeavyTemplate.tiff in Resources */,
+				1BCD77E511EC5E55000938B1 /* TranslatorLightTemplate.tiff in Resources */,
+				1BCD77E611EC5E55000938B1 /* TranslatorMiddleTemplate.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +547,6 @@
 				1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */,
 				1BD2549511E45E9E006CD313 /* CRJSRemoteQuery.mm in Sources */,
 				1BD2549B11E45ED3006CD313 /* CRGoogleTranslate.mm in Sources */,
-				1BD256C311E47FDA006CD313 /* LOSpecialWindow.mm in Sources */,
 				1BD256FF11E4865B006CD313 /* LOTranslatorWindowController.mm in Sources */,
 				1BD2574D11E48CD1006CD313 /* CRChangeSignaler.mm in Sources */,
 				1BD2596011E4AEA5006CD313 /* LOTranslatorController.mm in Sources */,
@@ -557,6 +569,7 @@
 				1BE59F6011E8D39000CF82C3 /* CRGoogleLanguagePair.mm in Sources */,
 				1BE59F6111E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm in Sources */,
 				1BCD768D11EC4AA0000938B1 /* CRRoundedBox.mm in Sources */,
+				1B0061EB11ED08EF00336629 /* CRAnimationStack.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
