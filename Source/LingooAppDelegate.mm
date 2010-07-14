@@ -106,6 +106,9 @@
 	// Hotkeys
 	[[LOHotKeysCenter sharedCenter] registerHotkeyForKey:LOShowTranslatorHotkeyKey withTarget:self action:@selector(showTranslator:)];
 	[[LOHotKeysCenter sharedCenter] registerHotkeyForKey:LOShowTranslatorClipboardHotkeyKey withTarget:self action:@selector(showTranslatorWithClipboard:)];
+	
+	// TEMPORARY:
+	[self showTranslator:self];
 }
 
 //////////////////////////////////////////////////////////////////////

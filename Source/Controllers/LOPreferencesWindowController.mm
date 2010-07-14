@@ -10,6 +10,10 @@
 #import "CRAutorunOnLogin.h"
 #import "SGKeyCombo.h"
 
+#import "LOTranslatorLightController.h"
+#import "LOTranslatorMiddleController.h"
+#import "LOTranslatorHeavyController.h"
+
 //////////////////////////////////////////////////////////////////////
 // Preferences window controller
 //////////////////////////////////////////////////////////////////////
@@ -23,6 +27,9 @@
 	SGKeyCombo* comboShow = [[SGKeyCombo alloc] initWithKeyCode:37 modifiers:2304];			// cmd + alt + L
 	SGKeyCombo* comboShowClipboard = [[SGKeyCombo alloc] initWithKeyCode:8 modifiers:2304];	// cmd + alt + C
 	id langPairsData = [CRGoogleLanguagePairsSet defaultData];								// default data
+	NSString* lightSize = NSStringFromSize([LOTranslatorLightController defaultSize]);		// light controller size
+	NSString* middleSize = NSStringFromSize([LOTranslatorMiddleController defaultSize]);	// middle controller size
+	NSString* heavySize = NSStringFromSize([LOTranslatorHeavyController defaultSize]);		// heavy controller size
 	
 	// defaults
 	[[NSUserDefaults standardUserDefaults] registerDefaults:
@@ -37,6 +44,10 @@
 	  [NSNumber numberWithBool:YES],				LOAutotranslateFromClipboardKey,
 	  [NSNumber numberWithBool:NO],					LOAutoclipboardTranslationKey,
 	  [NSNumber numberWithFloat:5.0f],				LOFailReloadDelayKey,
+	  
+	  lightSize,									LOTranslatorLightSizeKey,
+	  middleSize,									LOTranslatorMiddleSizeKey,
+	  heavySize,									LOTranslatorHeavySizeKey,
 	  
 	  langPairsData,								LOLanguagePairsKey,
 	  [comboShow plistRepresentation],				LOShowTranslatorHotkeyKey,

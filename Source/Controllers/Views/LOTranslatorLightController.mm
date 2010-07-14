@@ -22,4 +22,19 @@
 	return self;
 }
 
++ (NSSize)defaultSize;
+{
+	return NSMakeSize(400, 50);
+}
+
+- (NSString *)sizeDefaultsKey
+{
+	return LOTranslatorLightSizeKey;
+}
+
+- (BOOL)canScaleVertically
+{
+	return NO;
+}
+
 @end

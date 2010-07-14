@@ -24,4 +24,8 @@ NSString* const LOFailReloadDelayKey = @"LOFailReloadDelayKey";
 NSString* const LOShowTranslatorHotkeyKey = @"LOShowTranslatorHotkeyKey";
 NSString* const LOShowTranslatorClipboardHotkeyKey = @"LOShowTranslatorClipboardHotkeyKey";
 
+NSString* const LOTranslatorLightSizeKey = @"LOTranslatorLightSizeKey";
+NSString* const LOTranslatorMiddleSizeKey = @"LOTranslatorMiddleSizeKey";
+NSString* const LOTranslatorHeavySizeKey = @"LOTranslatorHeavySizeKey";
+
 NSString* const LOTranslatorIsReadyNotification = @"LOTranslatorIsReadyNotification";

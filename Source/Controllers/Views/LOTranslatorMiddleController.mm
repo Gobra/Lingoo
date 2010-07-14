@@ -22,4 +22,14 @@
 	return self;
 }
 
++ (NSSize)defaultSize;
+{
+	return NSMakeSize(400, 123);
+}
+
+- (NSString *)sizeDefaultsKey
+{
+	return LOTranslatorMiddleSizeKey;
+}
+
 @end

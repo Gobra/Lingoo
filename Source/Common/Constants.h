@@ -22,4 +22,8 @@ extern NSString* const LOLanguagePairsKey;
 extern NSString* const LOShowTranslatorHotkeyKey;
 extern NSString* const LOShowTranslatorClipboardHotkeyKey;
 
+extern NSString* const LOTranslatorLightSizeKey;
+extern NSString* const LOTranslatorMiddleSizeKey;
+extern NSString* const LOTranslatorHeavySizeKey;
+
 extern NSString* const LOTranslatorIsReadyNotification;

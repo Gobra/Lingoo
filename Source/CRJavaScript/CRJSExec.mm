@@ -25,7 +25,6 @@
 	{
 		reloadDelay = 3.0f;
 		view = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, 4, 4)];
-		[view setShouldUpdateWhileOffscreen:YES];
 		[view setDrawsBackground:NO];
 		[view setFrameLoadDelegate:self];
 		[view setResourceLoadDelegate:self];
@@ -35,20 +34,40 @@
 
 - (id)initWithHTML:(NSString *)HTML
 {
-	self = [self init];
+	self = [self initWithHTML:HTML timeout:15.0f];
 	if (self)
 	{
-		[[view mainFrame] loadHTMLString:HTML baseURL:nil];
 	}
 	return self;
 }
 
 - (id)initWithURL:(NSURL *)url
 {
+	self = [self initWithURL:url timeout:15.0f];
+	if (self)
+	{
+	}
+	return self;
+}
+
+- (id)initWithHTML:(NSString *)HTML timeout:(float)timeoutInterval
+{
 	self = [self init];
 	if (self)
 	{
-		[[view mainFrame] loadRequest:[NSURLRequest requestWithURL:url]];
+		timeout = timeoutInterval;
+		[self loadWithObject:HTML];
+	}
+	return self;
+}
+
+- (id)initWithURL:(NSURL *)url timeout:(float)timeoutInterval
+{
+	self = [self init];
+	if (self)
+	{
+		timeout = timeoutInterval;
+		[self loadWithObject:url];
 	}
 	return self;
 }
@@ -57,6 +76,24 @@
 {
 	[view release];
 	[super dealloc];
+}
+
+- (void)checkTimeout
+{
+	if ([view isLoading])
+		[self loadWithObject:nil];
+}
+
+- (void)loadWithObject:(id)object
+{
+	if (nil == object)
+		[view reload:self];
+	else if ([object isKindOfClass:[NSURL class]])
+		[[view mainFrame] loadRequest:[NSURLRequest requestWithURL:object]];
+	else if ([object isKindOfClass:[NSString class]])
+		[[view mainFrame] loadHTMLString:object baseURL:nil];
+	
+	[self performSelector:@selector(checkTimeout) withObject:nil afterDelay:timeout];
 }
 
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowScriptObject forFrame:(WebFrame *)frame

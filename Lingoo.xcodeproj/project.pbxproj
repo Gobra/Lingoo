@@ -18,6 +18,7 @@
 		1BC6E38611E600ED003D6B05 /* SGKeyCodeTranslator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38111E600ED003D6B05 /* SGKeyCodeTranslator.mm */; };
 		1BC6E38711E600ED003D6B05 /* SGKeyCombo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */; };
 		1BC6E38A11E600FD003D6B05 /* LOHotKeysCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */; };
+		1BC991C811EDEF3700C8FEF8 /* CRAnimationKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC991C711EDEF3700C8FEF8 /* CRAnimationKey.mm */; };
 		1BCD763911EC492E000938B1 /* CRAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD763711EC492E000938B1 /* CRAboutWindow.xib */; };
 		1BCD768D11EC4AA0000938B1 /* CRRoundedBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */; };
 		1BCD76BA11EC52AB000938B1 /* sparkle_public.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD76B911EC52AB000938B1 /* sparkle_public.pem */; };
@@ -105,6 +106,8 @@
 		1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGKeyCombo.mm; sourceTree = "<group>"; };
 		1BC6E38811E600FD003D6B05 /* LOHotKeysCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOHotKeysCenter.h; sourceTree = "<group>"; };
 		1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LOHotKeysCenter.mm; sourceTree = "<group>"; };
+		1BC991C611EDEF3700C8FEF8 /* CRAnimationKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAnimationKey.h; sourceTree = "<group>"; };
+		1BC991C711EDEF3700C8FEF8 /* CRAnimationKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAnimationKey.mm; sourceTree = "<group>"; };
 		1BCD763811EC492E000938B1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/CRAboutWindow.xib; sourceTree = "<group>"; };
 		1BCD768B11EC4AA0000938B1 /* CRRoundedBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRRoundedBox.h; path = Source/Controls/CRRoundedBox.h; sourceTree = "<group>"; };
 		1BCD768C11EC4AA0000938B1 /* CRRoundedBox.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRRoundedBox.mm; path = Source/Controls/CRRoundedBox.mm; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 		1B0061E811ED08EF00336629 /* Animation Stack */ = {
 			isa = PBXGroup;
 			children = (
+				1BC991C611EDEF3700C8FEF8 /* CRAnimationKey.h */,
+				1BC991C711EDEF3700C8FEF8 /* CRAnimationKey.mm */,
 				1B0061E911ED08EF00336629 /* CRAnimationStack.h */,
 				1B0061EA11ED08EF00336629 /* CRAnimationStack.mm */,
 			);
@@ -570,6 +575,7 @@
 				1BE59F6111E8D39000CF82C3 /* CRGoogleLanguagePairsSet.mm in Sources */,
 				1BCD768D11EC4AA0000938B1 /* CRRoundedBox.mm in Sources */,
 				1B0061EB11ED08EF00336629 /* CRAnimationStack.mm in Sources */,
+				1BC991C811EDEF3700C8FEF8 /* CRAnimationKey.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +711,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
@@ -718,7 +724,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};

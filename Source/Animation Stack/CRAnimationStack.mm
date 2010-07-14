@@ -7,57 +7,7 @@
 //
 
 #import "CRAnimationStack.h"
-
-//////////////////////////////////////////////////////////////////////
-// Animation key
-//////////////////////////////////////////////////////////////////////
-@implementation CRAnimationKey
-
-@synthesize root;
-@synthesize target;
-@dynamic	value;
-@synthesize key;
-@synthesize duration;
-
-- (void)dealloc
-{
-	[value release];
-	[key release];
-	[super dealloc];
-}
-
-- (id)value
-{
-	return value;
-}
-
-- (void)setValue:(id)aValue
-{
-	if (value != aValue)
-	{
-		[aValue retain];
-		[value release];
-		value = aValue;
-	}
-}
-
-- (void)run
-{
-	//NSLog(@"Play key for %@.'%@' value '%@', duration %f", target, keyPath, value, duration);
-	
-	[[NSAnimationContext currentContext] setDuration:duration];
-	[[target animator] setValue:value forKey:key];
-	
-	if (root)
-	{
-		if (duration > 0)
-			[root performSelector:@selector(keyPlayed:) withObject:self afterDelay:duration];
-		else
-			[root performSelector:@selector(keyPlayed:) withObject:self];
-	}
-}
-
-@end
+#import "CRAnimationKey.h"
 
 //////////////////////////////////////////////////////////////////////
 // Animation stack
@@ -123,17 +73,50 @@
 	}
 }
 
-- (void)appendAnimationForTarget:(id)target withValue:(id)value forKey:(NSString *)key withDuration:(NSTimeInterval)duration
+- (void)appendSpaceWithDuration:(NSTimeInterval)duration
 {
-	CRAnimationKey* animKey = [[CRAnimationKey alloc] init];
+	[self appendAnimationForTarget:nil withValue:nil forKey:nil duration:duration];
+}
+
+- (void)appendAnimationForTarget:(id)target withValue:(id)value forKey:(NSString *)key duration:(NSTimeInterval)duration
+{
+	CRCAAnimationKey* animKey = [[CRCAAnimationKey alloc] initWithRoot:self duration:duration];
 	[animKey setTarget:target];
 	[animKey setValue:value];
 	[animKey setKey:key];
-	[animKey setDuration:duration];
-	[animKey setRoot:self];
 	
 	[stack addObject:animKey];
 	[animKey release];
+}
+
+- (void)appendNSAnimation:(NSAnimation *)animation
+{
+	CRNSAnimationKey* animKey = [[CRNSAnimationKey alloc] initWithRoot:self duration:[animation duration]];
+	[animKey setAnimation:animation];
+	[stack addObject:animKey];
+	
+	[animKey release];
+}
+
+- (void)appendNSAnimationWithTarget:(id)target frame:(NSRect)endFrame duration:(NSTimeInterval)duration
+{
+	// NSAnimation
+	NSDictionary* animData = [NSDictionary dictionaryWithObjectsAndKeys:
+							  target,							NSViewAnimationTargetKey,
+							  [NSValue valueWithRect:endFrame], NSViewAnimationEndFrameKey,
+							  nil];
+	
+	NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:animData]];
+	[animation setAnimationBlockingMode:NSAnimationNonblocking];
+	
+	// Key
+	CRNSAnimationKey* animKey = [[CRNSAnimationKey alloc] initWithRoot:self duration:duration];
+	[animKey setAnimation:animation];
+	
+	// Save and cleanup
+	[stack addObject:animKey];
+	[animKey release];
+	[animation release];
 }
 
 @end

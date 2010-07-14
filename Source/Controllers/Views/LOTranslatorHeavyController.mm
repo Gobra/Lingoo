@@ -24,6 +24,16 @@
 	return self;
 }
 
++ (NSSize)defaultSize;
+{
+	return NSMakeSize(400, 273);
+}
+
+- (NSString *)sizeDefaultsKey
+{
+	return LOTranslatorHeavySizeKey;
+}
+
 - (NSTextField *)translationDestination
 {
 	return textDestination;

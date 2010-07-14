@@ -16,9 +16,9 @@
 {
 	NSArray*				viewControllers;
 	LOTranslatorController*	selectedViewController;
-	int						deferredViewLoad;
 	
 @private
+	BOOL					firstApply;
 	BOOL					inAnimation;
 	NSTimeInterval			viewSwitchInterval;
 	

@@ -39,7 +39,7 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 
 - (void)awakeFromNib
 {
-	originalSize = [[self view] frame].size;
+	[self loadSizeFromDefaults];
 }
 
 - (void)activate
@@ -50,9 +50,14 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 //////////////////////////////////////////////////////////////////////
 #pragma mark Setting from UserDefaults
 
-- (NSSize)originalSize
++ (NSSize)defaultSize;
 {
-	return originalSize;
+	return NSZeroSize;
+}
+
+- (NSSize)defaultSize
+{
+	return [[self class] defaultSize];
 }
 
 - (BOOL)autoselectTranslated
@@ -80,17 +85,48 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 	return textSource;
 }
 
+- (BOOL)canScaleVertically
+{
+	return YES;
+}
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark Size
+
+- (NSString *)sizeDefaultsKey
+{
+	return nil;
+}
+
+- (void)loadSizeFromDefaults
+{
+	if ([self sizeDefaultsKey])
+	{
+		NSString* valSize = [[NSUserDefaults standardUserDefaults] valueForKey:[self sizeDefaultsKey]];
+		[[self view] setFrameSize:NSSizeFromString(valSize)];
+	}
+}
+
+- (void)saveSizeToDefaults
+{
+	if ([self sizeDefaultsKey])
+	{
+		[[NSUserDefaults standardUserDefaults] setValue:NSStringFromSize([[self view] frame].size) forKey:[self sizeDefaultsKey]];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
+}
+
 //////////////////////////////////////////////////////////////////////
 #pragma mark Delegate
 
-- (IBAction)loadDefaults:(id)sender
+- (IBAction)loadLanguageDefaults:(id)sender
 {
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
 	[self setSourceLanguage:[[LOShared translator] languageFromCode:[ud valueForKey:LOSourceLanguageCodeKey]]];
 	[self setDestinationLanguage:[[LOShared translator] languageFromCode:[ud valueForKey:LODestinationLanguageCodeKey]]];
 }
 
-- (IBAction)saveDefaults:(id)sender
+- (IBAction)saveLanguageDefaults:(id)sender
 {
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
 	if ([self sourceLanguage])

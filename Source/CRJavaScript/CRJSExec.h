@@ -14,6 +14,7 @@
 	id					delegate;
 	WebView*			view;
 	WebScriptObject*	script;
+	float				timeout;
 	float				reloadDelay;
 }
 
@@ -25,5 +26,9 @@
 - (id)init;
 - (id)initWithHTML:(NSString *)HTML;
 - (id)initWithURL:(NSURL *)url;
+- (id)initWithHTML:(NSString *)HTML timeout:(float)timeoutInterval;
+- (id)initWithURL:(NSURL *)url timeout:(float)timeoutInterval;
+
+- (void)loadWithObject:(id)object;
 
 @end

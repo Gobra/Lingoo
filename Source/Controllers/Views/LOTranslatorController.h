@@ -32,15 +32,20 @@ extern NSString* const LODeferredTranslateRequestKey;
 @property (assign) IBOutlet NSTextField*	textSource;				// Text-to-translate source control
 
 + (id)controller;
++ (NSSize)defaultSize;
+- (NSSize)defaultSize;
 
-- (NSSize)originalSize;
 - (BOOL)autoselectTranslated;
 - (BOOL)autotranslateForClipboard;
 - (BOOL)autoclipboardTranslated;
+- (BOOL)canScaleVertically;
 
 - (void)activate;
-- (IBAction)saveDefaults:(id)sender;
-- (IBAction)loadDefaults:(id)sender;
+- (void)loadSizeFromDefaults;
+- (void)saveSizeToDefaults;
+
+- (IBAction)saveLanguageDefaults:(id)sender;
+- (IBAction)loadLanguageDefaults:(id)sender;
 - (IBAction)readTextFromClipboard:(id)sender;
 - (IBAction)translate:(id)sender;
 

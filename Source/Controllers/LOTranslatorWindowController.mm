@@ -34,8 +34,8 @@
 		
 		// Animation
 		inAnimation = NO;
+		firstApply = YES;
 		viewSwitchInterval = 0.5f;
-		deferredViewLoad = -1;
 		
 		// Notification
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(translatorIsReady:) name:LOTranslatorIsReadyNotification object:nil];
@@ -55,11 +55,10 @@
 	[[self window] setBackgroundColor:[NSColor colorWithCalibratedWhite:0.05f alpha:0.85f]];
 	[[self window] setOpaque:NO];
 	
-	if (deferredViewLoad != -1)
-	{
-		[modeSwitch setSelectedSegment:deferredViewLoad];
-		[self showViewAtIndex:deferredViewLoad];
-	}
+	// load view
+	int index = [[[NSUserDefaults standardUserDefaults] valueForKey:LOTranslatorTypeIndexKey] intValue];
+	[modeSwitch setSelectedSegment:index];
+	[self showViewAtIndex:index];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -68,64 +67,77 @@
 - (NSRect)frameRectToFitContent:(NSSize)aSize
 {
 	NSRect newContentRect = [[self window] contentRectForFrameRect:[[self window] frame]];
+	newContentRect.origin.y -= aSize.height - newContentRect.size.height;
 	newContentRect.size = aSize;
+	
 	return [[self window] frameRectForContentRect:newContentRect];
-}
-
-- (void)animateToContentSize:(NSSize)aSize
-{
-	NSRect newContentRect = [[self window] contentRectForFrameRect:[[self window] frame]];
-	newContentRect.size = aSize;
-	NSRect newFrame = [[self window] frameRectForContentRect:newContentRect];
-	[[self window] setFrame:newFrame display:YES animate:YES];
 }
 
 - (void)setContentController:(LOTranslatorController *)aController
 {
 	inAnimation = YES;
 	
-	double stepDuration = viewSwitchInterval / 3.0;
-	NSSize viewSize = [[selectedViewController valueForKey:@"originalSize"] sizeValue];
+	// we set 0 animation length for the first time, this discards animation
+	// and sets all values immediately
+	double stepDuration = firstApply? 0 : viewSwitchInterval / 3.0;
+	NSSize viewSize = [selectedViewController view].frame.size;
 	CRAnimationStack* stack = [[CRAnimationStack alloc] init];
 	
 	// fade out
 	[stack appendAnimationForTarget:contentBox
 						  withValue:[NSNumber numberWithFloat:0.0f]
 							forKey:@"alphaValue"
-					   withDuration:stepDuration];
+						   duration:stepDuration];
 	
-	// move frame
+	// remove the content view
+	[stack appendAnimationForTarget:contentBox
+						  withValue:nil
+							 forKey:@"contentView"
+						   duration:0];
+	
+	// move frame (NSAnimation is better here because is natively supported and updates display)
 	[stack appendAnimationForTarget:[self window]
 						  withValue:[NSValue valueWithRect:[self frameRectToFitContent:viewSize]]
-							forKey:@"frame"
-					   withDuration:stepDuration];
+							 forKey:@"frame"
+						   duration:stepDuration];
 	
 	// immediately change the content view & size
 	[stack appendAnimationForTarget:contentBox
-						  withValue:[aController view]
-							forKey:@"contentView"
-					   withDuration:0];
-	
-	[stack appendAnimationForTarget:contentBox
 						  withValue:[NSValue valueWithSize:viewSize]
 							forKey:@"frameSize"
-					   withDuration:0];
+						   duration:0];
+	
+	[stack appendAnimationForTarget:contentBox
+						  withValue:[aController view]
+							 forKey:@"contentView"
+						   duration:0];
 	
 	// fade in
 	[stack appendAnimationForTarget:contentBox
 						  withValue:[NSNumber numberWithFloat:1.0f]
 							forKey:@"alphaValue"
-					   withDuration:stepDuration];
+						   duration:stepDuration];
 	
 	// run
 	[stack setDelegate:self];
 	[stack playback];
+	
+	firstApply = NO;
 }
 
 - (void)animationStackPlayed:(CRAnimationStack *)stack
 {
 	[stack release];
 	[selectedViewController activate];
+	
+	// Constraints
+	NSSize viewMinimumSize = [selectedViewController defaultSize];
+	NSSize viewMaximumSize = NSMakeSize(800, 600);
+	if (![selectedViewController canScaleVertically])
+		viewMaximumSize.height = viewMinimumSize.height;
+	[[self window] setMinSize:viewMinimumSize];
+	[[self window] setMaxSize:viewMaximumSize];
+	
 	inAnimation = NO;
 }
 
@@ -134,14 +146,12 @@
 	if (inAnimation)
 		return;
 	
-	id oldController = selectedViewController;
-	if ([oldController isKindOfClass:[LOTranslatorController class]])
-		[(LOTranslatorController *)oldController saveDefaults:self];
+	LOTranslatorController* oldController = selectedViewController;
+	[oldController saveLanguageDefaults:self];
 	selectedViewController = [viewControllers objectAtIndex:index];
 	
 	// data transfer
-	if ([selectedViewController isKindOfClass:[LOTranslatorController class]])
-		[(LOTranslatorController *)selectedViewController loadDefaults:self];
+	[selectedViewController loadLanguageDefaults:self];
 	
 	// view switch
 	if (oldController != selectedViewController)
@@ -155,22 +165,24 @@
 //////////////////////////////////////////////////////////////////////
 #pragma mark Delegate
 
+- (void)windowDidResize:(NSNotification *)notification
+{
+	// resize the box
+	[contentBox setFrame:NSMakeRect(0, 0, [[[self window] contentView] frame].size.width, [[[self window] contentView] frame].size.height)];
+	
+	// save size of the controller
+	[selectedViewController saveSizeToDefaults];
+}
+
 - (void)windowWillClose:(NSNotification *)notification
 {
-	if ([selectedViewController isKindOfClass:[LOTranslatorController class]])
-		[(LOTranslatorController *)selectedViewController saveDefaults:nil];
+	[selectedViewController saveLanguageDefaults:nil];
 }
 																				  
 - (void)translatorIsReady:(NSNotification *)notification
 {
-	int index = [[[NSUserDefaults standardUserDefaults] valueForKey:LOTranslatorTypeIndexKey] intValue];
-	if ([self isWindowLoaded])
-	{
-		[modeSwitch setSelectedSegment:index];
-		[self showViewAtIndex:index];
-	}
-	else
-		deferredViewLoad = index;
+	if (selectedViewController)
+		[selectedViewController loadLanguageDefaults:self];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -191,8 +203,7 @@
 
 - (IBAction)readTextFromClipboard:(id)sender;
 {
-	if ([selectedViewController isKindOfClass:[LOTranslatorController class]])
-		[(LOTranslatorController *)selectedViewController readTextFromClipboard:sender];
+	[selectedViewController readTextFromClipboard:sender];
 }
 
 - (IBAction)showLightView:(id)sender
