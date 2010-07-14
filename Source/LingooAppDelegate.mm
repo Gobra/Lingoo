@@ -36,7 +36,8 @@
 	{
 		// Status bar
 		statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
-		[statusItem setTitle:@"Lingoo"];
+		[statusItem setTitle:@""];
+		[statusItem setImage:[NSImage imageNamed:@"Arrows"]];
 		[statusItem setHighlightMode:YES];
 		
 		// Google.Translate
@@ -106,9 +107,6 @@
 	// Hotkeys
 	[[LOHotKeysCenter sharedCenter] registerHotkeyForKey:LOShowTranslatorHotkeyKey withTarget:self action:@selector(showTranslator:)];
 	[[LOHotKeysCenter sharedCenter] registerHotkeyForKey:LOShowTranslatorClipboardHotkeyKey withTarget:self action:@selector(showTranslatorWithClipboard:)];
-	
-	// TEMPORARY:
-	[self showTranslator:self];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -130,11 +128,15 @@
 
 - (IBAction)showTranslator:(id)sender
 {
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	
 	[translatorWindowController fadeIn:nil];
 }
 
 - (IBAction)showTranslatorWithClipboard:(id)sender
 {
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	
 	[translatorWindowController fadeIn:nil];
 	[translatorWindowController readTextFromClipboard:self];
 }

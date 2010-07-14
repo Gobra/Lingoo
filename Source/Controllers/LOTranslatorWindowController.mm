@@ -197,7 +197,7 @@
 - (IBAction)fadeIn:(id)sender
 {
 	[[self window] setAlphaValue:0.0f];
-	[self showWindow:self];
+	[[self window] makeKeyAndOrderFront:self];
 	[[[self window] animator] setAlphaValue:1.0f];
 }
 
