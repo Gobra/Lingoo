@@ -19,7 +19,6 @@
 		1BC6E38711E600ED003D6B05 /* SGKeyCombo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38311E600ED003D6B05 /* SGKeyCombo.mm */; };
 		1BC6E38A11E600FD003D6B05 /* LOHotKeysCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */; };
 		1BC991C811EDEF3700C8FEF8 /* CRAnimationKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC991C711EDEF3700C8FEF8 /* CRAnimationKey.mm */; };
-		1BCCF6C711EE539C00E01DB4 /* Arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BCCF6C411EE539C00E01DB4 /* Arrows.png */; };
 		1BCCF6C811EE539C00E01DB4 /* Languages.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BCCF6C511EE539C00E01DB4 /* Languages.png */; };
 		1BCCF6C911EE539C00E01DB4 /* Shotcuts.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BCCF6C611EE539C00E01DB4 /* Shotcuts.png */; };
 		1BCD763911EC492E000938B1 /* CRAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD763711EC492E000938B1 /* CRAboutWindow.xib */; };
@@ -32,6 +31,9 @@
 		1BCE2A6311E78EF6006CD5DC /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = 1BCE2A5D11E78EF6006CD5DC /* Credits */; };
 		1BCE2B0E11E7A275006CD5DC /* CRAboutWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2B0D11E7A275006CD5DC /* CRAboutWindow.mm */; };
 		1BCE2B9511E7BF3D006CD5DC /* CRDataToObjectTransformer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE2B9411E7BF3D006CD5DC /* CRDataToObjectTransformer.mm */; };
+		1BD1A42111EF4B780072BF51 /* Lingoo.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1A41F11EF4B780072BF51 /* Lingoo.icns */; };
+		1BD1A42211EF4B780072BF51 /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1A42011EF4B780072BF51 /* Book.png */; };
+		1BD1A48911EF5D740072BF51 /* BookAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD1A48811EF5D740072BF51 /* BookAlternate.png */; };
 		1BD2548911E45E7B006CD313 /* Constants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2548811E45E7B006CD313 /* Constants.mm */; };
 		1BD2549311E45E9E006CD313 /* CRJSExec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549011E45E9E006CD313 /* CRJSExec.mm */; };
 		1BD2549411E45E9E006CD313 /* CRJSMapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2549111E45E9E006CD313 /* CRJSMapper.mm */; };
@@ -111,7 +113,6 @@
 		1BC6E38911E600FD003D6B05 /* LOHotKeysCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LOHotKeysCenter.mm; sourceTree = "<group>"; };
 		1BC991C611EDEF3700C8FEF8 /* CRAnimationKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRAnimationKey.h; sourceTree = "<group>"; };
 		1BC991C711EDEF3700C8FEF8 /* CRAnimationKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAnimationKey.mm; sourceTree = "<group>"; };
-		1BCCF6C411EE539C00E01DB4 /* Arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrows.png; path = Resources/Images/Arrows.png; sourceTree = "<group>"; };
 		1BCCF6C511EE539C00E01DB4 /* Languages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Languages.png; path = Resources/Images/Languages.png; sourceTree = "<group>"; };
 		1BCCF6C611EE539C00E01DB4 /* Shotcuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shotcuts.png; path = Resources/Images/Shotcuts.png; sourceTree = "<group>"; };
 		1BCD763811EC492E000938B1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/CRAboutWindow.xib; sourceTree = "<group>"; };
@@ -128,6 +129,9 @@
 		1BCE2B0D11E7A275006CD5DC /* CRAboutWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRAboutWindow.mm; sourceTree = "<group>"; };
 		1BCE2B9311E7BF3D006CD5DC /* CRDataToObjectTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDataToObjectTransformer.h; path = Source/Common/CRDataToObjectTransformer.h; sourceTree = "<group>"; };
 		1BCE2B9411E7BF3D006CD5DC /* CRDataToObjectTransformer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CRDataToObjectTransformer.mm; path = Source/Common/CRDataToObjectTransformer.mm; sourceTree = "<group>"; };
+		1BD1A41F11EF4B780072BF51 /* Lingoo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Lingoo.icns; path = Resources/Images/Lingoo.icns; sourceTree = "<group>"; };
+		1BD1A42011EF4B780072BF51 /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Book.png; path = Resources/Images/Book.png; sourceTree = "<group>"; };
+		1BD1A48811EF5D740072BF51 /* BookAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BookAlternate.png; path = Resources/Images/BookAlternate.png; sourceTree = "<group>"; };
 		1BD2548711E45E7B006CD313 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Common/Constants.h; sourceTree = "<group>"; };
 		1BD2548811E45E7B006CD313 /* Constants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Constants.mm; path = Source/Common/Constants.mm; sourceTree = "<group>"; };
 		1BD2548D11E45E9E006CD313 /* CRJSExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRJSExec.h; path = Source/CRJavaScript/CRJSExec.h; sourceTree = "<group>"; };
@@ -366,7 +370,9 @@
 		1BD256DA11E48100006CD313 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1BCCF6C411EE539C00E01DB4 /* Arrows.png */,
+				1BD1A41F11EF4B780072BF51 /* Lingoo.icns */,
+				1BD1A42011EF4B780072BF51 /* Book.png */,
+				1BD1A48811EF5D740072BF51 /* BookAlternate.png */,
 				1BCCF6C511EE539C00E01DB4 /* Languages.png */,
 				1BCCF6C611EE539C00E01DB4 /* Shotcuts.png */,
 				1BD256DC11E48146006CD313 /* TitlebarClose.tiff */,
@@ -544,9 +550,11 @@
 				1BCD77E411EC5E55000938B1 /* TranslatorHeavyTemplate.tiff in Resources */,
 				1BCD77E511EC5E55000938B1 /* TranslatorLightTemplate.tiff in Resources */,
 				1BCD77E611EC5E55000938B1 /* TranslatorMiddleTemplate.tiff in Resources */,
-				1BCCF6C711EE539C00E01DB4 /* Arrows.png in Resources */,
 				1BCCF6C811EE539C00E01DB4 /* Languages.png in Resources */,
 				1BCCF6C911EE539C00E01DB4 /* Shotcuts.png in Resources */,
+				1BD1A42111EF4B780072BF51 /* Lingoo.icns in Resources */,
+				1BD1A42211EF4B780072BF51 /* Book.png in Resources */,
+				1BD1A48911EF5D740072BF51 /* BookAlternate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -66,7 +66,7 @@
 									<object class="NSTextField" id="588029833">
 										<reference key="NSNextResponder" ref="49532168"/>
 										<int key="NSvFlags">268</int>
-										<string key="NSFrame">{{0, 97}, {140, 14}}</string>
+										<string key="NSFrame">{{0, 102}, {140, 14}}</string>
 										<reference key="NSSuperview" ref="49532168"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="BWTransparentTextFieldCell" key="NSCell" id="809822219">
@@ -102,7 +102,7 @@
 									<object class="BWTransparentCheckbox" id="73797469">
 										<reference key="NSNextResponder" ref="49532168"/>
 										<int key="NSvFlags">265</int>
-										<string key="NSFrame">{{236, 95}, {18, 18}}</string>
+										<string key="NSFrame">{{236, 100}, {18, 18}}</string>
 										<reference key="NSSuperview" ref="49532168"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="BWTransparentCheckboxCell" key="NSCell" id="134036244">
@@ -129,7 +129,7 @@
 									<object class="BWTransparentPopUpButton" id="619413622">
 										<reference key="NSNextResponder" ref="49532168"/>
 										<int key="NSvFlags">265</int>
-										<string key="NSFrame">{{258, 91}, {135, 22}}</string>
+										<string key="NSFrame">{{258, 96}, {135, 22}}</string>
 										<reference key="NSSuperview" ref="49532168"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="BWTransparentPopUpButtonCell" key="NSCell" id="172224877">
@@ -182,7 +182,7 @@
 									<object class="NSTextField" id="423427258">
 										<reference key="NSNextResponder" ref="49532168"/>
 										<int key="NSvFlags">274</int>
-										<string key="NSFrame">{{1, 2}, {391, 90}}</string>
+										<string key="NSFrame">{{1, 2}, {391, 95}}</string>
 										<reference key="NSSuperview" ref="49532168"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="920907430">
@@ -214,7 +214,7 @@
 										</object>
 									</object>
 								</object>
-								<string key="NSFrameSize">{394, 115}</string>
+								<string key="NSFrameSize">{394, 120}</string>
 								<reference key="NSSuperview" ref="839436616"/>
 								<string key="NSClassName">NSView</string>
 							</object>
@@ -227,7 +227,7 @@
 										<reference key="NSNextResponder" ref="665586822"/>
 										<int key="NSvFlags">1289</int>
 										<object class="NSPSMatrix" key="NSDrawMatrix"/>
-										<string key="NSFrame">{{376, 73}, {16, 16}}</string>
+										<string key="NSFrame">{{374, 75}, {16, 16}}</string>
 										<reference key="NSSuperview" ref="665586822"/>
 										<int key="NSViewLayerContentsRedrawPolicy">2</int>
 										<int key="NSpiFlags">20746</int>
@@ -236,7 +236,7 @@
 									<object class="NSTextField" id="308892171">
 										<reference key="NSNextResponder" ref="665586822"/>
 										<int key="NSvFlags">268</int>
-										<string key="NSFrame">{{0, 98}, {166, 14}}</string>
+										<string key="NSFrame">{{0, 101}, {166, 14}}</string>
 										<reference key="NSSuperview" ref="665586822"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="BWTransparentTextFieldCell" key="NSCell" id="616276087">
@@ -252,7 +252,7 @@
 									<object class="BWTransparentPopUpButton" id="457746805">
 										<reference key="NSNextResponder" ref="665586822"/>
 										<int key="NSvFlags">265</int>
-										<string key="NSFrame">{{258, 92}, {135, 22}}</string>
+										<string key="NSFrame">{{258, 95}, {135, 22}}</string>
 										<reference key="NSSuperview" ref="665586822"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="BWTransparentPopUpButtonCell" key="NSCell" id="79813321">
@@ -295,7 +295,7 @@
 									<object class="NSTextField" id="646041011">
 										<reference key="NSNextResponder" ref="665586822"/>
 										<int key="NSvFlags">274</int>
-										<string key="NSFrame">{{1, 2}, {391, 91}}</string>
+										<string key="NSFrame">{{1, 2}, {391, 94}}</string>
 										<reference key="NSSuperview" ref="665586822"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="880086239">
@@ -310,13 +310,14 @@
 										</object>
 									</object>
 								</object>
-								<string key="NSFrame">{{0, 124}, {394, 116}}</string>
+								<string key="NSFrame">{{0, 121}, {394, 120}}</string>
 								<reference key="NSSuperview" ref="839436616"/>
 								<string key="NSClassName">NSView</string>
 							</object>
 						</object>
-						<string key="NSFrame">{{3, 30}, {394, 240}}</string>
+						<string key="NSFrame">{{3, 29}, {394, 241}}</string>
 						<reference key="NSSuperview" ref="1005"/>
+						<int key="NSDividerStyle">2</int>
 						<string key="NSAutosaveName">LOTranslatorHeavySplitter</string>
 						<reference key="BWSVColor" ref="623847113"/>
 						<bool key="BWSVColorIsEnabled">NO</bool>

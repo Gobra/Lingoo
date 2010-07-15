@@ -37,7 +37,8 @@
 		// Status bar
 		statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 		[statusItem setTitle:@""];
-		[statusItem setImage:[NSImage imageNamed:@"Arrows"]];
+		[statusItem setImage:[NSImage imageNamed:@"Book"]];
+		[statusItem setAlternateImage:[NSImage imageNamed:@"BookAlternate"]];
 		[statusItem setHighlightMode:YES];
 		
 		// Google.Translate
@@ -143,6 +144,8 @@
 
 - (IBAction)showPreferences:(id)sender
 {
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	
 	[[self preferencesController] show];
 }
 
