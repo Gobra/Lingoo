@@ -89,6 +89,7 @@
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
+	[[NSStatusBar systemStatusBar] removeStatusItem:statusItem];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

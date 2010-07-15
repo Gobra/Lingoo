@@ -265,11 +265,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>1BC8CE7711E264090012A062</string>
+								<string>1BD256F611E484E9006CD313</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>17</integer>
+									<integer>14</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -312,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LingooAppDelegate.mm</string>
+								<string>LOTranslatorWindowController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LingooAppDelegate.mm</string>
+										<string>LOTranslatorWindowController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1BD1A59E11EF80A70072BF51</string>
+										<string>1BDEBD3E11EFA4E900B6FCD0</string>
 										<key>history</key>
 										<array>
 											<string>1BF0CCCB11DFAB5F005C908F</string>
@@ -393,38 +396,35 @@
 											<string>1BC9924311EE001600C8FEF8</string>
 											<string>1BC9924D11EE018D00C8FEF8</string>
 											<string>1BC9924E11EE018D00C8FEF8</string>
-											<string>1BC9924F11EE018D00C8FEF8</string>
-											<string>1BC9926111EE01D700C8FEF8</string>
 											<string>1BC9926211EE01D700C8FEF8</string>
 											<string>1BC9927311EE026900C8FEF8</string>
 											<string>1BC9928011EE034B00C8FEF8</string>
-											<string>1BC9929611EE06E000C8FEF8</string>
 											<string>1BC9929711EE06E000C8FEF8</string>
-											<string>1BC9929F11EE073E00C8FEF8</string>
 											<string>1BC992A911EE07C700C8FEF8</string>
-											<string>1BC992B111EE081000C8FEF8</string>
 											<string>1BC992B811EE087D00C8FEF8</string>
 											<string>1BC992B911EE087D00C8FEF8</string>
 											<string>1BCCF6D211EE5E6400E01DB4</string>
 											<string>1BCCF6D411EE5E6400E01DB4</string>
 											<string>1BCCF6D511EE5E6400E01DB4</string>
-											<string>1BCCF6D711EE5E6400E01DB4</string>
 											<string>1BCCF6D811EE5E6400E01DB4</string>
-											<string>1BCCF6E511EE5F1800E01DB4</string>
 											<string>1BD1A42611EF4BA60072BF51</string>
 											<string>1BD1A42711EF4BA60072BF51</string>
 											<string>1BD1A42811EF4BA60072BF51</string>
 											<string>1BD1A42911EF4BA60072BF51</string>
 											<string>1BD1A46711EF568D0072BF51</string>
-											<string>1BD1A48C11EF5D860072BF51</string>
 											<string>1BD1A58D11EF804A0072BF51</string>
 											<string>1BD1A58E11EF804A0072BF51</string>
 											<string>1BD1A59011EF804A0072BF51</string>
 											<string>1BD1A59311EF804A0072BF51</string>
-											<string>1BD1A59411EF804A0072BF51</string>
-											<string>1BD1A59611EF804A0072BF51</string>
 											<string>1BD1A59811EF804A0072BF51</string>
-											<string>1BD1A59D11EF80A70072BF51</string>
+											<string>1BDEBCDE11EFA1EF00B6FCD0</string>
+											<string>1BDEBCDF11EFA1EF00B6FCD0</string>
+											<string>1BDEBCE011EFA1EF00B6FCD0</string>
+											<string>1BDEBCE111EFA1EF00B6FCD0</string>
+											<string>1BDEBCE211EFA1EF00B6FCD0</string>
+											<string>1BDEBCF711EFA2A900B6FCD0</string>
+											<string>1BDEBCF811EFA2A900B6FCD0</string>
+											<string>1BDEBD2B11EFA3CE00B6FCD0</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -482,9 +482,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1BD1A2FC11EEEF160072BF51</string>
+				<string>1BDEBCE511EFA1EF00B6FCD0</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>1BD1A2FD11EEEF160072BF51</string>
+				<string>1BDEBCE611EFA1EF00B6FCD0</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -622,9 +622,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1BD1A59F11EF80A70072BF51</string>
-		<string>1BD1A40D11EEFED50072BF51</string>
-		<string>1BD1A40E11EEFED50072BF51</string>
+		<string>1BDEBCF011EFA1EF00B6FCD0</string>
+		<string>1BDEBCF111EFA1EF00B6FCD0</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1BF0C9B011DF69FC005C908F</string>
@@ -708,7 +707,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1BF0C9B011DF69FC005C908F</string>
-				<string>1BD1A2FE11EEEF160072BF51</string>
+				<string>1BDEBCE711EFA1EF00B6FCD0</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -830,13 +829,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>1BD1A40511EEFED50072BF51</string>
+				<string>1BDEBCE811EFA1EF00B6FCD0</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>1BD1A40611EEFED50072BF51</string>
-				<string>1BD1A40711EEFED50072BF51</string>
-				<string>1BD1A40811EEFED50072BF51</string>
-				<string>1BD1A40911EEFED50072BF51</string>
-				<string>1BD1A40A11EEFED50072BF51</string>
+				<string>1BDEBCE911EFA1EF00B6FCD0</string>
+				<string>1BDEBCEA11EFA1EF00B6FCD0</string>
+				<string>1BDEBCEB11EFA1EF00B6FCD0</string>
+				<string>1BDEBCEC11EFA1EF00B6FCD0</string>
+				<string>1BDEBCED11EFA1EF00B6FCD0</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -990,7 +989,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>1BD1A40B11EEFED50072BF51</string>
+				<string>1BDEBCEE11EFA1EF00B6FCD0</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

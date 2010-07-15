@@ -81,6 +81,8 @@
 	// and sets all values immediately
 	double stepDuration = firstApply? 0 : viewSwitchInterval / 3.0;
 	NSSize viewSize = [selectedViewController view].frame.size;
+	viewSize.width = MAX(viewSize.width, [selectedViewController defaultSize].width);
+	viewSize.height = MAX(viewSize.height, [selectedViewController defaultSize].height);
 	CRAnimationStack* stack = [[CRAnimationStack alloc] init];
 	
 	// fade out
@@ -131,8 +133,12 @@
 	[selectedViewController activate];
 	
 	// Constraints
+	NSRect contentRect = [[[self window] contentView] frame];
+	NSRect titledRect = [NSWindow frameRectForContentRect:contentRect styleMask:[[self window] styleMask]];
+	CGFloat titlebarHeight = titledRect.size.height - contentRect.size.height;
 	NSSize viewMinimumSize = [selectedViewController defaultSize];
 	NSSize viewMaximumSize = NSMakeSize(800, 600);
+	viewMinimumSize.height += titlebarHeight;
 	if (![selectedViewController canScaleVertically])
 		viewMaximumSize.height = viewMinimumSize.height;
 	[[self window] setMinSize:viewMinimumSize];
