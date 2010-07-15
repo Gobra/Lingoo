@@ -24,8 +24,12 @@ function ReadFileLines()
 #---------------------------------------------------------------
 ProjectName=$(ReadFileLines "build_params.txt" 0 0)
 ProjectVersion=$(ReadFileLines "build_params.txt" 1 1)
-BuildBase="../out/saved/"$ProjectVersion
-BuildPath=$BuildBase"/"$ProjectName".dmg"
 
 # Push future DMG contents to the temporary directory and make DMG
-dmgcanvas ProjectName"Dmg.dmgCanvas" BuildPath
+abspath="$(cd "${0%/*}" 2>/dev/null; echo "$PWD"/"${0##*/}")"
+script_path=`dirname "$abspath"`
+project_path="$(dirname "$script_path")"
+TemplatePath=$script_path"/Dmg/"$ProjectName"Dmg.dmgCanvas"
+BuildPath=$project_path"/out/saved/"$ProjectVersion"/"$ProjectName$ProjectVersion".dmg"
+
+dmgcanvas $TemplatePath $BuildPath -leopard-compatible yes

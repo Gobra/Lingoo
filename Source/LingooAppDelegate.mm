@@ -151,11 +151,15 @@
 
 - (IBAction)showAbout:(id)sender
 {
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	
 	[[self aboutController] show];
 }
 
 - (IBAction)sendFeedback:(id)sender
 {
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	
 	[[FRFeedbackReporter sharedReporter] reportFeedback];
 }
 
