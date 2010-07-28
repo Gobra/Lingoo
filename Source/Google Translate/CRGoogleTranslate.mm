@@ -118,6 +118,34 @@ NSString* const CRGoogleTranslateErrorKey = @"error";
 }
 
 //////////////////////////////////////////////////////////////////////
+#pragma mark Branding
+
+- (void)loadBrandingImage
+{
+	// "shot" the branding image
+	if (nil == googleBrand)
+	{
+		// To render WebView must be placed into a onscreen non-deferred window
+		WebView* vw = [jsExec view];
+		NSWindow* temporaryWindow = [[NSWindow alloc] initWithContentRect:vw.bounds styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO];
+		[temporaryWindow setContentView:vw];
+		[temporaryWindow setAlphaValue:0];
+		[temporaryWindow orderFront:self];
+		
+		NSView* vr = [[[vw mainFrame] frameView] documentView];
+		NSData* pdf = [vr dataWithPDFInsideRect:vr.bounds];
+		NSImage* brandImage = [[NSImage alloc] initWithData:pdf];
+		[self setGoogleBrand:brandImage];
+		[brandImage release];
+		
+		// remove the window
+		[temporaryWindow setContentView:nil];
+		[temporaryWindow orderOut:self];
+		[temporaryWindow close];
+	}
+}
+
+//////////////////////////////////////////////////////////////////////
 #pragma mark Parsing
 
 - (CRGoogleLanguage *)defaultLanguage
@@ -150,6 +178,8 @@ NSString* const CRGoogleTranslateErrorKey = @"error";
 
 - (void)signalQueryComplete:(CRJSRemoteQuery *)query
 {
+	[self loadBrandingImage];
+	
 	BOOL success = (nil == [query.params valueForKey:CRGoogleTranslateErrorKey]);
 	[query complete:success];
 	self.isWaiting = NO;
@@ -211,6 +241,8 @@ NSString* const CRGoogleTranslateErrorKey = @"error";
 
 - (void)initialize
 {
+	if (!isReady)
+		[[jsExec script] setValue:self forKey:@"root"];
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -218,32 +250,13 @@ NSString* const CRGoogleTranslateErrorKey = @"error";
 
 - (void)jsReady:(CRJSExec *)sender
 {
-	[[jsExec script] setValue:self forKey:@"root"];
+	[self initialize];
 }
 
 - (void)frameLoaded:(CRJSExec *)sender
 {
-	// "shot" the branding image
-	if (nil == googleBrand)
-	{
-		// To render WebView must be placed into a onscreen non-deferred window
-		WebView* vw = [jsExec view];
-		NSWindow* temporaryWindow = [[NSWindow alloc] initWithContentRect:vw.bounds styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO];
-		[temporaryWindow setContentView:vw];
-		[temporaryWindow setAlphaValue:0];
-		[temporaryWindow orderFront:self];
-		
-		NSView* vr = [[[vw mainFrame] frameView] documentView];
-		NSData* pdf = [vr dataWithPDFInsideRect:vr.bounds];
-		NSImage* brandImage = [[NSImage alloc] initWithData:pdf];
-		[self setGoogleBrand:brandImage];
-		[brandImage release];
-		
-		// remove the window
-		[temporaryWindow setContentView:nil];
-		[temporaryWindow orderOut:self];
-		[temporaryWindow close];
-	}
+	[self loadBrandingImage];
+	[self initialize];
 }
 
 @end

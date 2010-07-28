@@ -15,21 +15,23 @@ extern NSString* const LODeferredTranslateRequestKey;
 //////////////////////////////////////////////////////////////////////
 @interface LOTranslatorController : NSViewController
 {
-	CRGoogleLanguage*	sourceLanguage;
-	CRGoogleLanguage*	destinationLanguage;
+	CRGoogleLanguage*		sourceLanguage;
+	CRGoogleLanguage*		destinationLanguage;
 	
 @private
-	BOOL				ignoreAction;			// signal whether text field action should be ignored
-	NSSize				originalSize;
+	BOOL					ignoreAction;			// signal whether text field action should be ignored
+	NSSize					originalSize;
 	
-@public
-	NSTextField*		textSource;
+@private
+	NSTextField*			textSource;
+	BWTransparentButton*	swapButton;
 }
 
-@property (assign) CRGoogleLanguage*		sourceLanguage;			// Source language object
-@property (assign) CRGoogleLanguage*		destinationLanguage;	// Destination language object
+@property (assign) CRGoogleLanguage*				sourceLanguage;			// Source language object
+@property (assign) CRGoogleLanguage*				destinationLanguage;	// Destination language object
 
-@property (assign) IBOutlet NSTextField*	textSource;				// Text-to-translate source control
+@property (assign) IBOutlet NSTextField*			textSource;				// Text-to-translate source control
+@property (assign) IBOutlet BWTransparentButton*	swapButton;				// Swap languages button
 
 + (id)controller;
 + (NSSize)defaultSize;
@@ -44,6 +46,7 @@ extern NSString* const LODeferredTranslateRequestKey;
 - (void)loadSizeFromDefaults;
 - (void)saveSizeToDefaults;
 
+- (IBAction)swapLanguages:(id)sender;
 - (IBAction)saveLanguageDefaults:(id)sender;
 - (IBAction)loadLanguageDefaults:(id)sender;
 - (IBAction)readTextFromClipboard:(id)sender;

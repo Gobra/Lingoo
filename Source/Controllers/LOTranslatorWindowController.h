@@ -17,6 +17,8 @@
 	NSArray*				viewControllers;
 	LOTranslatorController*	selectedViewController;
 	
+	NSMutableArray*			hotKeys;
+	
 @private
 	BOOL					firstApply;
 	BOOL					inAnimation;
@@ -30,7 +32,7 @@
 @property (assign) IBOutlet NSBox*				contentBox;
 @property (assign) IBOutlet NSSegmentedControl*	modeSwitch;
 
-- (void)showViewAtIndex:(NSUInteger)index;
+- (BOOL)showViewAtIndex:(NSUInteger)index;
 
 - (IBAction)fadeIn:(id)sender;
 - (IBAction)fadeOut:(id)sender;

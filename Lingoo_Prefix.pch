@@ -8,6 +8,7 @@
 	#import <QuartzCore/QuartzCore.h>
 	#import <FeedbackReporter/FRFeedbackReporter.h>
 	#import <ShortcutRecorder/ShortcutRecorder.h>
+	#import <BWToolkitFramework/BWToolkitFramework.h>
 
 	#import "Constants.h"
 	#import "LOHotKeysCenter.h"

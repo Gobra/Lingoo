@@ -130,17 +130,34 @@
 
 - (IBAction)showTranslator:(id)sender
 {
-	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-	
-	[translatorWindowController fadeIn:nil];
+	// Hide
+	if ([[translatorWindowController window] isKeyWindow])
+	{
+		[translatorWindowController fadeOut:self];
+	}
+	// Show
+	else
+	{
+		[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];	
+		[translatorWindowController fadeIn:nil];
+	}
 }
 
 - (IBAction)showTranslatorWithClipboard:(id)sender
 {
-	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-	
-	[translatorWindowController fadeIn:nil];
-	[translatorWindowController readTextFromClipboard:self];
+	// Hide
+	if ([[translatorWindowController window] isKeyWindow])
+	{
+		[translatorWindowController fadeOut:self];
+	}
+	// Show
+	else
+	{
+		[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+		
+		[translatorWindowController fadeIn:nil];
+		[translatorWindowController readTextFromClipboard:self];
+	}
 }
 
 - (IBAction)showPreferences:(id)sender

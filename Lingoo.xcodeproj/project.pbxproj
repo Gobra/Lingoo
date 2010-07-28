@@ -57,6 +57,7 @@
 		1BD259F711E4BA0B006CD313 /* FeedbackReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD259E511E4B9DC006CD313 /* FeedbackReporter.framework */; };
 		1BD25B9A11E4CDDD006CD313 /* LOPreferencesWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BD25B9911E4CDDD006CD313 /* LOPreferencesWindowController.mm */; };
 		1BD25B9D11E4CDEE006CD313 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD25B9B11E4CDEE006CD313 /* PreferencesWindow.xib */; };
+		1BDCE3AB120039260038D0E0 /* Swap.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDCE3AA120039260038D0E0 /* Swap.png */; };
 		1BE59F5811E8D37D00CF82C3 /* LOShared.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BE59F5711E8D37D00CF82C3 /* LOShared.mm */; };
 		1BE59F5F11E8D39000CF82C3 /* CRGoogleLanguage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BE59F5C11E8D39000CF82C3 /* CRGoogleLanguage.mm */; };
 		1BE59F6011E8D39000CF82C3 /* CRGoogleLanguagePair.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BE59F5D11E8D39000CF82C3 /* CRGoogleLanguagePair.mm */; };
@@ -165,6 +166,7 @@
 		1BD25B9811E4CDDD006CD313 /* LOPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOPreferencesWindowController.h; path = Source/Controllers/LOPreferencesWindowController.h; sourceTree = "<group>"; };
 		1BD25B9911E4CDDD006CD313 /* LOPreferencesWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOPreferencesWindowController.mm; path = Source/Controllers/LOPreferencesWindowController.mm; sourceTree = "<group>"; };
 		1BD25B9C11E4CDEE006CD313 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
+		1BDCE3AA120039260038D0E0 /* Swap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Swap.png; path = Resources/Images/Swap.png; sourceTree = "<group>"; };
 		1BE59F5611E8D37D00CF82C3 /* LOShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LOShared.h; path = Source/LOShared.h; sourceTree = "<group>"; };
 		1BE59F5711E8D37D00CF82C3 /* LOShared.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LOShared.mm; path = Source/LOShared.mm; sourceTree = "<group>"; };
 		1BE59F5911E8D39000CF82C3 /* CRGoogleLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRGoogleLanguage.h; path = "Source/Google Translate/Language/CRGoogleLanguage.h"; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			children = (
 				1BD1A41F11EF4B780072BF51 /* Lingoo.icns */,
 				1BD1A42011EF4B780072BF51 /* Book.png */,
+				1BDCE3AA120039260038D0E0 /* Swap.png */,
 				1BD1A48811EF5D740072BF51 /* BookAlternate.png */,
 				1BCCF6C511EE539C00E01DB4 /* Languages.png */,
 				1BCCF6C611EE539C00E01DB4 /* Shotcuts.png */,
@@ -555,6 +558,7 @@
 				1BD1A42111EF4B780072BF51 /* Lingoo.icns in Resources */,
 				1BD1A42211EF4B780072BF51 /* Book.png in Resources */,
 				1BD1A48911EF5D740072BF51 /* BookAlternate.png in Resources */,
+				1BDCE3AB120039260038D0E0 /* Swap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

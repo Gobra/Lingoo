@@ -40,6 +40,8 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 - (void)awakeFromNib
 {
 	[self loadSizeFromDefaults];
+	
+	[swapButton setImage:[NSImage imageNamed:@"Swap"]];
 }
 
 - (void)activate
@@ -211,6 +213,17 @@ NSString* const LODeferredTranslateRequestKey = @"LODeferredTranslateRequestKey"
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark Actions
+
+- (IBAction)swapLanguages:(id)sender
+{
+	// turn the auto-detect off
+	[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:NO] forKey:LOAutodetectLanguageKey];
+	
+	CRGoogleLanguage* oldDest = [self.destinationLanguage retain];
+	self.destinationLanguage = self.sourceLanguage;
+	self.sourceLanguage = oldDest;
+	[oldDest release];
+}
 
 - (IBAction)readTextFromClipboard:(id)sender
 {

@@ -12,6 +12,19 @@
 #import "LOTranslatorMiddleController.h"
 #import "LOTranslatorHeavyController.h"
 
+#import "SGHotKeyCenter.h"
+
+//////////////////////////////////////////////////////////////////////
+// Translator window controller: private members
+//////////////////////////////////////////////////////////////////////
+@interface LOTranslatorWindowController (Private)
+
+- (void)unregisterHotkeys;
+- (void)registerHotkeys;
+
+@end
+
+
 //////////////////////////////////////////////////////////////////////
 // Translator window controller
 //////////////////////////////////////////////////////////////////////
@@ -46,6 +59,7 @@
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[self unregisterHotkeys];
 	
 	[super dealloc];
 }
@@ -147,10 +161,10 @@
 	inAnimation = NO;
 }
 
-- (void)showViewAtIndex:(NSUInteger)index
+- (BOOL)showViewAtIndex:(NSUInteger)index
 {
 	if (inAnimation)
-		return;
+		return NO;
 	
 	LOTranslatorController* oldController = selectedViewController;
 	[oldController saveLanguageDefaults:self];
@@ -166,10 +180,63 @@
 	// save in Defaults
 	[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:index] forKey:LOTranslatorTypeIndexKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	return YES;
+}
+
+//////////////////////////////////////////////////////////////////////
+#pragma mark Hotkeys
+
+- (void)unregisterHotkeys
+{
+	if (hotKeys)
+	{
+		for (SGHotKey* key in hotKeys)
+			[[SGHotKeyCenter sharedCenter] unregisterHotKey:key];
+		[hotKeys release];
+		hotKeys = nil;
+	}
+}
+
+- (void)registerHotkeys
+{
+	[self unregisterHotkeys];
+	
+	hotKeys = [[NSMutableArray alloc] init];
+	for (int i = 0; i < 3; ++i)
+	{
+		SGKeyCombo* combo = [[SGKeyCombo alloc] initWithKeyCode:18 + i modifiers:256];
+		SGHotKey* hk = [[SGHotKey alloc] initWithIdentifier:[NSString stringWithFormat:@"LWM%d", i] keyCombo:combo];
+		[hk setTarget:self];
+		[hk setAction:@selector(switchModeWithHotkey:)];
+		[[SGHotKeyCenter sharedCenter] registerHotKey:hk];
+		
+		[hotKeys addObject:hk];
+	}
+}
+
+- (void)switchModeWithHotkey:(id)sender
+{
+	NSUInteger index = [hotKeys indexOfObject:sender];
+	if (NSNotFound != index)
+	{
+		if ([self showViewAtIndex:index])
+			[modeSwitch setSelectedSegment:index];
+	}
 }
 
 //////////////////////////////////////////////////////////////////////
 #pragma mark Delegate
+
+- (void)windowDidBecomeKey:(NSNotification *)notification
+{
+	[self registerHotkeys];
+}
+
+- (void)windowDidResignKey:(NSNotification *)notification
+{
+	[self unregisterHotkeys];
+}
 
 - (void)windowDidResize:(NSNotification *)notification
 {

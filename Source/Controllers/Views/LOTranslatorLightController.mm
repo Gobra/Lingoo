@@ -24,7 +24,7 @@
 
 + (NSSize)defaultSize;
 {
-	return NSMakeSize(400, 50);
+	return NSMakeSize(425, 50);
 }
 
 - (NSString *)sizeDefaultsKey

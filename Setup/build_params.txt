@@ -1,5 +1,5 @@
 Lingoo
-1.0
+1.1
 u94805.ftp.masterhost.ru
 u94805
 roiden4ic4
